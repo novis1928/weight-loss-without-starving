@@ -26,7 +26,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 const siteOrigin = Astro.site ?? new URL(Astro.url.origin);
 
 const formattedDate =
