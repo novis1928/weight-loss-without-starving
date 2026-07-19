@@ -1,0 +1,140 @@
+---
+const baseURL = import.meta.env.BASE_URL;
+---
+
+<section class="preview-section" id="preview">
+  <div class="preview-container">
+
+    <div class="section-heading">
+      <span class="section-label">PEEK INSIDE</span>
+
+      <h2>
+        See What’s Waiting
+        <span>Inside the Ebook</span>
+      </h2>
+
+      <p>
+        Take a closer look at selected pages and discover the practical advice,
+        clear explanations, and simple recipes included in the guide.
+      </p>
+    </div>
+
+    <div class="preview-grid">
+
+      <a
+        class="preview-card"
+        href={`${baseURL}preview/cover.png`}
+        target="_blank"
+        aria-label="Open ebook cover preview"
+      >
+        <div class="preview-image">
+          <img
+            src={`${baseURL}preview/cover.png`}
+            alt="Weight Loss Without Starving ebook cover"
+            loading="lazy"
+          />
+
+          <span class="preview-zoom">View full page</span>
+        </div>
+
+        <div class="preview-info">
+          <span>01</span>
+
+          <div>
+            <h3>Professional Cover</h3>
+            <p>A modern beginner-friendly guide.</p>
+          </div>
+        </div>
+      </a>
+
+      <a
+        class="preview-card"
+        href={`${baseURL}preview/chapter.png`}
+        target="_blank"
+        aria-label="Open chapter preview"
+      >
+        <div class="preview-image">
+          <img
+            src={`${baseURL}preview/chapter.png`}
+            alt="Example page from the ebook"
+            loading="lazy"
+          />
+
+          <span class="preview-zoom">View full page</span>
+        </div>
+
+        <div class="preview-info">
+          <span>02</span>
+
+          <div>
+            <h3>Clear Explanations</h3>
+            <p>Simple guidance without complicated jargon.</p>
+          </div>
+        </div>
+      </a>
+
+      <a
+        class="preview-card"
+        href={`${baseURL}preview/meal-planning.png`}
+        target="_blank"
+        aria-label="Open meal planning preview"
+      >
+        <div class="preview-image">
+          <img
+            src={`${baseURL}preview/meal-planning.png`}
+            alt="Meal planning chapter from the ebook"
+            loading="lazy"
+          />
+
+          <span class="preview-zoom">View full page</span>
+        </div>
+
+        <div class="preview-info">
+          <span>03</span>
+
+          <div>
+            <h3>Practical Strategies</h3>
+            <p>Everyday tips that are realistic and easy to follow.</p>
+          </div>
+        </div>
+      </a>
+
+      <a
+        class="preview-card"
+        href={`${baseURL}preview/recipes.png`}
+        target="_blank"
+        aria-label="Open healthy recipes preview"
+      >
+        <div class="preview-image">
+          <img
+            src={`${baseURL}preview/recipes.png`}
+            alt="Healthy recipes chapter from the ebook"
+            loading="lazy"
+          />
+
+          <span class="preview-zoom">View full page</span>
+        </div>
+
+        <div class="preview-info">
+          <span>04</span>
+
+          <div>
+            <h3>Easy Healthy Recipes</h3>
+            <p>Quick meals made with common ingredients.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="preview-note">
+      <span>📖</span>
+
+      <p>
+        The complete ebook contains <strong>68 practical pages</strong> and
+        <strong>15 easy-to-understand chapters</strong>.
+      </p>
+    </div>
+
+  </div>
+</section>
