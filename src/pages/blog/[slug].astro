@@ -27,6 +27,7 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post);
 
 const baseURL = import.meta.env.BASE_URL;
+const siteOrigin = Astro.site ?? new URL(Astro.url.origin);
 
 const formattedDate =
   post.data.publishDate.toLocaleDateString("en-US", {
@@ -37,49 +38,156 @@ const formattedDate =
 
 const articleURL = new URL(
   `${baseURL}blog/${post.id}/`,
-  Astro.site
-).href;
+  siteOrigin
+);
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const homepageURL = new URL(
+  baseURL,
+  siteOrigin
+);
+
+const blogURL = new URL(
+  `${baseURL}blog/`,
+  siteOrigin
+);
+
+const categoryURL = new URL(
+  `${baseURL}category/${slugify(
+    post.data.category
+  )}/`,
+  siteOrigin
+);
+
+const articleImageURL = new URL(
+  `${baseURL}ebook-cover.png`,
+  siteOrigin
+);
+
+const websiteId = `${homepageURL.href}#website`;
+const organizationId =
+  `${homepageURL.href}#organization`;
+
+const articleId = `${articleURL.href}#article`;
+const breadcrumbId =
+  `${articleURL.href}#breadcrumb`;
+
+const articleDescription =
+  post.data.seoDescription ??
+  post.data.description;
+
+const datePublished =
+  post.data.publishDate.toISOString();
+
+const dateModified =
+  post.data.updatedDate?.toISOString() ??
+  datePublished;
+
+const blogPostingSchema = {
+  "@type": "BlogPosting",
+  "@id": articleId,
+
   headline: post.data.title,
-  description:
-    post.data.seoDescription ?? post.data.description,
-  datePublished: post.data.publishDate.toISOString(),
-  dateModified:
-    post.data.updatedDate?.toISOString() ??
-    post.data.publishDate.toISOString(),
+  name: post.data.title,
+  description: articleDescription,
+
+  url: articleURL.href,
+
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": articleURL.href,
+  },
+
+  image: {
+    "@type": "ImageObject",
+    url: articleImageURL.href,
+  },
+
+  datePublished,
+  dateModified,
+
   author: {
     "@type": "Person",
     name: post.data.author,
   },
+
   publisher: {
-    "@type": "Person",
-    name: "George Novák",
+    "@id": organizationId,
   },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": articleURL,
+
+  isPartOf: {
+    "@id": websiteId,
   },
-  url: articleURL,
-  inLanguage: "en",
+
+  breadcrumb: {
+    "@id": breadcrumbId,
+  },
+
+  inLanguage: "en-US",
+
   articleSection: post.data.category,
+
   keywords: post.data.tags.join(", "),
+
+  wordCount:
+    typeof post.body === "string"
+      ? post.body
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean)
+          .length
+      : undefined,
+};
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": breadcrumbId,
+
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: homepageURL.href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: blogURL.href,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: post.data.category,
+      item: categoryURL.href,
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: post.data.title,
+      item: articleURL.href,
+    },
+  ],
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPostingSchema,
+    breadcrumbSchema,
+  ],
 };
 ---
 
 <Layout
   title={post.data.seoTitle ?? post.data.title}
-  description={
-    post.data.seoDescription ?? post.data.description
-  }
+  description={articleDescription}
 >
   <script
+    is:inline
     type="application/ld+json"
-    slot="head"
-    set:html={JSON.stringify(articleSchema)}
-  />
+    set:html={JSON.stringify(structuredData)}
+  ></script>
 
   <Header />
 
@@ -90,15 +198,27 @@ const articleSchema = {
           class="breadcrumbs"
           aria-label="Breadcrumb"
         >
-          <a href={baseURL}>Home</a>
+          <a href={baseURL}>
+            Home
+          </a>
 
-          <span>/</span>
+          <span aria-hidden="true">/</span>
 
           <a href={`${baseURL}blog/`}>
             Blog
           </a>
 
-          <span>/</span>
+          <span aria-hidden="true">/</span>
+
+          <a
+            href={`${baseURL}category/${slugify(
+              post.data.category
+            )}/`}
+          >
+            {post.data.category}
+          </a>
+
+          <span aria-hidden="true">/</span>
 
           <span aria-current="page">
             {post.data.title}
@@ -150,9 +270,14 @@ const articleSchema = {
             <strong>{post.data.author}</strong>
 
             <div class="meta-details">
-              <span>{formattedDate}</span>
+              <time datetime={datePublished}>
+                {formattedDate}
+              </time>
 
-              <span class="meta-separator">
+              <span
+                class="meta-separator"
+                aria-hidden="true"
+              >
                 •
               </span>
 
@@ -179,9 +304,7 @@ const articleSchema = {
                       heading.depth === 2
                   )
                   .map((heading) => (
-                    <a
-                      href={`#${heading.slug}`}
-                    >
+                    <a href={`#${heading.slug}`}>
                       {heading.text}
                     </a>
                   ))
@@ -255,9 +378,11 @@ const articleSchema = {
 
           <ul>
             <li>68 practical pages</li>
+
             <li>
               15 easy-to-understand chapters
             </li>
+
             <li>Instant PDF access</li>
           </ul>
         </div>
