@@ -20,7 +20,7 @@ seoDescription: "Discover the biggest mistakes people make when trying to lose w
 
 # 10 Common Weight Loss Mistakes (And How to Avoid Them)
 
-![10 Common Weight Loss Mistakes](/weight-loss-without-starving/images/blog/10-common-weight-loss-mistakes.png)
+![10 Common Weight Loss Mistakes](/weight-loss-without-starving/images/10-common-weight-loss-mistakes.png)
 
 *Avoid the most common weight loss mistakes and build healthy habits that last.*
 
