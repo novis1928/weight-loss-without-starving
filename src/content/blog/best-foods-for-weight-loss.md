@@ -135,6 +135,82 @@ Large salads can become much more satisfying when combined with protein.
 
 ---
 
+## 11. Cottage Cheese
+
+Cottage cheese is rich in protein while remaining relatively low in calories.
+
+It can be eaten on its own or paired with fruit, vegetables, or whole-grain toast for a filling meal or snack.
+
+---
+
+## 12. Lentils
+
+Lentils provide an excellent combination of protein, fiber, vitamins, and minerals.
+
+They are inexpensive, versatile, and help you stay satisfied for longer.
+
+---
+
+## 13. Beans
+
+Beans are packed with fiber and plant-based protein.
+
+Black beans, kidney beans, and chickpeas are excellent additions to soups, salads, and main meals.
+
+---
+
+## 14. Tofu
+
+Tofu is a great protein source, especially for people following vegetarian or vegan diets.
+
+It absorbs flavors well and can be prepared in many different ways.
+
+---
+
+## 15. Salmon
+
+Salmon provides high-quality protein together with omega-3 fatty acids.
+
+It supports overall health while fitting perfectly into a balanced weight-loss diet.
+
+---
+
+## 16. Tuna
+
+Canned tuna in water is convenient, high in protein, and easy to include in salads or sandwiches.
+
+Choose varieties with lower sodium whenever possible.
+
+---
+
+## 17. Brown Rice
+
+Brown rice contains more fiber than white rice and can help create balanced meals when combined with vegetables and lean protein.
+
+---
+
+## 18. Quinoa
+
+Quinoa provides protein, fiber, and several important minerals.
+
+It works well as a replacement for rice or pasta.
+
+---
+
+## 19. Sweet Potatoes
+
+Sweet potatoes are naturally rich in fiber, vitamin A, and potassium.
+
+They can satisfy cravings for carbohydrates while providing valuable nutrients.
+
+---
+
+## 20. Avocados
+
+Although avocados are relatively high in calories, they also contain healthy fats and fiber.
+
+Eating moderate portions may help increase meal satisfaction.
+
 ## Continue Reading
 
 If you're new to healthy weight loss, these guides may help:
