@@ -211,22 +211,139 @@ Although avocados are relatively high in calories, they also contain healthy fat
 
 Eating moderate portions may help increase meal satisfaction.
 
+---
+
+## 21. Apples
+
+Apples are naturally rich in fiber and water, making them one of the most filling fruits.
+
+Eating a whole apple is generally more satisfying than drinking apple juice because the fiber remains intact.
+
+---
+
+## 22. Pears
+
+Pears contain plenty of fiber and natural sweetness.
+
+They make an excellent snack between meals.
+
+---
+
+## 23. Oranges
+
+Oranges provide vitamin C, water, and fiber while remaining relatively low in calories.
+
+Whole fruit is usually a better choice than fruit juice.
+
+---
+
+## 24. Blueberries
+
+Blueberries are packed with antioxidants and add natural sweetness to breakfasts and desserts without excessive calories.
+
+---
+
+## 25. Strawberries
+
+Strawberries are high in vitamin C and contain relatively few calories.
+
+They can help satisfy sweet cravings while contributing valuable nutrients.
+
+---
+
+## 26. Cucumbers
+
+Cucumbers contain a large amount of water, making them an excellent low-calorie addition to salads and snacks.
+
+---
+
+## 27. Carrots
+
+Carrots provide fiber, vitamins, and a satisfying crunch.
+
+They are an easy snack that pairs well with hummus or low-fat yogurt dips.
+
+---
+
+## 28. Bell Peppers
+
+Bell peppers are colorful, rich in vitamin C, and naturally low in calories.
+
+They add volume and flavor to meals.
+
+---
+
+## 29. Mushrooms
+
+Mushrooms are low in calories but rich in flavor.
+
+They can replace part of the meat in some recipes while adding texture and nutrients.
+
+---
+
+## 30. Leafy Greens
+
+Leafy greens such as lettuce, kale, and arugula provide vitamins, minerals, and fiber while adding very few calories.
+
+Building meals around leafy greens is one of the easiest ways to increase food volume without dramatically increasing calorie intake.
+
+---
+
+# Comparison Table
+
+| Food | High Protein | High Fiber | Keeps You Full |
+|------|:------------:|:----------:|:--------------:|
+| Eggs | ✅ | ❌ | ⭐⭐⭐⭐⭐ |
+| Greek Yogurt | ✅ | ❌ | ⭐⭐⭐⭐ |
+| Chicken Breast | ✅ | ❌ | ⭐⭐⭐⭐⭐ |
+| Lentils | ✅ | ✅ | ⭐⭐⭐⭐⭐ |
+| Oats | ❌ | ✅ | ⭐⭐⭐⭐ |
+| Potatoes | ❌ | ✅ | ⭐⭐⭐⭐⭐ |
+| Apples | ❌ | ✅ | ⭐⭐⭐⭐ |
+| Broccoli | ❌ | ✅ | ⭐⭐⭐⭐ |
+| Cottage Cheese | ✅ | ❌ | ⭐⭐⭐⭐ |
+| Salmon | ✅ | ❌ | ⭐⭐⭐⭐⭐ |
+
+---
+
+# Frequently Asked Questions
+
+## What is the best food for weight loss?
+
+There is no single perfect food. The best approach is combining protein-rich foods, vegetables, fruit, whole grains, and healthy fats into balanced meals.
+
+## Should I avoid carbohydrates?
+
+No. Whole-food carbohydrate sources such as potatoes, oats, brown rice, fruit, and beans can all fit into a healthy weight-loss diet.
+
+## Are high-protein foods better?
+
+Protein can increase satiety and help preserve muscle during weight loss, but it should be part of an overall balanced diet.
+
+## Can I lose weight without feeling hungry?
+
+Yes. Choosing filling foods that contain protein, fiber, and water can make maintaining a calorie deficit much easier.
+
+---
+
 ## Continue Reading
 
-If you're new to healthy weight loss, these guides may help:
+If you found this guide helpful, you may also enjoy:
 
 - Healthy Weight Loss for Beginners
 - How to Lose Weight Without Feeling Hungry
 - Calorie Deficit Explained
 
+These articles build on the principles discussed here and provide practical advice for long-term success.
+
 ---
 
 ## Final Thoughts
 
-There is no single "magic food" for weight loss.
+No single food causes weight loss on its own.
 
-Instead, successful long-term weight loss comes from building meals around nutritious foods that help control hunger while supporting a moderate calorie deficit.
+The most successful approach combines nutritious foods, regular physical activity, and a moderate calorie deficit that you can maintain over time.
 
-Focus on consistency rather than perfection.
+Small, consistent improvements usually produce better long-term results than extreme diets.
 
-Small improvements repeated every day often produce the biggest results over time.
+If you're looking for a practical step-by-step system, check out the **Weight Loss Without Starving** e-book, where you'll find beginner-friendly guidance, healthy recipes, and sustainable habits that support long-term success.
