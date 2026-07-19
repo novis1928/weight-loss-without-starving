@@ -1,0 +1,500 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+import { getCollection } from "astro:content";
+import { slugify } from "../../utils/slugify";
+
+export async function getStaticPaths() {
+  const posts = await getCollection(
+    "blog",
+    ({ data }) => !data.draft
+  );
+
+  const tags = [
+    ...new Set(
+      posts.flatMap((post) => post.data.tags)
+    ),
+  ];
+
+  return tags.map((tag) => ({
+    params: {
+      tag: slugify(tag),
+    },
+    props: {
+      tagName: tag,
+      posts: posts
+        .filter((post) => post.data.tags.includes(tag))
+        .sort(
+          (a, b) =>
+            b.data.publishDate.getTime() -
+            a.data.publishDate.getTime()
+        ),
+    },
+  }));
+}
+
+const { tagName, posts } = Astro.props;
+
+const baseURL = import.meta.env.BASE_URL;
+
+const formattedDate = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+---
+
+<Layout
+  title={`${tagName} Articles | Weight Loss Without Starving`}
+  description={`Browse practical weight loss articles about ${tagName}.`}
+>
+  <Header />
+
+  <main class="tag-page">
+    <section class="tag-hero">
+      <div class="tag-hero-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={baseURL}>Home</a>
+          <span>/</span>
+          <a href={`${baseURL}blog/`}>Blog</a>
+          <span>/</span>
+          <span aria-current="page">{tagName}</span>
+        </nav>
+
+        <span class="tag-label">TOPIC</span>
+
+        <h1>{tagName}</h1>
+
+        <p>
+          Browse all published articles connected with this topic.
+        </p>
+      </div>
+    </section>
+
+    <section class="articles-section">
+      <div class="articles-container">
+        <div class="articles-heading">
+          <div>
+            <span>TAG ARCHIVE</span>
+            <h2>Articles About {tagName}</h2>
+          </div>
+
+          <p>
+            {posts.length}
+            {posts.length === 1 ? " article" : " articles"}
+          </p>
+        </div>
+
+        {
+          posts.length > 0 ? (
+            <div class="articles-grid">
+              {posts.map((post, index) => (
+                <article class="article-card">
+                  <div class="article-card-top">
+                    <a
+                      class="article-category"
+                      href={`${baseURL}category/${slugify(
+                        post.data.category
+                      )}/`}
+                    >
+                      {post.data.category}
+                    </a>
+
+                    <span class="article-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h2>
+                    <a href={`${baseURL}blog/${post.id}/`}>
+                      {post.data.title}
+                    </a>
+                  </h2>
+
+                  <p class="article-description">
+                    {post.data.description}
+                  </p>
+
+                  <div class="article-tags">
+                    {post.data.tags.slice(0, 3).map((tag) => (
+                      <a
+                        href={`${baseURL}tag/${slugify(tag)}/`}
+                      >
+                        {tag}
+                      </a>
+                    ))}
+                  </div>
+
+                  <div class="article-footer">
+                    <div class="article-meta">
+                      <span>
+                        {formattedDate(post.data.publishDate)}
+                      </span>
+
+                      <span aria-hidden="true">•</span>
+
+                      <span>{post.data.readingTime}</span>
+                    </div>
+
+                    <a
+                      class="read-more"
+                      href={`${baseURL}blog/${post.id}/`}
+                    >
+                      Read article
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div class="empty-state">
+              <h2>No articles found</h2>
+
+              <p>
+                There are currently no published articles for this tag.
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .tag-page {
+    background: #ffffff;
+  }
+
+  .tag-hero {
+    padding: 90px 0;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(34, 197, 94, 0.14),
+        transparent 36%
+      ),
+      linear-gradient(
+        180deg,
+        #f0fdf4 0%,
+        #ffffff 100%
+      );
+  }
+
+  .tag-hero-container {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-bottom: 30px;
+    color: #94a3b8;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumbs a {
+    color: #64748b;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: #16a34a;
+  }
+
+  .tag-label {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+  }
+
+  .tag-hero h1 {
+    margin: 24px 0 0;
+    color: #0f172a;
+    font-size: clamp(44px, 7vw, 70px);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+  }
+
+  .tag-hero p {
+    max-width: 680px;
+    margin: 24px auto 0;
+    color: #64748b;
+    font-size: 19px;
+    line-height: 1.75;
+  }
+
+  .articles-section {
+    padding: 100px 0 120px;
+  }
+
+  .articles-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .articles-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
+  }
+
+  .articles-heading span {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .articles-heading h2 {
+    margin: 10px 0 0;
+    color: #0f172a;
+    font-size: clamp(34px, 5vw, 48px);
+    letter-spacing: -0.04em;
+  }
+
+  .articles-heading > p {
+    margin: 0;
+    color: #94a3b8;
+    font-weight: 700;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .article-card {
+    position: relative;
+    display: flex;
+    min-height: 420px;
+    padding: 30px;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.07);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .article-card::before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: -55px;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .article-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 30px 66px rgba(15, 23, 42, 0.11);
+  }
+
+  .article-card-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .article-category {
+    display: inline-flex;
+    min-height: 28px;
+    align-items: center;
+    padding: 0 11px;
+    border-radius: 999px;
+    background: #ecfdf3;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .article-category:hover {
+    background: #22c55e;
+    color: #ffffff;
+  }
+
+  .article-number {
+    color: rgba(15, 23, 42, 0.13);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .article-card h2 {
+    position: relative;
+    z-index: 1;
+    margin: 34px 0 16px;
+    font-size: 25px;
+    line-height: 1.28;
+    letter-spacing: -0.025em;
+  }
+
+  .article-card h2 a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .article-card h2 a:hover {
+    color: #16a34a;
+  }
+
+  .article-description {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .article-tags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .article-tags a {
+    display: inline-flex;
+    min-height: 29px;
+    align-items: center;
+    padding: 0 9px;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .article-tags a:hover {
+    background: #22c55e;
+    color: #ffffff;
+  }
+
+  .article-footer {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .read-more {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 9px;
+    color: #16a34a;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  .empty-state {
+    padding: 50px;
+    border-radius: 24px;
+    background: #f8fafc;
+    text-align: center;
+  }
+
+  .empty-state h2 {
+    margin: 0 0 10px;
+    color: #0f172a;
+  }
+
+  .empty-state p {
+    margin: 0;
+    color: #64748b;
+  }
+
+  @media (max-width: 940px) {
+    .articles-grid {
+      max-width: 720px;
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+    }
+
+    .article-card {
+      min-height: 350px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .tag-hero {
+      padding: 70px 0;
+    }
+
+    .tag-hero-container,
+    .articles-container {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .articles-section {
+      padding: 76px 0 90px;
+    }
+
+    .articles-heading {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .article-card {
+      min-height: 370px;
+      padding: 24px;
+      border-radius: 20px;
+    }
+  }
+</style>

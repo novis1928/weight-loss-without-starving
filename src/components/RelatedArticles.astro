@@ -1,0 +1,407 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "../utils/slugify";
+
+const { currentPost } = Astro.props;
+
+const baseURL = import.meta.env.BASE_URL;
+
+const allPosts = await getCollection(
+  "blog",
+  ({ data }) => !data.draft
+);
+
+const related = allPosts
+  .filter((post) => post.id !== currentPost.id)
+  .map((post) => {
+    const sameCategory =
+      post.data.category === currentPost.data.category;
+
+    const commonTags = post.data.tags.filter((tag) =>
+      currentPost.data.tags.includes(tag)
+    ).length;
+
+    return {
+      post,
+      score: (sameCategory ? 10 : 0) + commonTags,
+    };
+  })
+  .filter(({ score }) => score > 0)
+  .sort((a, b) => {
+    if (b.score !== a.score) {
+      return b.score - a.score;
+    }
+
+    return (
+      b.post.data.publishDate.getTime() -
+      a.post.data.publishDate.getTime()
+    );
+  })
+  .slice(0, 3)
+  .map(({ post }) => post);
+
+const formattedDate = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+---
+
+{
+  related.length > 0 && (
+    <section
+      class="related"
+      aria-labelledby="related-articles-title"
+    >
+      <div class="related-heading">
+        <div>
+          <span class="related-label">
+            KEEP READING
+          </span>
+
+          <h2 id="related-articles-title">
+            Related Articles
+          </h2>
+        </div>
+
+        <p>
+          Continue with practical guides selected by category
+          and topic.
+        </p>
+      </div>
+
+      <div class="related-grid">
+        {related.map((post) => (
+          <article class="related-card">
+            <div class="card-content">
+              <div class="card-top">
+                <a
+                  class="category"
+                  href={`${baseURL}category/${slugify(
+                    post.data.category
+                  )}/`}
+                >
+                  {post.data.category}
+                </a>
+
+                <a
+                  class="arrow"
+                  href={`${baseURL}blog/${post.id}/`}
+                  aria-label={`Read ${post.data.title}`}
+                >
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <h3>
+                <a href={`${baseURL}blog/${post.id}/`}>
+                  {post.data.title}
+                </a>
+              </h3>
+
+              <p class="description">
+                {post.data.description}
+              </p>
+
+              {
+                post.data.tags.length > 0 && (
+                  <div
+                    class="tags"
+                    aria-label="Article topics"
+                  >
+                    {post.data.tags
+                      .slice(0, 3)
+                      .map((tag) => (
+                        <a
+                          class="tag"
+                          href={`${baseURL}tag/${slugify(tag)}/`}
+                        >
+                          {tag}
+                        </a>
+                      ))}
+                  </div>
+                )
+              }
+
+              <div class="meta">
+                <span>
+                  {formattedDate(post.data.publishDate)}
+                </span>
+
+                <span aria-hidden="true">•</span>
+
+                <span>{post.data.readingTime}</span>
+              </div>
+
+              <a
+                class="read-more"
+                href={`${baseURL}blog/${post.id}/`}
+              >
+                Read article
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .related {
+    width: min(900px, calc(100% - 40px));
+    margin: 90px auto 0;
+    padding: 60px 0 90px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .related-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 42px;
+  }
+
+  .related-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .related h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(32px, 5vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  .related-heading > p {
+    max-width: 340px;
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, 340px), 1fr)
+    );
+    gap: 24px;
+  }
+
+  .related-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(34, 197, 94, 0.55);
+    box-shadow: 0 22px 46px rgba(15, 23, 42, 0.11);
+  }
+
+  .card-content {
+    display: flex;
+    min-height: 360px;
+    padding: 28px;
+    flex-direction: column;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .category {
+    display: inline-flex;
+    min-height: 28px;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: #ecfdf3;
+    color: #15803d;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .category:hover {
+    transform: translateY(-2px);
+    background: #22c55e;
+    color: #ffffff;
+  }
+
+  .arrow {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 18px;
+    text-decoration: none;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .arrow:hover {
+    transform: translateX(3px);
+    background: #22c55e;
+    color: #ffffff;
+  }
+
+  .related-card h3 {
+    margin: 28px 0 14px;
+    font-size: 23px;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+  }
+
+  .related-card h3 a {
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .related-card h3 a:hover {
+    color: #16a34a;
+  }
+
+  .description {
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .tag {
+    display: inline-flex;
+    min-height: 28px;
+    align-items: center;
+    padding: 0 9px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+    border-color: #22c55e;
+    background: #22c55e;
+    color: #ffffff;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 26px;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .read-more {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 760px) {
+    .related-grid:has(.related-card:only-child) {
+      grid-template-columns: minmax(340px, 420px);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .related {
+      width: min(100% - 24px, 900px);
+      margin-top: 70px;
+      padding: 48px 0 70px;
+    }
+
+    .related-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .related-heading > p {
+      max-width: 100%;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card-content {
+      min-height: 330px;
+      padding: 24px;
+    }
+
+    .related-card h3 {
+      margin-top: 24px;
+      font-size: 21px;
+    }
+  }
+</style>
