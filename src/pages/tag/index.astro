@@ -6,7 +6,11 @@ import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { slugify } from "../../utils/slugify";
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 const posts = await getCollection(
   "blog",
