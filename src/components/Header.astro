@@ -1,5 +1,9 @@
 ---
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 ---
 
 <header class="site-header">
@@ -21,13 +25,13 @@ const baseURL = import.meta.env.BASE_URL;
       class="main-navigation"
       aria-label="Main navigation"
     >
-      <a href={`${baseURL}#home`}>Home</a>
-      <a href={`${baseURL}blog/`}>Blog</a>
-      <a href={`${baseURL}categories/`}>Categories</a>
-      <a href={`${baseURL}tag/`}>Tags</a>
-      <a href={`${baseURL}#preview`}>E-book</a>
-      <a href={`${baseURL}#about`}>About</a>
-      <a href={`${baseURL}#contact`}>Contact</a>
+      <a href={baseURL}>Home</a>
+<a href={`${baseURL}blog/`}>Blog</a>
+<a href={`${baseURL}category/`}>Categories</a>
+<a href={`${baseURL}tag/`}>Tags</a>
+<a href={`${baseURL}#ebook`}>E-book</a>
+<a href={`${baseURL}#about`}>About</a>
+<a href={`${baseURL}#contact`}>Contact</a>
     </nav>
 
     <a
