@@ -1,0 +1,330 @@
+<section class="testimonials-section" id="reviews">
+  <div class="testimonials-container">
+
+    <div class="testimonials-heading">
+      <span class="testimonials-label">READER FEEDBACK</span>
+
+      <h2>
+        First Reviews
+        <span>Coming Soon</span>
+      </h2>
+
+      <p>
+        The ebook has recently launched. Verified reader feedback will be
+        added here as soon as the first customers share their experience.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <article class="testimonial-card testimonial-card-main">
+        <div class="quote-mark" aria-hidden="true">“</div>
+
+        <span class="card-label">EARLY READER PROGRAM</span>
+
+        <h3>Have You Read the Ebook?</h3>
+
+        <p>
+          Your honest feedback can help other readers decide whether
+          <strong>Weight Loss Without Starving</strong> is right for them.
+        </p>
+
+        <a
+          href="mailto:YOUR-EMAIL@example.com?subject=Weight%20Loss%20Without%20Starving%20-%20Reader%20Feedback"
+          class="feedback-button"
+        >
+          Share Your Feedback
+          <span>→</span>
+        </a>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-icon" aria-hidden="true">✓</div>
+
+        <h3>Only Genuine Reviews</h3>
+
+        <p>
+          This section is reserved for honest feedback from real readers and
+          verified customers.
+        </p>
+
+        <span class="testimonial-status">
+          Awaiting first review
+        </span>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-icon" aria-hidden="true">★</div>
+
+        <h3>Your Experience Matters</h3>
+
+        <p>
+          Feedback about clarity, usefulness, recipes, or practical advice is
+          welcome.
+        </p>
+
+        <span class="testimonial-status">
+          Reviews will appear here
+        </span>
+      </article>
+
+    </div>
+
+    <p class="testimonials-note">
+      Reviews may be edited slightly for length or clarity, but their meaning
+      will never be changed.
+    </p>
+
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 110px 0;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(34, 197, 94, 0.1),
+        transparent 34%
+      ),
+      #f8fafc;
+  }
+
+  .testimonials-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .testimonials-heading {
+    max-width: 720px;
+    margin: 0 auto 52px;
+    text-align: center;
+  }
+
+  .testimonials-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .testimonials-heading h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .testimonials-heading h2 span {
+    display: block;
+    color: #22c55e;
+  }
+
+  .testimonials-heading p {
+    max-width: 640px;
+    margin: 22px auto 0;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr;
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    position: relative;
+    min-height: 330px;
+    padding: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.07);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(34, 197, 94, 0.28);
+    box-shadow: 0 28px 64px rgba(15, 23, 42, 0.11);
+  }
+
+  .testimonial-card-main {
+    background: #0f172a;
+    color: #ffffff;
+  }
+
+  .testimonial-card-main::before {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.14);
+  }
+
+  .quote-mark {
+    position: absolute;
+    top: 6px;
+    right: 24px;
+    color: rgba(74, 222, 128, 0.18);
+    font-family: Georgia, serif;
+    font-size: 130px;
+    line-height: 1;
+  }
+
+  .card-label {
+    position: relative;
+    z-index: 1;
+    color: #4ade80;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .testimonial-card h3 {
+    position: relative;
+    z-index: 1;
+    margin: 30px 0 16px;
+    color: #0f172a;
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  .testimonial-card-main h3 {
+    color: #ffffff;
+    font-size: 31px;
+  }
+
+  .testimonial-card p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .testimonial-card-main p {
+    color: #cbd5e1;
+  }
+
+  .testimonial-card-main strong {
+    color: #ffffff;
+  }
+
+  .testimonial-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 15px;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 21px;
+    font-weight: 900;
+  }
+
+  .feedback-button {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    margin-top: 28px;
+    padding: 0 20px;
+    border-radius: 14px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(34, 197, 94, 0.25);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .feedback-button:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+  }
+
+  .testimonial-status {
+    position: absolute;
+    left: 32px;
+    bottom: 30px;
+    color: #16a34a;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .testimonials-note {
+    max-width: 760px;
+    margin: 34px auto 0;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  @media (max-width: 940px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      min-height: 290px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .testimonials-section {
+      padding: 82px 0;
+    }
+
+    .testimonials-container {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .testimonials-heading {
+      margin-bottom: 38px;
+    }
+
+    .testimonials-heading p {
+      font-size: 16px;
+    }
+
+    .testimonial-card {
+      min-height: 320px;
+      padding: 24px;
+      border-radius: 20px;
+    }
+
+    .testimonial-card-main h3 {
+      font-size: 27px;
+    }
+
+    .testimonial-status {
+      left: 24px;
+      bottom: 24px;
+    }
+  }
+</style>

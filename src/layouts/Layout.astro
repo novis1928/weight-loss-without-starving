@@ -1,37 +1,73 @@
 ---
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  canonicalURL?: string;
-  noindex?: boolean;
+  title: string;
+  description: string;
 }
 
-const {
-  title = "Weight Loss Without Starving | Healthy Weight Loss Ebook",
-  description = "A practical beginner-friendly ebook that teaches healthy and sustainable weight loss without extreme diets, complicated meal plans, or constant hunger.",
-  image = "ebook-cover.png",
-  canonicalURL,
-  noindex = false,
-} = Astro.props;
+const { title, description } = Astro.props;
 
 const siteName = "Weight Loss Without Starving";
+const authorName = "George Novák";
+
 const baseURL = import.meta.env.BASE_URL;
 
-const currentURL =
-  canonicalURL ??
-  (Astro.site
-    ? new URL(Astro.url.pathname, Astro.site).toString()
-    : Astro.url.toString());
+const asset = (path: string) =>
+  `${baseURL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 
-const socialImagePath = `${baseURL}${image}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const socialImage = Astro.site
-  ? new URL(socialImagePath, Astro.site).toString()
-  : new URL(socialImagePath, Astro.url.origin).toString();
+const socialImageURL = new URL(
+  asset("ebook-cover.png"),
+  Astro.site
+);
+
+const sitemapURL = new URL(
+  asset("sitemap-index.xml"),
+  Astro.site
+);
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  name: "Weight Loss Without Starving",
+  alternateName: "Weight Loss Without Starving: A Practical Guide to Healthy and Sustainable Weight Loss",
+  description,
+  url: canonicalURL.href,
+  image: socialImageURL.href,
+
+  author: {
+    "@type": "Person",
+    name: authorName,
+  },
+
+  bookFormat: "https://schema.org/EBook",
+  inLanguage: "en",
+  numberOfPages: 68,
+
+  genre: [
+    "Health",
+    "Nutrition",
+    "Weight Loss",
+    "Healthy Lifestyle",
+  ],
+
+  offers: {
+    "@type": "Offer",
+    price: "19.99",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://payhip.com/b/eW3MA",
+  },
+
+  publisher: {
+    "@type": "Person",
+    name: authorName,
+  },
+};
 ---
 
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,11 +75,6 @@ const socialImage = Astro.site
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
-    />
-
-    <meta
-      name="generator"
-      content={Astro.generator}
     />
 
     <title>{title}</title>
@@ -55,34 +86,53 @@ const socialImage = Astro.site
 
     <meta
       name="author"
-      content="George Novák"
+      content={authorName}
     />
 
     <meta
       name="robots"
-      content={noindex ? "noindex, nofollow" : "index, follow"}
+      content="index, follow, max-image-preview:large"
+    />
+
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large"
+    />
+
+    <meta
+      name="theme-color"
+      content="#16a34a"
+    />
+
+    <meta
+      name="color-scheme"
+      content="light"
     />
 
     <link
       rel="canonical"
-      href={currentURL}
-    />
-
-    <!-- Favicons -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href={`${baseURL}favicon.png`}
+      href={canonicalURL.href}
     />
 
     <link
+      rel="sitemap"
+      type="application/xml"
+      href={sitemapURL.href}
+    />
+
+    <link
       rel="icon"
-      type="image/x-icon"
-      href={`${baseURL}favicon.ico`}
+      type="image/svg+xml"
+      href={asset("favicon.svg")}
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href={asset("favicon.svg")}
     />
 
     <!-- Open Graph -->
+
     <meta
       property="og:type"
       content="website"
@@ -105,12 +155,17 @@ const socialImage = Astro.site
 
     <meta
       property="og:url"
-      content={currentURL}
+      content={canonicalURL.href}
     />
 
     <meta
       property="og:image"
-      content={socialImage}
+      content={socialImageURL.href}
+    />
+
+    <meta
+      property="og:image:secure_url"
+      content={socialImageURL.href}
     />
 
     <meta
@@ -124,6 +179,7 @@ const socialImage = Astro.site
     />
 
     <!-- Twitter / X -->
+
     <meta
       name="twitter:card"
       content="summary_large_image"
@@ -141,26 +197,20 @@ const socialImage = Astro.site
 
     <meta
       name="twitter:image"
-      content={socialImage}
+      content={socialImageURL.href}
     />
 
     <meta
-      name="theme-color"
-      content="#159447"
+      name="twitter:image:alt"
+      content="Weight Loss Without Starving ebook cover"
     />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
+    <!-- Structured data -->
 
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(bookSchema)}
     />
-
-    <slot name="head" />
   </head>
 
   <body>

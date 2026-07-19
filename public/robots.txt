@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novis1928.github.io/weight-loss-without-starving/sitemap-index.xml

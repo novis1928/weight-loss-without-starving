@@ -1,0 +1,351 @@
+<section class="about-section" id="about">
+  <div class="about-container">
+
+    <div class="about-content">
+
+      <span class="about-label">ABOUT THE AUTHOR</span>
+
+      <h2>
+        A Practical Guide
+        <span>Created for Real Life</span>
+      </h2>
+
+      <p class="about-intro">
+        Hi, I’m George Novák, the author of
+        <strong>Weight Loss Without Starving</strong>.
+      </p>
+
+      <p>
+        I created this ebook for people who want to lose weight without
+        extreme diets, complicated rules, or constant hunger.
+      </p>
+
+      <p>
+        The goal is simple: explain healthy weight loss in a clear,
+        realistic, and beginner-friendly way. The ebook focuses on practical
+        advice, everyday habits, and simple recipes that can fit into a normal
+        lifestyle.
+      </p>
+
+      <div class="about-values">
+
+        <div class="about-value">
+          <div class="about-value-icon">✓</div>
+
+          <div>
+            <h3>Simple Explanations</h3>
+
+            <p>
+              Clear information without unnecessary technical language.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-value">
+          <div class="about-value-icon">✓</div>
+
+          <div>
+            <h3>Realistic Advice</h3>
+
+            <p>
+              Practical strategies designed for everyday life.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-value">
+          <div class="about-value-icon">✓</div>
+
+          <div>
+            <h3>Sustainable Approach</h3>
+
+            <p>
+              No crash diets, unrealistic promises, or quick-fix methods.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <aside class="author-card">
+
+      <div class="author-avatar" aria-hidden="true">
+        GN
+      </div>
+
+      <span class="author-card-label">AUTHOR</span>
+
+      <h3>George Novák</h3>
+
+      <p class="author-role">
+        Author of Weight Loss Without Starving
+      </p>
+
+      <div class="author-divider"></div>
+
+      <blockquote>
+        “Healthy weight loss should not feel like punishment. It should be a
+        process of building better habits that you can maintain.”
+      </blockquote>
+
+      <div class="author-tags">
+        <span>Practical</span>
+        <span>Beginner-friendly</span>
+        <span>Sustainable</span>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 110px 0;
+    background:
+      radial-gradient(
+        circle at bottom right,
+        rgba(34, 197, 94, 0.12),
+        transparent 35%
+      ),
+      #f8fafc;
+  }
+
+  .about-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+    align-items: center;
+    gap: 72px;
+  }
+
+  .about-content {
+    max-width: 700px;
+  }
+
+  .about-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .about-content h2 {
+    margin: 0 0 26px;
+    color: #0f172a;
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .about-content h2 span {
+    display: block;
+    color: #22c55e;
+  }
+
+  .about-content > p {
+    margin: 0 0 18px;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .about-content .about-intro {
+    color: #334155;
+    font-size: 19px;
+  }
+
+  .about-content strong {
+    color: #0f172a;
+  }
+
+  .about-values {
+    display: grid;
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .about-value {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.05);
+  }
+
+  .about-value-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .about-value h3 {
+    margin: 1px 0 6px;
+    color: #0f172a;
+    font-size: 18px;
+  }
+
+  .about-value p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .author-card {
+    position: relative;
+    padding: 42px 34px;
+    overflow: hidden;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 28px;
+    background: #ffffff;
+    text-align: center;
+    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.11);
+  }
+
+  .author-card::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .author-avatar {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 22px;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e, #15803d);
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    box-shadow: 0 16px 32px rgba(34, 197, 94, 0.3);
+  }
+
+  .author-card-label {
+    position: relative;
+    z-index: 1;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .author-card h3 {
+    position: relative;
+    z-index: 1;
+    margin: 10px 0 8px;
+    color: #0f172a;
+    font-size: 30px;
+    letter-spacing: -0.03em;
+  }
+
+  .author-role {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  .author-divider {
+    width: 60px;
+    height: 3px;
+    margin: 26px auto;
+    border-radius: 999px;
+    background: #22c55e;
+  }
+
+  .author-card blockquote {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #334155;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.75;
+  }
+
+  .author-tags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .author-tags span {
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  @media (max-width: 940px) {
+    .about-container {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .about-content {
+      max-width: none;
+    }
+
+    .author-card {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .about-section {
+      padding: 82px 0;
+    }
+
+    .about-container {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .about-content > p {
+      font-size: 16px;
+    }
+
+    .about-value {
+      padding: 17px;
+    }
+
+    .author-card {
+      padding: 34px 24px;
+      border-radius: 22px;
+    }
+  }
+</style>
