@@ -9,7 +9,11 @@ const { title, description } = Astro.props;
 const siteName = "Weight Loss Without Starving";
 const authorName = "George Novák";
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 const asset = (path: string) =>
   `${baseURL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
@@ -82,6 +86,7 @@ const organizationSchema = {
   "@id": organizationId,
   name: siteName,
   url: siteURL.href,
+
   logo: {
     "@type": "ImageObject",
     url: socialImageURL.href,
@@ -149,6 +154,7 @@ const bookSchema = {
  */
 const structuredData = {
   "@context": "https://schema.org",
+
   "@graph": [
     websiteSchema,
     organizationSchema,
@@ -161,17 +167,26 @@ const structuredData = {
 
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <!-- Google Search Console verification -->
+
     <meta
       name="google-site-verification"
       content="ONRkREvpa8xmu_-HhWrl9bV-qz0TwGubZj-E1D17Wtw"
     />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics 4 -->
 
     <script
       is:inline
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-NJ6T75ZVLZ"
+      src="https://www.googletagmanager.com/gtag/js?id=G-P69VD544HB"
     ></script>
 
     <script is:inline>
@@ -182,15 +197,13 @@ const structuredData = {
       }
 
       gtag("js", new Date());
-      gtag("config", "G-NJ6T75ZVLZ");
+
+      gtag("config", "G-P69VD544HB", {
+        anonymize_ip: true,
+      });
     </script>
 
-    <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <!-- Basic SEO -->
 
     <title>{title}</title>
 
@@ -224,16 +237,22 @@ const structuredData = {
       content="light"
     />
 
+    <!-- Canonical URL -->
+
     <link
       rel="canonical"
       href={canonicalURL.href}
     />
+
+    <!-- Sitemap -->
 
     <link
       rel="sitemap"
       type="application/xml"
       href={sitemapURL.href}
     />
+
+    <!-- Icons -->
 
     <link
       rel="icon"
