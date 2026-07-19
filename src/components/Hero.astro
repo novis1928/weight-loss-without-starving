@@ -1,5 +1,6 @@
 ---
-const baseURL = import.meta.env.BASE_URL;
+const asset = (path: string) =>
+  `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 ---
 
 <section class="hero" id="home">
@@ -77,7 +78,7 @@ const baseURL = import.meta.env.BASE_URL;
   <div class="hero-image">
 
     <img
-      src={`${baseURL}ebook-cover.png`}
+      src={asset("ebook-cover.png")}
       alt="Weight Loss Without Starving ebook cover"
       width="520"
       height="700"

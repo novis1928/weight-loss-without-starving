@@ -1,5 +1,6 @@
 ---
-const baseURL = import.meta.env.BASE_URL;
+const asset = (path: string) =>
+  `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 ---
 
 <section class="preview-section" id="preview">
@@ -23,13 +24,14 @@ const baseURL = import.meta.env.BASE_URL;
 
       <a
         class="preview-card"
-        href={`${baseURL}preview/cover.png`}
+        href={asset("preview/cover.png")}
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Open ebook cover preview"
       >
         <div class="preview-image">
           <img
-            src={`${baseURL}preview/cover.png`}
+            src={asset("preview/cover.png")}
             alt="Weight Loss Without Starving ebook cover"
             loading="lazy"
           />
@@ -49,13 +51,14 @@ const baseURL = import.meta.env.BASE_URL;
 
       <a
         class="preview-card"
-        href={`${baseURL}preview/chapter.png`}
+        href={asset("preview/chapter.png")}
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Open chapter preview"
       >
         <div class="preview-image">
           <img
-            src={`${baseURL}preview/chapter.png`}
+            src={asset("preview/chapter.png")}
             alt="Example page from the ebook"
             loading="lazy"
           />
@@ -75,13 +78,14 @@ const baseURL = import.meta.env.BASE_URL;
 
       <a
         class="preview-card"
-        href={`${baseURL}preview/meal-planning.png`}
+        href={asset("preview/meal-planning.png")}
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Open meal planning preview"
       >
         <div class="preview-image">
           <img
-            src={`${baseURL}preview/meal-planning.png`}
+            src={asset("preview/meal-planning.png")}
             alt="Meal planning chapter from the ebook"
             loading="lazy"
           />
@@ -101,13 +105,14 @@ const baseURL = import.meta.env.BASE_URL;
 
       <a
         class="preview-card"
-        href={`${baseURL}preview/recipes.png`}
+        href={asset("preview/recipes.png")}
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Open healthy recipes preview"
       >
         <div class="preview-image">
           <img
-            src={`${baseURL}preview/recipes.png`}
+            src={asset("preview/recipes.png")}
             alt="Healthy recipes chapter from the ebook"
             loading="lazy"
           />
