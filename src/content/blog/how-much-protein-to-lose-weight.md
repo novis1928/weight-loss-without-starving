@@ -17,8 +17,6 @@ readingTime: "18 min read"
 
 ![How Much Protein Do You Need to Lose Weight?](/weight-loss-without-starving/images/protein-weight-loss-hero.png)
 
-# How Much Protein Do You Need to Lose Weight? (Complete Guide)
-
 Trying to lose weight often raises one important question:
 
 **How much protein do you actually need?**
@@ -370,6 +368,7 @@ If you're new to nutrition and healthy eating, our guide to **[Healthy Weight Lo
 - International Society of Sports Nutrition (ISSN) Position Stand: Protein and Exercise
 - Dietary Guidelines for Americans
 - European Food Safety Authority (EFSA)
+
 The recommendations in this guide are based on current evidence from major public health organizations and peer-reviewed nutrition research.
 
 ## Continue Reading
