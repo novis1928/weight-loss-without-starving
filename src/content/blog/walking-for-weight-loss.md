@@ -3,7 +3,7 @@ title: "Walking for Weight Loss: The Complete Beginner's Guide (2026)"
 description: "Discover how walking can help you lose weight, burn calories, improve your health, and build sustainable habits. Learn the best walking speed, daily step goals, and a practical 30-day walking plan."
 publishDate: 2026-07-20
 updatedDate: 2026-07-20
-readingTime: "18"
+readingTime: "18 min read"
 category: "Exercise"
 tags:
   - walking

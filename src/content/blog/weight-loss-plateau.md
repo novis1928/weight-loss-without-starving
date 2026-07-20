@@ -12,7 +12,7 @@ tags:
   - healthy weight loss
 featuredImage: "/images/plateau-hero-banner.png"
 featuredImageAlt: "Person standing on a scale and wondering why their weight loss has stopped"
-readingTime: "22"
+readingTime: "22 min read"
 draft: false
 ---
 
@@ -36,7 +36,7 @@ In this guide, you will learn:
 
 > **Important:** Body weight can fluctuate from day to day because of water, digestion, hormones, sodium intake, and other factors. A few days without a lower number on the scale is not automatically a true plateau.
 
-> ## ⭐ Key Takeaways
+> **⭐ Key Takeaways**
 >
 > - Weight loss plateaus are a normal part of losing weight.
 > - A plateau does not necessarily mean your diet has stopped working.
@@ -744,7 +744,7 @@ The most common reasons include inaccurate calorie tracking, water retention, re
 
 ### How long should a weight loss plateau last?
 
-Most true plateaus last between three and six weeks, although the exact duration varies from person to person.
+There is no fixed duration. A few days or one week without change is usually too short to confirm a true plateau. If your average weight has remained stable for at least three to four weeks despite consistent habits, it may be time to review your calorie intake, activity, sleep, and other possible factors.
 
 ### Should I eat fewer calories during a plateau?
 
@@ -853,9 +853,9 @@ Inside you'll discover:
 
 Ready to take the next step?
 
-Discover the complete **Weight Loss Without Starving** ebook and learn how to build healthy habits that last for life.
+Discover the complete **[Weight Loss Without Starving](https://payhip.com/b/eW3MA)** ebook and learn how to build healthy habits that last for life.
 
-## Scientific References
+## Sources and Further Reading
 
 1. Hall KD, Kahan S. Maintenance of Lost Weight and Long-Term Management of Obesity. *Medical Clinics of North America*. 2018.
 2. National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK). Body Weight and Metabolism.
