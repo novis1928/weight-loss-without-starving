@@ -1,12 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
 import { slugify } from "../../utils/slugify";
 
 import { getCollection } from "astro:content";
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 const posts = (
   await getCollection("blog", ({ data }) => !data.draft)
@@ -28,7 +30,6 @@ const formattedDate = (date: Date) =>
   title="Weight Loss Blog | Practical Healthy Weight Loss Advice"
   description="Read practical articles about sustainable weight loss, nutrition, healthy habits, motivation, exercise, and beginner-friendly healthy eating."
 >
-  <Header />
 
   <main class="blog-page">
     <section class="blog-hero">
@@ -181,7 +182,6 @@ const formattedDate = (date: Date) =>
     </section>
   </main>
 
-  <Footer />
 </Layout>
 
 <style>

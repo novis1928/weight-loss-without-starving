@@ -10,7 +10,7 @@ const baseURL = rawBaseURL.endsWith("/")
   <div class="header-container">
     <a
       class="site-logo"
-      href={`${baseURL}#home`}
+      href={baseURL}
       aria-label="Go to homepage"
     >
       <span class="logo-mark" aria-hidden="true">◆</span>
@@ -26,18 +26,22 @@ const baseURL = rawBaseURL.endsWith("/")
       aria-label="Main navigation"
     >
       <a href={baseURL}>Home</a>
-<a href={`${baseURL}blog/`}>Blog</a>
-<a href={`${baseURL}category/`}>Categories</a>
-<a href={`${baseURL}tag/`}>Tags</a>
-<a
-  href="https://payhip.com/b/eW3MA"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  E-book
-</a>
-<a href={`${baseURL}#about`}>About</a>
-<a href={`${baseURL}#contact`}>Contact</a>
+
+      <a href={`${baseURL}blog/`}>
+        Blog
+      </a>
+
+      <a href={`${baseURL}tools/`}>
+        Tools
+      </a>
+
+      <a href={`${baseURL}#about`}>
+        About
+      </a>
+
+      <a href={`${baseURL}#contact`}>
+        Contact
+      </a>
     </nav>
 
     <a
@@ -46,7 +50,7 @@ const baseURL = rawBaseURL.endsWith("/")
       target="_blank"
       rel="noopener noreferrer"
     >
-      Get the Ebook
+      Get the eBook
     </a>
   </div>
 </header>
@@ -113,7 +117,7 @@ const baseURL = rawBaseURL.endsWith("/")
     min-width: 0;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     margin-left: auto;
   }
 

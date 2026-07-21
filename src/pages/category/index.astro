@@ -6,7 +6,11 @@ import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { slugify } from "../../utils/slugify";
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 const posts = await getCollection(
   "blog",
@@ -55,7 +59,6 @@ const categories = Array.from(categoryMap.entries())
   title="Weight Loss Categories | Browse All Topics"
   description="Browse all weight loss blog categories, including nutrition, healthy habits, exercise, motivation, and beginner weight loss advice."
 >
-  <Header />
 
   <main class="categories-page">
     <section class="categories-hero">
@@ -202,7 +205,6 @@ const categories = Array.from(categoryMap.entries())
     </section>
   </main>
 
-  <Footer />
 </Layout>
 
 <style>

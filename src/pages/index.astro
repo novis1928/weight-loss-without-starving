@@ -3,7 +3,6 @@ import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
 
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Benefits from "../components/Benefits.astro";
 import WhatsInside from "../components/WhatsInside.astro";
@@ -15,18 +14,13 @@ import Testimonials from "../components/Testimonials.astro";
 import PurchaseCTA from "../components/PurchaseCTA.astro";
 import FAQ from "../components/FAQ.astro";
 import ContactSection from "../components/ContactSection.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout
   title="Weight Loss Without Starving | Practical Weight Loss Ebook"
   description="Learn how to lose weight in a healthy and sustainable way without extreme diets or constant hunger. A practical 68-page ebook for beginners."
 >
-
-  <Header />
-
   <main>
-
     <Hero />
 
     <Benefits />
@@ -48,9 +42,5 @@ import Footer from "../components/Footer.astro";
     <FAQ />
 
     <ContactSection />
-
   </main>
-
-  <Footer />
-
 </Layout>
