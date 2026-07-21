@@ -218,3 +218,23 @@ The most effective approach combines a moderate calorie deficit, high-protein me
 If you're ready to build a healthier lifestyle with practical tips, simple recipes, and a step-by-step plan, our ebook can help you get started.
 
 👉 **Start your weight-loss journey today:** [Weight Loss Without Starving eBook](https://payhip.com/b/eW3MA)
+
+## Sources
+
+This article is based on recommendations and educational resources from trusted health organizations, including:
+
+- Centers for Disease Control and Prevention (CDC) – Healthy Weight & Nutrition
+  https://www.cdc.gov/healthy-weight-growth/
+
+- National Institutes of Health (NIH) – Weight Management
+  https://www.niddk.nih.gov/health-information/weight-management
+
+- Harvard T.H. Chan School of Public Health – The Nutrition Source
+  https://nutritionsource.hsph.harvard.edu/
+
+- World Health Organization (WHO) – Healthy Diet
+  https://www.who.int/news-room/fact-sheets/detail/healthy-diet
+
+**Medical Disclaimer**
+
+This article is for educational purposes only and should not be considered medical advice. Always consult a qualified healthcare professional before making significant changes to your diet, exercise routine, or weight-loss plan, especially if you have an existing medical condition.
