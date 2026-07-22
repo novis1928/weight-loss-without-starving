@@ -7,7 +7,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
 <Layout
   title="Free Weight Loss Tools | BMI, Calories, BMR and More"
-  description="Explore free weight-loss calculators and health tools, including our BMI and calorie calculators, with more practical tools coming soon."
+  description="Free weight loss tools including BMI Calculator, Calorie Calculator and Ideal Weight Calculator. More health calculators coming soon."
 >
   <main>
     <section class="hero">
@@ -24,12 +24,12 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
         <div class="stats">
           <div>
-            <strong>3</strong>
+            <strong>4</strong>
             <span>Tools available</span>
           </div>
 
           <div>
-            <strong>5</strong>
+            <strong>4</strong>
             <span>More coming soon</span>
           </div>
 
@@ -47,8 +47,8 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
           <span class="eyebrow">AVAILABLE NOW</span>
           <h2>Choose one of our free calculators</h2>
           <p>
-            Get clear estimates and practical explanations with our currently
-            available BMI and calorie calculators.
+            Get clear estimates and practical explanations with our BMI, calorie,
+ideal weight and body fat calculators to support your weight-loss journey.
           </p>
         </div>
 
@@ -149,6 +149,38 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     <strong aria-hidden="true">→</strong>
   </div>
 </a>
+
+<a
+  class="featured-tool"
+  href={`${baseURL}tools/body-fat-calculator/`}
+>
+  <div class="tool-icon" aria-hidden="true">📏</div>
+
+  <div class="tool-content">
+    <div class="tool-topline">
+      <span class="tool-status available">Available now</span>
+      <span class="tool-label">Free tool</span>
+    </div>
+
+    <h2>Body Fat Calculator</h2>
+
+    <p>
+      Estimate your body fat percentage using simple circumference
+      measurements and view your estimated fat mass and lean mass.
+    </p>
+
+    <div class="tool-features">
+      <span>Male and female formulas</span>
+      <span>Metric and imperial</span>
+      <span>Instant estimate</span>
+    </div>
+  </div>
+
+  <div class="tool-action">
+    <span>Open calculator</span>
+    <strong aria-hidden="true">→</strong>
+  </div>
+</a>
         </div>
       </div>
     </section>
@@ -182,15 +214,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
             <p>
               Estimate your total daily energy expenditure based on your
               activity level.
-            </p>
-          </article>
-
-          <article class="tool-card">
-            <div class="card-icon">📏</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>Body Fat Calculator</h3>
-            <p>
-              Estimate body-fat percentage using simple body measurements.
             </p>
           </article>
 

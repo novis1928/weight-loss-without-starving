@@ -1,5 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const rawBaseURL = import.meta.env.BASE_URL;
+const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 ---
 
 <Layout
@@ -178,6 +181,91 @@ import Layout from "../../layouts/Layout.astro";
           <article><span>02</span><h3>Body composition</h3><p>BMI cannot distinguish between fat, muscle, bone, and other body tissues.</p></article>
           <article><span>03</span><h3>Fat distribution</h3><p>It does not show where body fat is stored.</p></article>
           <article><span>04</span><h3>Individual differences</h3><p>Age, sex, ethnicity, pregnancy, and medical conditions may affect interpretation.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="related-tools-section" aria-labelledby="related-tools-title">
+      <div class="container">
+        <div class="section-heading related-heading">
+          <span class="eyebrow">EXPLORE MORE FREE TOOLS</span>
+          <h2 id="related-tools-title">Related calculators</h2>
+          <p>
+            Use these free tools alongside your BMI result to build a clearer
+            picture of your weight, energy needs, and body composition.
+          </p>
+        </div>
+
+        <div class="related-tools-grid">
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/calorie-calculator/`}
+            aria-label="Open Calorie Calculator"
+          >
+            <div class="related-tool-top">
+              <span class="related-tool-icon" aria-hidden="true">🔥</span>
+              <span class="related-tool-status">Free tool</span>
+            </div>
+
+            <h3>Calorie Calculator</h3>
+            <p>
+              Estimate your BMR, TDEE, maintenance calories, and daily calorie
+              targets for weight loss or weight gain.
+            </p>
+
+            <span class="related-tool-link">
+              Open calculator <strong aria-hidden="true">→</strong>
+            </span>
+          </a>
+
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/ideal-weight-calculator/`}
+            aria-label="Open Ideal Weight Calculator"
+          >
+            <div class="related-tool-top">
+              <span class="related-tool-icon" aria-hidden="true">🎯</span>
+              <span class="related-tool-status">Free tool</span>
+            </div>
+
+            <h3>Ideal Weight Calculator</h3>
+            <p>
+              Compare four established ideal-weight formulas and view a
+              healthy BMI-based weight range for your height.
+            </p>
+
+            <span class="related-tool-link">
+              Open calculator <strong aria-hidden="true">→</strong>
+            </span>
+          </a>
+
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/body-fat-calculator/`}
+            aria-label="Open Body Fat Calculator"
+          >
+            <div class="related-tool-top">
+              <span class="related-tool-icon" aria-hidden="true">📏</span>
+              <span class="related-tool-status">Free tool</span>
+            </div>
+
+            <h3>Body Fat Calculator</h3>
+            <p>
+              Estimate your body fat percentage using simple measurements and
+              view your estimated fat mass and lean mass.
+            </p>
+
+            <span class="related-tool-link">
+              Open calculator <strong aria-hidden="true">→</strong>
+            </span>
+          </a>
+        </div>
+
+        <div class="all-tools-link">
+          <a href={`${baseURL}tools/`}>
+            View all free tools <strong aria-hidden="true">→</strong>
+          </a>
         </div>
       </div>
     </section>
@@ -618,6 +706,155 @@ import Layout from "../../layouts/Layout.astro";
     line-height:1.65;
   }
 
+
+  .related-tools-section {
+    padding: 78px 0;
+    background:
+      radial-gradient(circle at top left, rgba(34,197,94,.1), transparent 32%),
+      #fff;
+  }
+
+  .related-heading {
+    margin-bottom: 34px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .related-tool-card {
+    display: flex;
+    min-width: 0;
+    min-height: 330px;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid #dcfce7;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at top right, rgba(34,197,94,.11), transparent 34%),
+      #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 18px 50px rgba(15,23,42,.07);
+    transition:
+      transform .2s ease,
+      border-color .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .related-tool-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 26px 62px rgba(15,23,42,.12);
+    transform: translateY(-4px);
+  }
+
+  .related-tool-card:focus-visible,
+  .all-tools-link a:focus-visible {
+    outline: 3px solid rgba(34,197,94,.35);
+    outline-offset: 4px;
+  }
+
+  .related-tool-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .related-tool-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 17px;
+    background: #dcfce7;
+    font-size: 1.7rem;
+  }
+
+  .related-tool-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 29px;
+    padding: 0 11px;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: .69rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .related-tool-card h3 {
+    margin: 22px 0 0;
+    color: #0f172a;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    letter-spacing: -.03em;
+  }
+
+  .related-tool-card p {
+    margin: 13px 0 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .related-tool-link {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 24px;
+    color: #15803d;
+    font-weight: 800;
+  }
+
+  .related-tool-link strong {
+    font-size: 1.2rem;
+    transition: transform .2s ease;
+  }
+
+  .related-tool-card:hover .related-tool-link strong {
+    transform: translateX(4px);
+  }
+
+  .all-tools-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .all-tools-link a {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 13px;
+    background: #22c55e;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(34,197,94,.23);
+    transition:
+      transform .2s ease,
+      background .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .all-tools-link a:hover {
+    background: #16a34a;
+    box-shadow: 0 18px 36px rgba(34,197,94,.3);
+    transform: translateY(-2px);
+  }
+
   .cta-section { padding:24px 0 78px; }
 
   .cta-card {
@@ -672,6 +909,8 @@ import Layout from "../../layouts/Layout.astro";
     .calculator-grid,.content-grid { grid-template-columns:1fr; }
     .info-card { position:static; }
     .limitations-grid { grid-template-columns:repeat(2,1fr); }
+    .related-tools-grid { grid-template-columns:1fr; }
+    .related-tool-card { min-height:auto; }
     .cta-card { align-items:flex-start; flex-direction:column; }
   }
 

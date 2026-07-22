@@ -590,14 +590,9 @@ const structuredData = {
             href={`${baseURL}tools/bmi-calculator/`}
           >
             <span class="related-icon" aria-hidden="true">⚖️</span>
-
             <div>
               <h3>BMI Calculator</h3>
-              <p>
-                Calculate your BMI and view a weight range based on your
-                height.
-              </p>
-
+              <p>Calculate your BMI and view a healthy weight range.</p>
               <strong>Open calculator →</strong>
             </div>
           </a>
@@ -607,14 +602,21 @@ const structuredData = {
             href={`${baseURL}tools/calorie-calculator/`}
           >
             <span class="related-icon" aria-hidden="true">🔥</span>
-
             <div>
               <h3>Calorie Calculator</h3>
-              <p>
-                Estimate your BMR, TDEE, maintenance calories, and goal-based
-                targets.
-              </p>
+              <p>Estimate your BMR, TDEE and daily calorie needs.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
 
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/body-fat-calculator/`}
+          >
+            <span class="related-icon" aria-hidden="true">📏</span>
+            <div>
+              <h3>Body Fat Calculator</h3>
+              <p>Estimate your body fat percentage using simple body measurements.</p>
               <strong>Open calculator →</strong>
             </div>
           </a>
@@ -1814,7 +1816,7 @@ const structuredData = {
 
   .related-tools-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 

@@ -14,7 +14,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
       <p>
         Use our free tools to estimate your BMI, daily calorie needs, ideal
-        body weight, BMR, TDEE, and practical targets for your goals.
+        body weight, body fat percentage, and practical targets for your goals.
       </p>
     </div>
 
@@ -108,6 +108,38 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
           <strong aria-hidden="true">→</strong>
         </div>
       </a>
+
+      <a
+        class="tool-card"
+        href={`${baseURL}tools/body-fat-calculator/`}
+        aria-label="Open Body Fat Calculator"
+      >
+        <div class="tool-card-top">
+          <div class="tool-icon" aria-hidden="true">📏</div>
+          <span class="tool-status">Free tool</span>
+        </div>
+
+        <h3>Body Fat Calculator</h3>
+
+        <p>
+          Estimate your body fat percentage using simple circumference
+          measurements and view your estimated fat mass and lean mass.
+        </p>
+
+        <div
+          class="tool-features"
+          aria-label="Body Fat Calculator features"
+        >
+          <span>Male and female</span>
+          <span>Metric and imperial</span>
+          <span>Fat and lean mass</span>
+        </div>
+
+        <div class="tool-link">
+          <span>Open calculator</span>
+          <strong aria-hidden="true">→</strong>
+        </div>
+      </a>
     </div>
 
     <div class="all-tools">
@@ -132,7 +164,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   }
 
   .container {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1220px, calc(100% - 40px));
     margin: 0 auto;
   }
 
@@ -169,16 +201,16 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
   }
 
   .tool-card {
     display: flex;
     min-width: 0;
-    min-height: 410px;
+    min-height: 430px;
     flex-direction: column;
-    padding: 30px;
+    padding: 27px;
     border: 1px solid #dcfce7;
     border-radius: 24px;
     background:
@@ -211,39 +243,40 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   .tool-card-top {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
   }
 
   .tool-icon {
     display: grid;
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     place-items: center;
     border-radius: 18px;
     background: #dcfce7;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   .tool-status {
     display: inline-flex;
     align-items: center;
     min-height: 30px;
-    padding: 0 12px;
+    padding: 0 11px;
     border-radius: 999px;
     background: #f0fdf4;
     color: #166534;
-    font-size: 0.72rem;
+    font-size: 0.69rem;
     font-weight: 800;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .tool-card h3 {
     margin: 24px 0 0;
     color: #0f172a;
-    font-size: 1.55rem;
+    font-size: 1.45rem;
     line-height: 1.2;
     letter-spacing: -0.035em;
   }
@@ -251,22 +284,23 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   .tool-card > p {
     margin: 13px 0 0;
     color: #64748b;
+    font-size: 0.94rem;
     line-height: 1.72;
   }
 
   .tool-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 9px;
+    gap: 8px;
     margin-top: 22px;
   }
 
   .tool-features span {
-    padding: 8px 10px;
+    padding: 8px 9px;
     border-radius: 10px;
     background: #f8fafc;
     color: #475569;
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     font-weight: 700;
   }
 
@@ -328,19 +362,32 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     font-size: 1.2rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1180px) {
     .tools-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .tool-card {
-      min-height: auto;
+      min-height: 390px;
+      padding: 30px;
+    }
+
+    .container {
+      width: min(1000px, calc(100% - 40px));
     }
   }
 
   @media (max-width: 760px) {
     .tools-preview {
       padding: 64px 0;
+    }
+
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+      min-height: auto;
     }
   }
 
@@ -351,6 +398,16 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
     .tool-card {
       padding: 24px;
+    }
+
+    .tool-card-top {
+      align-items: flex-start;
+    }
+
+    .tool-icon {
+      width: 56px;
+      height: 56px;
+      font-size: 1.65rem;
     }
   }
 </style>

@@ -416,17 +416,17 @@ const schema = {
             <p>Estimate your BMI category and healthy weight range.</p>
           </a>
 
-          <article class="tool-card muted">
-            <span>Coming soon</span>
-            <h3>Macro Calculator</h3>
-            <p>Estimate protein, carbohydrate, and fat targets.</p>
-          </article>
-
-          <article class="tool-card muted">
-            <span>Coming soon</span>
+          <a href={`${base}tools/ideal-weight-calculator/`} class="tool-card">
+            <span>Available now</span>
             <h3>Ideal Weight Calculator</h3>
-            <p>Compare several common ideal-weight formulas.</p>
-          </article>
+            <p>Compare four established ideal-weight formulas and view a healthy BMI-based weight range.</p>
+          </a>
+
+          <a href={`${base}tools/body-fat-calculator/`} class="tool-card">
+            <span>Available now</span>
+            <h3>Body Fat Calculator</h3>
+            <p>Estimate your body fat percentage using simple body measurements.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -1108,10 +1108,7 @@ const schema = {
     transform: translateY(-4px);
   }
 
-  .tool-card.muted {
-    opacity: 0.7;
-  }
-
+  
   .cta-section {
     padding: 18px 0 78px;
     background: #ffffff;
