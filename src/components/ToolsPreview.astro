@@ -1,0 +1,314 @@
+---
+const rawBaseURL = import.meta.env.BASE_URL;
+const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
+---
+
+<section class="tools-preview" aria-labelledby="tools-preview-title">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">FREE WEIGHT LOSS TOOLS</span>
+
+      <h2 id="tools-preview-title">
+        Make smarter decisions with simple calculators
+      </h2>
+
+      <p>
+        Use our free tools to estimate your BMI, daily calorie needs, BMR,
+        TDEE, and practical targets for your goals.
+      </p>
+    </div>
+
+    <div class="tools-grid">
+      <a
+        class="tool-card"
+        href={`${baseURL}tools/bmi-calculator/`}
+        aria-label="Open BMI Calculator"
+      >
+        <div class="tool-card-top">
+          <div class="tool-icon" aria-hidden="true">⚖️</div>
+          <span class="tool-status">Free tool</span>
+        </div>
+
+        <h3>BMI Calculator</h3>
+
+        <p>
+          Calculate your BMI, view your category, and estimate a healthy weight
+          range based on your height.
+        </p>
+
+        <div class="tool-features" aria-label="BMI Calculator features">
+          <span>Instant BMI</span>
+          <span>Healthy range</span>
+          <span>Simple explanation</span>
+        </div>
+
+        <div class="tool-link">
+          <span>Open calculator</span>
+          <strong aria-hidden="true">→</strong>
+        </div>
+      </a>
+
+      <a
+        class="tool-card"
+        href={`${baseURL}tools/calorie-calculator/`}
+        aria-label="Open Calorie Calculator"
+      >
+        <div class="tool-card-top">
+          <div class="tool-icon" aria-hidden="true">🔥</div>
+          <span class="tool-status">Free tool</span>
+        </div>
+
+        <h3>Calorie Calculator</h3>
+
+        <p>
+          Estimate your BMR, TDEE, maintenance calories, and daily targets for
+          weight loss or weight gain.
+        </p>
+
+        <div class="tool-features" aria-label="Calorie Calculator features">
+          <span>BMR estimate</span>
+          <span>TDEE estimate</span>
+          <span>Goal-based targets</span>
+        </div>
+
+        <div class="tool-link">
+          <span>Open calculator</span>
+          <strong aria-hidden="true">→</strong>
+        </div>
+      </a>
+    </div>
+
+    <div class="all-tools">
+      <a href={`${baseURL}tools/`}>
+        <span>View all tools</span>
+        <strong aria-hidden="true">→</strong>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tools-preview {
+    padding: 88px 0;
+    background:
+      radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 30%),
+      linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  }
+
+  .container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: #15803d;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .section-heading h2 {
+    margin: 10px 0 0;
+    color: #0f172a;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p {
+    max-width: 680px;
+    margin: 16px auto 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .tool-card {
+    display: flex;
+    min-width: 0;
+    min-height: 390px;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid #dcfce7;
+    border-radius: 24px;
+    background:
+      radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 34%),
+      #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .tool-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 28px 68px rgba(15, 23, 42, 0.13);
+    transform: translateY(-5px);
+  }
+
+  .tool-card:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 4px;
+  }
+
+  .tool-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .tool-icon {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 18px;
+    background: #dcfce7;
+    font-size: 1.9rem;
+  }
+
+  .tool-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .tool-card h3 {
+    margin: 24px 0 0;
+    color: #0f172a;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
+
+  .tool-card > p {
+    margin: 13px 0 0;
+    color: #64748b;
+    line-height: 1.72;
+  }
+
+  .tool-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .tool-features span {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .tool-link {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 28px;
+    color: #15803d;
+    font-weight: 800;
+  }
+
+  .tool-link strong {
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+  }
+
+  .tool-card:hover .tool-link strong {
+    transform: translateX(4px);
+  }
+
+  .all-tools {
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+  }
+
+  .all-tools a {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 22px;
+    border-radius: 14px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 14px 32px rgba(34, 197, 94, 0.25);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .all-tools a:hover {
+    background: #16a34a;
+    box-shadow: 0 18px 38px rgba(34, 197, 94, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .all-tools a:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 4px;
+  }
+
+  .all-tools strong {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 760px) {
+    .tools-preview {
+      padding: 64px 0;
+    }
+
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .container {
+      width: min(100% - 24px, 1120px);
+    }
+
+    .tool-card {
+      padding: 24px;
+    }
+  }
+</style>
