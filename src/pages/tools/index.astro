@@ -7,7 +7,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
 <Layout
   title="Free Weight Loss Tools | BMI, Calories, BMR and More"
-  description="Explore free weight-loss calculators and health tools, including our BMI calculator, with more tools coming soon."
+  description="Explore free weight-loss calculators and health tools, including our BMI and calorie calculators, with more practical tools coming soon."
 >
   <main>
     <section class="hero">
@@ -24,12 +24,12 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
         <div class="stats">
           <div>
-            <strong>1</strong>
-            <span>Tool available</span>
+            <strong>2</strong>
+            <span>Tools available</span>
           </div>
 
           <div>
-            <strong>7</strong>
+            <strong>6</strong>
             <span>More coming soon</span>
           </div>
 
@@ -45,44 +45,78 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">AVAILABLE NOW</span>
-          <h2>Start with our BMI Calculator</h2>
+          <h2>Choose one of our free calculators</h2>
           <p>
-            Get an instant BMI result, healthy weight range, category, and a
-            simple explanation of what your result means.
+            Get clear estimates and practical explanations with our currently
+            available BMI and calorie calculators.
           </p>
         </div>
 
-        <a
-          class="featured-tool"
-          href={`${baseURL}tools/bmi-calculator/`}
-        >
-          <div class="tool-icon" aria-hidden="true">⚖️</div>
+        <div class="available-tools-grid">
+          <a
+            class="featured-tool"
+            href={`${baseURL}tools/bmi-calculator/`}
+          >
+            <div class="tool-icon" aria-hidden="true">⚖️</div>
 
-          <div class="tool-content">
-            <div class="tool-topline">
-              <span class="tool-status available">Available now</span>
-              <span class="tool-label">Free tool</span>
+            <div class="tool-content">
+              <div class="tool-topline">
+                <span class="tool-status available">Available now</span>
+                <span class="tool-label">Free tool</span>
+              </div>
+
+              <h2>BMI Calculator</h2>
+
+              <p>
+                Calculate your Body Mass Index in seconds and estimate a healthy
+                weight range based on your height.
+              </p>
+
+              <div class="tool-features">
+                <span>Instant result</span>
+                <span>Healthy weight range</span>
+                <span>Visual BMI scale</span>
+              </div>
             </div>
 
-            <h2>BMI Calculator</h2>
-
-            <p>
-              Calculate your Body Mass Index in seconds and estimate a healthy
-              weight range based on your height.
-            </p>
-
-            <div class="tool-features">
-              <span>Instant result</span>
-              <span>Healthy weight range</span>
-              <span>Visual BMI scale</span>
+            <div class="tool-action">
+              <span>Open calculator</span>
+              <strong aria-hidden="true">→</strong>
             </div>
-          </div>
+          </a>
 
-          <div class="tool-action">
-            <span>Open calculator</span>
-            <strong aria-hidden="true">→</strong>
-          </div>
-        </a>
+          <a
+            class="featured-tool"
+            href={`${baseURL}tools/calorie-calculator/`}
+          >
+            <div class="tool-icon" aria-hidden="true">🔥</div>
+
+            <div class="tool-content">
+              <div class="tool-topline">
+                <span class="tool-status available">Available now</span>
+                <span class="tool-label">Free tool</span>
+              </div>
+
+              <h2>Calorie Calculator</h2>
+
+              <p>
+                Estimate your BMR, TDEE, maintenance calories, and suggested
+                calorie targets for weight loss or weight gain.
+              </p>
+
+              <div class="tool-features">
+                <span>BMR estimate</span>
+                <span>TDEE estimate</span>
+                <span>Goal-based targets</span>
+              </div>
+            </div>
+
+            <div class="tool-action">
+              <span>Open calculator</span>
+              <strong aria-hidden="true">→</strong>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -98,16 +132,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
         </div>
 
         <div class="tools-grid">
-          <article class="tool-card">
-            <div class="card-icon">🔥</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>Calorie Calculator</h3>
-            <p>
-              Estimate how many calories you may need each day based on your
-              body and activity level.
-            </p>
-          </article>
-
           <article class="tool-card">
             <div class="card-icon">⚡</div>
             <span class="tool-status soon">Coming soon</span>
@@ -164,16 +188,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
             <p>
               Estimate daily protein, carbohydrate, and fat targets for your
               goal.
-            </p>
-          </article>
-
-          <article class="tool-card">
-            <div class="card-icon">📉</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>Weight-Loss Pace Calculator</h3>
-            <p>
-              Estimate a realistic timeline based on your target weight and
-              planned weekly pace.
             </p>
           </article>
         </div>
@@ -382,6 +396,12 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     line-height: 1.7;
   }
 
+  .available-tools-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .featured-tool {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
@@ -500,7 +520,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
   }
 
