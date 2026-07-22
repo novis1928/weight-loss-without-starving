@@ -260,6 +260,27 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
               Open calculator <strong aria-hidden="true">→</strong>
             </span>
           </a>
+
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/macro-calculator/`}
+            aria-label="Open Macro Calculator"
+          >
+            <div class="related-tool-top">
+              <span class="related-tool-icon" aria-hidden="true">🥗</span>
+              <span class="related-tool-status">Free tool</span>
+            </div>
+
+            <h3>Macro Calculator</h3>
+            <p>
+              Calculate your daily calories, protein, carbohydrates, and fat
+              for weight loss, maintenance, or muscle gain.
+            </p>
+
+            <span class="related-tool-link">
+              Open calculator <strong aria-hidden="true">→</strong>
+            </span>
+          </a>
         </div>
 
         <div class="all-tools-link">
@@ -723,7 +744,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
   .related-tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
   }
 
@@ -903,6 +924,10 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     background:#fff;
     color:#475569;
     line-height:1.65;
+  }
+
+  @media (max-width:1100px) {
+    .related-tools-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   }
 
   @media (max-width:900px) {

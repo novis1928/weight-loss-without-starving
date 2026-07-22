@@ -616,7 +616,25 @@ const structuredData = {
             <span class="related-icon" aria-hidden="true">📏</span>
             <div>
               <h3>Body Fat Calculator</h3>
-              <p>Estimate your body fat percentage using simple body measurements.</p>
+              <p>
+                Estimate your body fat percentage using simple body
+                measurements.
+              </p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a
+            class="related-tool-card"
+            href={`${baseURL}tools/macro-calculator/`}
+          >
+            <span class="related-icon" aria-hidden="true">🥗</span>
+            <div>
+              <h3>Macro Calculator</h3>
+              <p>
+                Calculate your daily calories, protein, carbohydrates, and fat
+                for weight loss, maintenance, or muscle gain.
+              </p>
               <strong>Open calculator →</strong>
             </div>
           </a>
@@ -1816,7 +1834,7 @@ const structuredData = {
 
   .related-tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
   }
 
@@ -1996,6 +2014,12 @@ const structuredData = {
 
   [hidden] {
     display: none !important;
+  }
+
+  @media (max-width: 1100px) {
+    .related-tools-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 980px) {

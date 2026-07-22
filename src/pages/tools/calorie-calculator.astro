@@ -425,7 +425,18 @@ const schema = {
           <a href={`${base}tools/body-fat-calculator/`} class="tool-card">
             <span>Available now</span>
             <h3>Body Fat Calculator</h3>
-            <p>Estimate your body fat percentage using simple body measurements.</p>
+            <p>
+              Estimate your body fat percentage using simple body measurements.
+            </p>
+          </a>
+
+          <a href={`${base}tools/macro-calculator/`} class="tool-card">
+            <span>Available now</span>
+            <h3>Macro Calculator</h3>
+            <p>
+              Calculate your daily calories, protein, carbohydrates, and fat
+              for weight loss, maintenance, or muscle gain.
+            </p>
           </a>
         </div>
       </div>
@@ -1095,7 +1106,7 @@ const schema = {
   }
 
   .related-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .tool-card {
@@ -1183,6 +1194,12 @@ const schema = {
     color: #475569;
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+
+  @media (max-width: 1100px) {
+    .related-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 960px) {
