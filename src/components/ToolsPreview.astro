@@ -13,8 +13,8 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
       </h2>
 
       <p>
-        Use our free tools to estimate your BMI, daily calorie needs, BMR,
-        TDEE, and practical targets for your goals.
+        Use our free tools to estimate your BMI, daily calorie needs, ideal
+        body weight, BMR, TDEE, and practical targets for your goals.
       </p>
     </div>
 
@@ -76,6 +76,38 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
           <strong aria-hidden="true">→</strong>
         </div>
       </a>
+
+      <a
+        class="tool-card"
+        href={`${baseURL}tools/ideal-weight-calculator/`}
+        aria-label="Open Ideal Weight Calculator"
+      >
+        <div class="tool-card-top">
+          <div class="tool-icon" aria-hidden="true">🎯</div>
+          <span class="tool-status">Free tool</span>
+        </div>
+
+        <h3>Ideal Weight Calculator</h3>
+
+        <p>
+          Estimate your ideal body weight using four established formulas and
+          compare the results with a healthy BMI-based weight range.
+        </p>
+
+        <div
+          class="tool-features"
+          aria-label="Ideal Weight Calculator features"
+        >
+          <span>4 formulas</span>
+          <span>Healthy range</span>
+          <span>Instant results</span>
+        </div>
+
+        <div class="tool-link">
+          <span>Open calculator</span>
+          <strong aria-hidden="true">→</strong>
+        </div>
+      </a>
     </div>
 
     <div class="all-tools">
@@ -91,7 +123,11 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   .tools-preview {
     padding: 88px 0;
     background:
-      radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 30%),
+      radial-gradient(
+        circle at top left,
+        rgba(34, 197, 94, 0.12),
+        transparent 30%
+      ),
       linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   }
 
@@ -124,7 +160,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   }
 
   .section-heading p {
-    max-width: 680px;
+    max-width: 700px;
     margin: 16px auto 0;
     color: #64748b;
     font-size: 1.05rem;
@@ -133,20 +169,24 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
   }
 
   .tool-card {
     display: flex;
     min-width: 0;
-    min-height: 390px;
+    min-height: 410px;
     flex-direction: column;
     padding: 30px;
     border: 1px solid #dcfce7;
     border-radius: 24px;
     background:
-      radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 34%),
+      radial-gradient(
+        circle at top right,
+        rgba(34, 197, 94, 0.12),
+        transparent 34%
+      ),
       #ffffff;
     color: inherit;
     text-decoration: none;
@@ -203,7 +243,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   .tool-card h3 {
     margin: 24px 0 0;
     color: #0f172a;
-    font-size: 1.65rem;
+    font-size: 1.55rem;
     line-height: 1.2;
     letter-spacing: -0.035em;
   }
@@ -288,17 +328,19 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     font-size: 1.2rem;
   }
 
-  @media (max-width: 760px) {
-    .tools-preview {
-      padding: 64px 0;
-    }
-
+  @media (max-width: 1000px) {
     .tools-grid {
       grid-template-columns: 1fr;
     }
 
     .tool-card {
       min-height: auto;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .tools-preview {
+      padding: 64px 0;
     }
   }
 
