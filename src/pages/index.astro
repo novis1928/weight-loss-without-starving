@@ -15,11 +15,21 @@ import Testimonials from "../components/Testimonials.astro";
 import PurchaseCTA from "../components/PurchaseCTA.astro";
 import FAQ from "../components/FAQ.astro";
 import ContactSection from "../components/ContactSection.astro";
+
+const pageTitle =
+  "Weight Loss Without Starving | Practical Weight Loss Ebook";
+
+const pageDescription =
+  "Learn how to lose weight in a healthy and sustainable way without extreme diets or constant hunger. Explore 8 free health and nutrition calculators, practical guidance, simple recipes, and sustainable weight-loss strategies.";
+
+const canonicalURL =
+  "https://novis1928.github.io/weight-loss-without-starving/";
 ---
 
 <Layout
-  title="Weight Loss Without Starving | Practical Weight Loss Ebook"
-  description="Learn how to lose weight in a healthy and sustainable way without extreme diets or constant hunger. Use our free BMI and calorie calculators and discover practical weight-loss guidance."
+  title={pageTitle}
+  description={pageDescription}
+  canonicalURL={canonicalURL}
 >
   <main>
     <Hero />

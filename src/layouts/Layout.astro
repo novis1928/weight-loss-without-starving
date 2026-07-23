@@ -177,6 +177,21 @@ const structuredData = {
       content="width=device-width, initial-scale=1"
     />
 
+    <meta
+      name="application-name"
+      content={siteName}
+    />
+
+    <meta
+      name="apple-mobile-web-app-title"
+      content={siteName}
+    />
+
+    <meta
+      name="mobile-web-app-capable"
+      content="yes"
+    />
+
     <!-- Google Search Console verification -->
 
     <meta
@@ -185,6 +200,11 @@ const structuredData = {
     />
 
     <!-- Google Analytics 4 -->
+
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+    />
 
     <script
       is:inline
@@ -255,6 +275,13 @@ const structuredData = {
       href={sitemapURL.href}
     />
 
+    <!-- Web App Manifest -->
+
+    <link
+      rel="manifest"
+      href={asset("manifest.webmanifest")}
+    />
+
     <!-- Icons -->
 
     <link
@@ -306,6 +333,21 @@ const structuredData = {
     />
 
     <meta
+      property="og:image:type"
+      content="image/png"
+    />
+
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+
+    <meta
       property="og:image:alt"
       content="Weight Loss Without Starving ebook cover"
     />
@@ -351,10 +393,10 @@ const structuredData = {
   </head>
 
   <body>
-  <Header />
+    <Header />
 
-  <slot />
+    <slot />
 
-  <Footer />
-</body>
+    <Footer />
+  </body>
 </html>

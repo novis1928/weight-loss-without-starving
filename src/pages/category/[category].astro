@@ -6,7 +6,11 @@ import { slugify } from "../../utils/slugify";
 
 import { getCollection } from "astro:content";
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 export async function getStaticPaths() {
   const slugify = (value: string) =>
@@ -57,7 +61,6 @@ const formattedDate = (date: Date) =>
   title={`${category} Articles | Weight Loss Without Starving`}
   description={`Browse practical ${category.toLowerCase()} articles about healthy, realistic, and sustainable weight loss.`}
 >
-  <Header />
 
   <main class="category-page">
     <section class="category-hero">
@@ -137,7 +140,6 @@ const formattedDate = (date: Date) =>
     </section>
   </main>
 
-  <Footer />
 </Layout>
 
 <style>

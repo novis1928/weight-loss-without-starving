@@ -1,0 +1,17 @@
+{
+  "name": "Weight Loss Without Starving",
+  "short_name": "Weight Loss",
+  "description": "Healthy and sustainable weight loss without starving.",
+  "start_url": "/weight-loss-without-starving/",
+  "scope": "/weight-loss-without-starving/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "/weight-loss-without-starving/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

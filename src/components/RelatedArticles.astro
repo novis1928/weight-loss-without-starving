@@ -4,7 +4,11 @@ import { slugify } from "../utils/slugify";
 
 const { currentPost } = Astro.props;
 
-const baseURL = import.meta.env.BASE_URL;
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
 
 const allPosts = await getCollection(
   "blog",
