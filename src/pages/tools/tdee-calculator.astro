@@ -76,20 +76,107 @@ const structuredData = {
 
     <section class="content-section"><div class="content-container narrow"><div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>How the TDEE estimate is calculated</h2></div><div class="steps"><article><span>01</span><div><h3>Estimate BMR</h3><p>The Mifflin-St Jeor equation estimates resting energy expenditure.</p></div></article><article><span>02</span><div><h3>Apply activity factor</h3><p>BMR is multiplied by the selected activity category.</p></div></article><article><span>03</span><div><h3>Create goal comparisons</h3><p>The calculator shows maintenance, two deficit options, and a small surplus.</p></div></article><article><span>04</span><div><h3>Check real-world progress</h3><p>Track average body weight and adjust gradually if your trend differs from the estimate.</p></div></article></div></div></section>
 
-    <section class="content-section shaded"><div class="page-container"><div class="section-heading"><span class="eyebrow">RELATED TOOLS</span><h2>Explore our other free calculators</h2></div>
-        <div class="related-grid">
-          <a href={`${baseURL}tools/bmi-calculator/`}><span>⚖️</span><div><h3>BMI Calculator</h3><p>Calculate BMI and view a healthy weight range.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/calorie-calculator/`}><span>🔥</span><div><h3>Calorie Calculator</h3><p>Estimate daily calories for maintenance or weight change.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/macro-calculator/`}><span>🥗</span><div><h3>Macro Calculator</h3><p>Estimate protein, carbohydrate, and fat targets.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/body-fat-calculator/`}><span>📏</span><div><h3>Body Fat Calculator</h3><p>Estimate body fat using circumference measurements.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/ideal-weight-calculator/`}><span>🎯</span><div><h3>Ideal Weight Calculator</h3><p>Compare four commonly used ideal-weight formulas.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/bmr-calculator/`}><span>⚡</span><div><h3>BMR Calculator</h3><p>Estimate the energy your body uses at rest.</p><strong>Open calculator →</strong></div></a>
+    <section class="content-section shaded">
+      <div class="page-container">
+        <div class="section-heading">
+          <span class="eyebrow">RELATED TOOLS</span>
+          <h2>Explore our other free calculators</h2>
         </div>
-</div></section>
+
+        <div class="related-grid">
+          <a href={`${baseURL}tools/bmi-calculator/`}>
+            <span>⚖️</span>
+            <div>
+              <h3>BMI Calculator</h3>
+              <p>Calculate BMI and view a healthy weight range.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/calorie-calculator/`}>
+            <span>🔥</span>
+            <div>
+              <h3>Calorie Calculator</h3>
+              <p>Estimate daily calories for maintenance or weight change.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/macro-calculator/`}>
+            <span>🥗</span>
+            <div>
+              <h3>Macro Calculator</h3>
+              <p>Estimate protein, carbohydrate, and fat targets.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/body-fat-calculator/`}>
+            <span>📏</span>
+            <div>
+              <h3>Body Fat Calculator</h3>
+              <p>Estimate body fat using circumference measurements.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/ideal-weight-calculator/`}>
+            <span>🎯</span>
+            <div>
+              <h3>Ideal Weight Calculator</h3>
+              <p>Compare four commonly used ideal-weight formulas.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/bmr-calculator/`}>
+            <span>⚡</span>
+            <div>
+              <h3>BMR Calculator</h3>
+              <p>Estimate the energy your body uses at rest.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+
+          <a href={`${baseURL}tools/water-intake-calculator/`}>
+            <span>💧</span>
+            <div>
+              <h3>Water Intake Calculator</h3>
+              <p>Estimate a practical daily hydration target.</p>
+              <strong>Open calculator →</strong>
+            </div>
+          </a>
+        </div>
+
+        <div class="related-actions">
+          <a class="all-tools-button" href={`${baseURL}tools/`}>
+            View all free tools →
+          </a>
+        </div>
+      </div>
+    </section>
 
     <section class="content-section"><div class="content-container narrow"><div class="section-heading"><span class="eyebrow">COMMON QUESTIONS</span><h2>TDEE Calculator FAQ</h2></div><div class="faq-list"><details><summary>What is TDEE?</summary><p>TDEE is your estimated total daily energy expenditure, including resting metabolism and activity.</p></details><details><summary>How accurate are activity multipliers?</summary><p>They are broad estimates. Jobs, training, movement habits, and individual biology vary considerably.</p></details><details><summary>Should I change calories immediately if my weight does not move?</summary><p>Daily weight fluctuates. Review a multi-week average before making a small adjustment.</p></details><details><summary>Is the moderate deficit right for everyone?</summary><p>No. Medical conditions, pregnancy, eating-disorder history, age, and other factors require individual advice.</p></details></div></div></section>
 
-    <section class="ebook-cta"><div class="page-container"><div class="ebook-card"><div><span class="eyebrow">READY FOR THE NEXT STEP?</span><h2>Build a weight-loss plan you can actually sustain</h2><p>Use your estimate as a starting point and focus on practical daily habits.</p></div><a href={`${baseURL}#purchase`}>Discover the ebook →</a></div></div></section>
+    <section class="ebook-cta">
+      <div class="page-container">
+        <div class="ebook-card">
+          <div>
+            <span class="eyebrow">READY FOR THE NEXT STEP?</span>
+            <h2>Build a weight-loss plan you can actually sustain</h2>
+            <p>Use your estimate as a starting point and focus on practical daily habits.</p>
+          </div>
+
+          <a
+            href="https://payhip.com/b/eW3MA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the ebook on Payhip →
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script is:inline>
@@ -221,6 +308,10 @@ const structuredData = {
   .related-grid h3 { margin:0; font-size:1.05rem; }
   .related-grid p { margin:8px 0 0; color:#64748b; line-height:1.55; font-size:.84rem; }
   .related-grid strong { display:inline-block; margin-top:13px; color:#15803d; font-size:.84rem; }
+  .related-actions { display:flex; justify-content:center; margin-top:34px; }
+  .all-tools-button { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 22px; border:1px solid #16a34a; border-radius:13px; background:#fff; color:#15803d; font-weight:900; text-decoration:none; box-shadow:0 12px 30px rgba(15,23,42,.06); transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease; }
+  .all-tools-button:hover { background:#16a34a; color:#fff; transform:translateY(-2px); box-shadow:0 16px 34px rgba(22,163,74,.2); }
+  .all-tools-button:focus-visible { outline:3px solid rgba(34,197,94,.28); outline-offset:4px; }
   .faq-list { display:grid; gap:13px; }
   .faq-list details { border:1px solid #e2e8f0; border-radius:15px; overflow:hidden; background:#fff; }
   .faq-list summary { padding:20px 21px; cursor:pointer; font-weight:800; }
@@ -235,7 +326,7 @@ const structuredData = {
   @media(max-width:1100px){ .related-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
   @media(max-width:980px){ .calculator-layout,.primary-result{grid-template-columns:1fr}.info-card{position:static}.result-grid,.content-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr} }
   @media(max-width:760px){ .hero{padding:30px 0 68px}.ebook-card{align-items:flex-start;flex-direction:column}.content-section{padding:72px 0} }
-  @media(max-width:580px){ .page-container,.content-container{width:min(100% - 24px,1160px)}.calculator-card,.info-card{padding:23px;border-radius:20px}.two-columns,.field-grid{grid-template-columns:1fr}.card-heading,.results-heading{align-items:flex-start}.results-heading{flex-direction:column}.primary-result{padding:24px}.related-grid a{flex-direction:column}.ebook-card{padding:28px 23px}.ebook-card a{width:100%;text-align:center} }
+  @media(max-width:580px){ .page-container,.content-container{width:min(100% - 24px,1160px)}.calculator-card,.info-card{padding:23px;border-radius:20px}.two-columns,.field-grid{grid-template-columns:1fr}.card-heading,.results-heading{align-items:flex-start}.results-heading{flex-direction:column}.primary-result{padding:24px}.related-grid a{flex-direction:column}.all-tools-button{width:100%;text-align:center}.ebook-card{padding:28px 23px}.ebook-card a{width:100%;text-align:center} }
 </style>
 
 </Layout>
