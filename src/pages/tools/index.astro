@@ -7,7 +7,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
 <Layout
   title="Free Weight Loss Tools | BMI, Calories, Macros and More"
-  description="Explore free weight-loss calculators and health tools, including BMI, calorie, ideal weight, body fat, and macro calculators."
+  description="Explore eight free health and weight-loss tools, including BMI, calorie, ideal weight, body fat, macro, BMR, TDEE, and water intake calculators."
 >
   <main>
     <section class="hero">
@@ -24,18 +24,18 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 
         <div class="stats">
           <div>
-            <strong>5</strong>
+            <strong>8</strong>
             <span>Tools available</span>
-          </div>
-
-          <div>
-            <strong>3</strong>
-            <span>More coming soon</span>
           </div>
 
           <div>
             <strong>100%</strong>
             <span>Free to use</span>
+          </div>
+
+          <div>
+            <strong>0</strong>
+            <span>Signup required</span>
           </div>
         </div>
       </div>
@@ -47,9 +47,9 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
           <span class="eyebrow">AVAILABLE NOW</span>
           <h2>Choose one of our free calculators</h2>
           <p>
-            Get clear estimates and practical explanations with our currently
-            available BMI, calorie, ideal weight, body fat, and macro
-            calculators.
+            Get clear estimates and practical explanations with our eight
+            available BMI, calorie, ideal weight, body fat, macro, BMR, TDEE,
+            and water intake calculators.
           </p>
         </div>
 
@@ -213,51 +213,78 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
               <strong aria-hidden="true">→</strong>
             </div>
           </a>
-        </div>
-      </div>
-    </section>
 
-    <section class="coming-section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">COMING SOON</span>
-          <h2>More free calculators are on the way</h2>
-          <p>
-            We are building a complete collection of practical weight-loss and
-            nutrition tools.
-          </p>
-        </div>
+          <a class="featured-tool" href={`${baseURL}tools/bmr-calculator/`}>
+            <div class="tool-icon" aria-hidden="true">⚡</div>
+            <div class="tool-content">
+              <div class="tool-topline">
+                <span class="tool-status available">Available now</span>
+                <span class="tool-label">Free tool</span>
+              </div>
+              <h2>BMR Calculator</h2>
+              <p>
+                Estimate how many calories your body uses at rest for breathing,
+                circulation, temperature control, and other essential functions.
+              </p>
+              <div class="tool-features">
+                <span>Resting calories</span>
+                <span>Metric and imperial</span>
+                <span>Mifflin-St Jeor</span>
+              </div>
+            </div>
+            <div class="tool-action">
+              <span>Open calculator</span>
+              <strong aria-hidden="true">→</strong>
+            </div>
+          </a>
 
-        <div class="tools-grid">
-          <article class="tool-card">
-            <div class="card-icon" aria-hidden="true">⚡</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>BMR Calculator</h3>
-            <p>
-              Estimate how much energy your body uses at rest for essential
-              functions.
-            </p>
-          </article>
+          <a class="featured-tool" href={`${baseURL}tools/tdee-calculator/`}>
+            <div class="tool-icon" aria-hidden="true">📊</div>
+            <div class="tool-content">
+              <div class="tool-topline">
+                <span class="tool-status available">Available now</span>
+                <span class="tool-label">Free tool</span>
+              </div>
+              <h2>TDEE Calculator</h2>
+              <p>
+                Estimate your total daily energy expenditure, maintenance
+                calories, and practical calorie targets based on activity.
+              </p>
+              <div class="tool-features">
+                <span>Maintenance calories</span>
+                <span>Activity adjustment</span>
+                <span>Goal estimates</span>
+              </div>
+            </div>
+            <div class="tool-action">
+              <span>Open calculator</span>
+              <strong aria-hidden="true">→</strong>
+            </div>
+          </a>
 
-          <article class="tool-card">
-            <div class="card-icon" aria-hidden="true">📊</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>TDEE Calculator</h3>
-            <p>
-              Estimate your total daily energy expenditure based on your
-              activity level.
-            </p>
-          </article>
-
-          <article class="tool-card">
-            <div class="card-icon" aria-hidden="true">💧</div>
-            <span class="tool-status soon">Coming soon</span>
-            <h3>Water Intake Calculator</h3>
-            <p>
-              Estimate a useful daily hydration target based on your body and
-              routine.
-            </p>
-          </article>
+          <a class="featured-tool" href={`${baseURL}tools/water-intake-calculator/`}>
+            <div class="tool-icon" aria-hidden="true">💧</div>
+            <div class="tool-content">
+              <div class="tool-topline">
+                <span class="tool-status available">Available now</span>
+                <span class="tool-label">Free tool</span>
+              </div>
+              <h2>Water Intake Calculator</h2>
+              <p>
+                Estimate a practical daily hydration target based on body
+                weight, exercise time, climate, and selected circumstances.
+              </p>
+              <div class="tool-features">
+                <span>Daily fluid target</span>
+                <span>Exercise adjustment</span>
+                <span>Glasses and bottles</span>
+              </div>
+            </div>
+            <div class="tool-action">
+              <span>Open calculator</span>
+              <strong aria-hidden="true">→</strong>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -436,7 +463,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   }
 
   .tools-section,
-  .coming-section,
   .why-section,
   .cta-section {
     padding: 78px 0;
@@ -445,10 +471,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   .tools-section,
   .why-section {
     background: #ffffff;
-  }
-
-  .coming-section {
-    background: #f8fafc;
   }
 
   .section-heading {
@@ -542,10 +564,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     color: #166534;
   }
 
-  .soon {
-    background: #f1f5f9;
-    color: #64748b;
-  }
 
   .tool-label {
     background: #ecfeff;
@@ -598,44 +616,10 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     font-size: 1.25rem;
   }
 
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-  }
 
-  .tool-card {
-    position: relative;
-    min-height: 260px;
-    padding: 25px;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    background: #ffffff;
-    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
-  }
 
-  .card-icon {
-    display: grid;
-    width: 50px;
-    height: 50px;
-    place-items: center;
-    margin-bottom: 18px;
-    border-radius: 15px;
-    background: #f0fdf4;
-    font-size: 1.5rem;
-  }
 
-  .tool-card h3 {
-    margin: 16px 0 8px;
-    color: #0f172a;
-    font-size: 1.16rem;
-  }
 
-  .tool-card p {
-    margin: 0;
-    color: #64748b;
-    line-height: 1.65;
-  }
 
   .why-card {
     padding: 42px;
@@ -733,9 +717,6 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   }
 
   @media (max-width: 960px) {
-    .tools-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
     .featured-tool {
       grid-template-columns: auto 1fr;
@@ -769,8 +750,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
     }
 
     .tools-section,
-    .coming-section,
-    .why-section,
+      .why-section,
     .cta-section {
       padding: 54px 0;
     }
@@ -790,13 +770,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
       font-size: 1.8rem;
     }
 
-    .tools-grid {
-      grid-template-columns: 1fr;
-    }
 
-    .tool-card {
-      min-height: auto;
-    }
 
     .why-card,
     .cta-card {

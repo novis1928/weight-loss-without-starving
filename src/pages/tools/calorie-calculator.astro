@@ -11,18 +11,68 @@ const canonicalURL = new URL(
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Calorie Calculator",
-  applicationCategory: "HealthApplication",
-  operatingSystem: "Any",
-  url: canonicalURL,
-  description:
-    "Estimate BMR, TDEE, maintenance calories, and suggested calorie targets for weight loss or weight gain.",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "Calorie Calculator",
+      applicationCategory: "HealthApplication",
+      operatingSystem: "Any",
+      browserRequirements: "Requires JavaScript",
+      url: canonicalURL,
+      description:
+        "Estimate BMR, TDEE, maintenance calories, and suggested calorie targets for weight loss, maintenance, or weight gain.",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How accurate is this calculator?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "This calculator provides an estimate. Real calorie needs can differ because of metabolism, body composition, daily movement, sleep, health, and food-tracking accuracy.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What calorie deficit should I use?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A moderate calorie deficit is generally easier to sustain than an extreme one. A gentle reduction is often a practical starting point.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should I eat below my BMR?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "BMR is not a personal minimum-intake prescription. Calorie intake should account for nutrition, activity, health, and professional guidance when needed.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why does my weight change from day to day?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Water, sodium, carbohydrate intake, digestion, hormones, and activity can all cause short-term changes in body weight.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who should not rely on this calculator?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Children, teenagers, pregnant people, people with medical conditions, and anyone with a history of disordered eating should seek individualized professional guidance.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 
@@ -55,6 +105,13 @@ const schema = {
             sex, and activity level. See your BMR, TDEE, and suggested targets
             for losing, maintaining, or gaining weight.
           </p>
+
+          <div class="hero-badges" aria-label="Calculator features">
+            <span>BMR estimate</span>
+            <span>TDEE estimate</span>
+            <span>Goal-based targets</span>
+            <span>No signup</span>
+          </div>
         </div>
       </div>
     </section>
@@ -111,6 +168,7 @@ const schema = {
                     step="1"
                     inputmode="numeric"
                     placeholder="35"
+                    value="35"
                     required
                   />
                   <small>years</small>
@@ -128,6 +186,7 @@ const schema = {
                     step="0.1"
                     inputmode="decimal"
                     placeholder="175"
+                    value="175"
                     required
                   />
                   <small>cm</small>
@@ -145,6 +204,7 @@ const schema = {
                     step="0.1"
                     inputmode="decimal"
                     placeholder="72"
+                    value="72"
                     required
                   />
                   <small>kg</small>
@@ -404,40 +464,27 @@ const schema = {
 
     <section class="related-section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading related-heading">
           <span class="eyebrow">RELATED TOOLS</span>
           <h2>Continue with another calculator</h2>
+          <p>
+            Combine your calorie estimate with other free tools for a broader
+            view of body composition, nutrition, activity, and hydration.
+          </p>
         </div>
 
         <div class="related-grid">
-          <a href={`${base}tools/bmi-calculator/`} class="tool-card">
-            <span>Available now</span>
-            <h3>BMI Calculator</h3>
-            <p>Estimate your BMI category and healthy weight range.</p>
-          </a>
+          <a href={`${base}tools/bmi-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">⚖️</span><span class="tool-status">Free tool</span></div><h3>BMI Calculator</h3><p>Estimate your BMI category and healthy weight range.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/ideal-weight-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">🎯</span><span class="tool-status">Free tool</span></div><h3>Ideal Weight Calculator</h3><p>Compare four established ideal-weight formulas and a BMI-based healthy range.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/body-fat-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">📏</span><span class="tool-status">Free tool</span></div><h3>Body Fat Calculator</h3><p>Estimate body-fat percentage, fat mass, and lean body mass.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/macro-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">🥗</span><span class="tool-status">Free tool</span></div><h3>Macro Calculator</h3><p>Estimate daily protein, carbohydrate, fat, and calorie targets.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/bmr-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">⚡</span><span class="tool-status">Free tool</span></div><h3>BMR Calculator</h3><p>Estimate how many calories your body uses at complete rest.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/tdee-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">📊</span><span class="tool-status">Free tool</span></div><h3>TDEE Calculator</h3><p>Estimate total daily calorie expenditure based on activity.</p><strong>Open calculator →</strong></a>
+          <a href={`${base}tools/water-intake-calculator/`} class="tool-card"><div class="tool-card-top"><span class="tool-icon" aria-hidden="true">💧</span><span class="tool-status">Free tool</span></div><h3>Water Intake Calculator</h3><p>Estimate a practical daily hydration target for your routine.</p><strong>Open calculator →</strong></a>
+        </div>
 
-          <a href={`${base}tools/ideal-weight-calculator/`} class="tool-card">
-            <span>Available now</span>
-            <h3>Ideal Weight Calculator</h3>
-            <p>Compare four established ideal-weight formulas and view a healthy BMI-based weight range.</p>
-          </a>
-
-          <a href={`${base}tools/body-fat-calculator/`} class="tool-card">
-            <span>Available now</span>
-            <h3>Body Fat Calculator</h3>
-            <p>
-              Estimate your body fat percentage using simple body measurements.
-            </p>
-          </a>
-
-          <a href={`${base}tools/macro-calculator/`} class="tool-card">
-            <span>Available now</span>
-            <h3>Macro Calculator</h3>
-            <p>
-              Calculate your daily calories, protein, carbohydrates, and fat
-              for weight loss, maintenance, or muscle gain.
-            </p>
-          </a>
+        <div class="all-tools-link">
+          <a href={`${base}tools/`}>View all free tools <strong aria-hidden="true">→</strong></a>
         </div>
       </div>
     </section>
@@ -602,6 +649,24 @@ const schema = {
     color: #475569;
     font-size: 1.12rem;
     line-height: 1.75;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 24px;
+  }
+
+  .hero-badges span {
+    padding: 8px 11px;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    color: #166534;
+    font-size: 0.76rem;
+    font-weight: 800;
   }
 
   .calculator-section {
@@ -1120,6 +1185,18 @@ const schema = {
   }
 
   
+  .related-heading { margin-inline: auto; text-align: center; }
+  .tool-card { display:flex; min-width:0; min-height:300px; flex-direction:column; color:inherit; text-decoration:none; background:radial-gradient(circle at top right,rgba(34,197,94,.1),transparent 34%),#fff; transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease; }
+  .tool-card:hover { border-color:#22c55e; box-shadow:0 24px 60px rgba(15,23,42,.11); transform:translateY(-4px); }
+  .tool-card-top { display:flex; justify-content:space-between; gap:14px; align-items:center; }
+  .tool-icon { display:grid; width:54px; height:54px; place-items:center; border-radius:16px; background:#dcfce7; font-size:1.55rem; }
+  .tool-status { display:inline-flex; align-items:center; min-height:28px; padding:0 10px; border-radius:999px; background:#f0fdf4; color:#166534; font-size:.68rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
+  .tool-card h3 { margin:20px 0 0; }
+  .tool-card p { margin:10px 0 0; }
+  .tool-card > strong { display:inline-block; margin-top:auto; padding-top:22px; color:#15803d; font-size:.86rem; }
+  .all-tools-link { display:flex; justify-content:center; margin-top:30px; }
+  .all-tools-link a { display:inline-flex; gap:10px; align-items:center; padding:14px 20px; border-radius:13px; background:#22c55e; color:#fff; font-weight:800; text-decoration:none; box-shadow:0 14px 30px rgba(34,197,94,.23); }
+
   .cta-section {
     padding: 18px 0 78px;
     background: #ffffff;
@@ -1270,6 +1347,7 @@ const schema = {
 </style>
 
 <script is:inline>
+  (() => {
   const form = document.getElementById("calorieForm");
   const results = document.getElementById("results");
   const error = document.getElementById("formError");
@@ -1288,6 +1366,8 @@ const schema = {
   const maintainValue = document.getElementById("maintainValue");
   const gainValue = document.getElementById("gainValue");
   const resultMessage = document.getElementById("resultMessage");
+
+  if (!form || !results || !error || !recalculateButton || !ageInput || !heightInput || !weightInput || !activityInput || !mainCalories || !bmrValue || !tdeeValue || !lossValue || !gentleLossValue || !maintainValue || !gainValue || !resultMessage) return;
 
   const formatCalories = (value) =>
     `${Math.round(value / 10) * 10} kcal/day`;
@@ -1366,4 +1446,5 @@ const schema = {
     form.scrollIntoView({ behavior: "smooth", block: "start" });
     ageInput.focus();
   });
+  })();
 </script>

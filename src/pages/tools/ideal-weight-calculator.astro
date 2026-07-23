@@ -74,7 +74,11 @@ const structuredData = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalURL={canonicalURL}
+>
   <script
     type="application/ld+json"
     set:html={JSON.stringify(structuredData)}
@@ -575,68 +579,89 @@ const structuredData = {
       <div class="page-container">
         <div class="section-heading">
           <span class="eyebrow">CONTINUE YOUR JOURNEY</span>
-
           <h2>Explore our other free calculators</h2>
-
           <p>
-            Combine multiple tools to build a clearer picture of your starting
-            point and daily needs.
+            Combine several tools to build a clearer picture of body
+            composition, calorie needs, nutrition, activity, and hydration.
           </p>
         </div>
 
         <div class="related-tools-grid">
-          <a
-            class="related-tool-card"
-            href={`${baseURL}tools/bmi-calculator/`}
-          >
-            <span class="related-icon" aria-hidden="true">⚖️</span>
-            <div>
-              <h3>BMI Calculator</h3>
-              <p>Calculate your BMI and view a healthy weight range.</p>
-              <strong>Open calculator →</strong>
+          <a class="related-tool-card" href={`${baseURL}tools/bmi-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">⚖️</span>
+              <span class="related-status">Free tool</span>
             </div>
+            <h3>BMI Calculator</h3>
+            <p>Calculate your BMI and view a healthy weight range.</p>
+            <strong>Open calculator →</strong>
           </a>
 
-          <a
-            class="related-tool-card"
-            href={`${baseURL}tools/calorie-calculator/`}
-          >
-            <span class="related-icon" aria-hidden="true">🔥</span>
-            <div>
-              <h3>Calorie Calculator</h3>
-              <p>Estimate your BMR, TDEE and daily calorie needs.</p>
-              <strong>Open calculator →</strong>
+          <a class="related-tool-card" href={`${baseURL}tools/calorie-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">🔥</span>
+              <span class="related-status">Free tool</span>
             </div>
+            <h3>Calorie Calculator</h3>
+            <p>Estimate your BMR, TDEE, and daily calorie targets.</p>
+            <strong>Open calculator →</strong>
           </a>
 
-          <a
-            class="related-tool-card"
-            href={`${baseURL}tools/body-fat-calculator/`}
-          >
-            <span class="related-icon" aria-hidden="true">📏</span>
-            <div>
-              <h3>Body Fat Calculator</h3>
-              <p>
-                Estimate your body fat percentage using simple body
-                measurements.
-              </p>
-              <strong>Open calculator →</strong>
+          <a class="related-tool-card" href={`${baseURL}tools/body-fat-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">📏</span>
+              <span class="related-status">Free tool</span>
             </div>
+            <h3>Body Fat Calculator</h3>
+            <p>Estimate body-fat percentage, fat mass, and lean body mass.</p>
+            <strong>Open calculator →</strong>
           </a>
 
-          <a
-            class="related-tool-card"
-            href={`${baseURL}tools/macro-calculator/`}
-          >
-            <span class="related-icon" aria-hidden="true">🥗</span>
-            <div>
-              <h3>Macro Calculator</h3>
-              <p>
-                Calculate your daily calories, protein, carbohydrates, and fat
-                for weight loss, maintenance, or muscle gain.
-              </p>
-              <strong>Open calculator →</strong>
+          <a class="related-tool-card" href={`${baseURL}tools/macro-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">🥗</span>
+              <span class="related-status">Free tool</span>
             </div>
+            <h3>Macro Calculator</h3>
+            <p>Estimate daily protein, carbohydrate, fat, and calorie targets.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-tool-card" href={`${baseURL}tools/bmr-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">⚡</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>BMR Calculator</h3>
+            <p>Estimate how many calories your body uses at complete rest.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-tool-card" href={`${baseURL}tools/tdee-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">📊</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>TDEE Calculator</h3>
+            <p>Estimate total daily calorie expenditure based on activity.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-tool-card" href={`${baseURL}tools/water-intake-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">💧</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>Water Intake Calculator</h3>
+            <p>Estimate a practical daily hydration target for your routine.</p>
+            <strong>Open calculator →</strong>
+          </a>
+        </div>
+
+        <div class="all-tools-link">
+          <a href={`${baseURL}tools/`}>
+            View all free tools
+            <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -739,8 +764,12 @@ const structuredData = {
             </p>
           </div>
 
-          <a href={`${baseURL}#purchase`}>
-            Discover the ebook
+          <a
+            href="https://payhip.com/b/eW3MA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the ebook
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -1840,11 +1869,15 @@ const structuredData = {
 
   .related-tool-card {
     display: flex;
-    gap: 20px;
-    padding: 27px;
+    min-width: 0;
+    min-height: 300px;
+    flex-direction: column;
+    padding: 25px;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    background: #ffffff;
+    background:
+      radial-gradient(circle at top right, rgba(34, 197, 94, 0.1), transparent 34%),
+      #ffffff;
     color: inherit;
     text-decoration: none;
     box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
@@ -1856,8 +1889,21 @@ const structuredData = {
 
   .related-tool-card:hover {
     border-color: #22c55e;
-    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 22px 54px rgba(15, 23, 42, 0.11);
     transform: translateY(-4px);
+  }
+
+  .related-tool-card:focus-visible,
+  .all-tools-link a:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 4px;
+  }
+
+  .related-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
   }
 
   .related-icon {
@@ -1871,22 +1917,65 @@ const structuredData = {
     font-size: 1.55rem;
   }
 
+  .related-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
   .related-tool-card h3 {
-    margin: 0;
-    font-size: 1.28rem;
+    margin: 20px 0 0;
+    font-size: 1.22rem;
   }
 
   .related-tool-card p {
-    margin: 8px 0 0;
+    margin: 10px 0 0;
     color: #64748b;
     line-height: 1.65;
   }
 
   .related-tool-card strong {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: auto;
+    padding-top: 22px;
     color: #15803d;
     font-size: 0.88rem;
+  }
+
+  .all-tools-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .all-tools-link a {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 13px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(34, 197, 94, 0.23);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .all-tools-link a:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
   }
 
   .faq-list {

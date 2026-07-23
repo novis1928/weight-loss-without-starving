@@ -64,7 +64,11 @@ const structuredData = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalURL={canonicalURL}
+>
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <main class="calculator-page">
@@ -339,17 +343,94 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="content-section shaded">
+    <section class="content-section shaded related-tools-section">
       <div class="page-container">
         <div class="section-heading">
           <span class="eyebrow">RELATED TOOLS</span>
           <h2>Explore our other free calculators</h2>
+          <p>
+            Combine several tools to build a clearer picture of body
+            composition, calorie needs, activity, and hydration.
+          </p>
         </div>
+
         <div class="related-grid">
-          <a href={`${baseURL}tools/calorie-calculator/`}><span>🔥</span><div><h3>Calorie Calculator</h3><p>Estimate BMR, TDEE, and daily calorie needs.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/bmi-calculator/`}><span>⚖️</span><div><h3>BMI Calculator</h3><p>Calculate BMI and view a healthy weight range.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/body-fat-calculator/`}><span>📏</span><div><h3>Body Fat Calculator</h3><p>Estimate body fat from simple measurements.</p><strong>Open calculator →</strong></div></a>
-          <a href={`${baseURL}tools/ideal-weight-calculator/`}><span>⚖️</span><div><h3>Ideal Weight Calculator</h3><p>Estimate your ideal body weight using four well-known formulas.</p><strong>Open calculator →</strong></div></a>
+          <a class="related-card" href={`${baseURL}tools/bmi-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">⚖️</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>BMI Calculator</h3>
+            <p>Calculate your BMI and view a healthy weight range.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/calorie-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">🔥</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>Calorie Calculator</h3>
+            <p>Estimate BMR, TDEE, and daily calorie targets.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/body-fat-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">📏</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>Body Fat Calculator</h3>
+            <p>Estimate body-fat percentage from simple measurements.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/ideal-weight-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">🎯</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>Ideal Weight Calculator</h3>
+            <p>Compare four formulas and a healthy BMI-based range.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/bmr-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">⚡</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>BMR Calculator</h3>
+            <p>Estimate how many calories your body uses at complete rest.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/tdee-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">📊</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>TDEE Calculator</h3>
+            <p>Estimate total daily calorie expenditure based on activity.</p>
+            <strong>Open calculator →</strong>
+          </a>
+
+          <a class="related-card" href={`${baseURL}tools/water-intake-calculator/`}>
+            <div class="related-card-top">
+              <span class="related-icon" aria-hidden="true">💧</span>
+              <span class="related-status">Free tool</span>
+            </div>
+            <h3>Water Intake Calculator</h3>
+            <p>Estimate a practical daily hydration target.</p>
+            <strong>Open calculator →</strong>
+          </a>
+        </div>
+
+        <div class="all-tools-link">
+          <a href={`${baseURL}tools/`}>
+            View all free tools
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>
@@ -375,7 +456,13 @@ const structuredData = {
             <h2>Lose weight without extreme diets or constant hunger</h2>
             <p>Get practical guidance for building sustainable eating and weight-loss habits.</p>
           </div>
-          <a href={`${baseURL}#purchase`}>Discover the ebook →</a>
+          <a
+            href="https://payhip.com/b/eW3MA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get the ebook →
+          </a>
         </div>
       </div>
     </section>
@@ -610,22 +697,129 @@ const structuredData = {
   .section-heading { max-width:750px; margin:0 auto 42px; text-align:center; }
   .section-heading h2 { margin:10px 0 0; font-size:clamp(2rem,5vw,3.25rem); line-height:1.1; letter-spacing:-.05em; }
   .content-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .related-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
-  .content-grid article { padding:27px; border:1px solid #e2e8f0; border-radius:20px; background:#fff; }
-  .content-grid article>div { display:grid; place-items:center; width:50px; height:50px; border-radius:14px; background:#dcfce7; font-size:1.45rem; }
-  .content-grid h3 { margin:20px 0 0; }
-  .content-grid p { margin:10px 0 0; color:#64748b; line-height:1.7; }
-  .steps { display:grid; gap:15px; }
-  .steps article { display:flex; gap:20px; padding:23px; border:1px solid #e2e8f0; border-radius:17px; }
-  .steps article>span { display:grid; place-items:center; width:42px; height:42px; flex-shrink:0; border-radius:12px; background:#f0fdf4; color:#15803d; font-size:.74rem; font-weight:900; }
-  .steps h3 { margin:0; }
-  .steps p { margin:7px 0 0; color:#64748b; line-height:1.65; }
-  .related-grid a { display:flex; gap:20px; padding:27px; border:1px solid #e2e8f0; border-radius:20px; background:#fff; color:inherit; text-decoration:none; box-shadow:0 14px 40px rgba(15,23,42,.06); }
-  .related-grid a:hover { border-color:#22c55e; transform:translateY(-4px); }
-  .related-grid>a>span { display:grid; place-items:center; width:56px; height:56px; flex-shrink:0; border-radius:16px; background:#dcfce7; font-size:1.55rem; }
-  .related-grid h3 { margin:0; }
-  .related-grid p { margin:8px 0 0; color:#64748b; line-height:1.65; }
-  .related-grid strong { display:inline-block; margin-top:15px; color:#15803d; font-size:.88rem; }
+  .related-tools-section .section-heading > p {
+    margin: 15px auto 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .related-card {
+    display: flex;
+    min-width: 0;
+    min-height: 300px;
+    flex-direction: column;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at top right, rgba(34, 197, 94, 0.1), transparent 34%),
+      #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .related-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .related-card:focus-visible,
+  .all-tools-link a:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 4px;
+  }
+
+  .related-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .related-icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 16px;
+    background: #dcfce7;
+    font-size: 1.55rem;
+  }
+
+  .related-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .related-card h3 {
+    margin: 20px 0 0;
+    font-size: 1.22rem;
+  }
+
+  .related-card p {
+    margin: 10px 0 0;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .related-card strong {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 22px;
+    color: #15803d;
+    font-size: 0.88rem;
+  }
+
+  .all-tools-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .all-tools-link a {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 13px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(34, 197, 94, 0.23);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .all-tools-link a:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+  }
+
   .faq-list { display:grid; gap:13px; }
   .faq-list details { border:1px solid #e2e8f0; border-radius:15px; overflow:hidden; }
   .faq-list summary { padding:20px 21px; cursor:pointer; font-weight:800; }
@@ -638,7 +832,7 @@ const structuredData = {
   .ebook-card a { flex-shrink:0; padding:15px 20px; border-radius:13px; background:#22c55e; color:#fff; font-weight:800; text-decoration:none; }
   [hidden] { display:none !important; }
   @media(max-width:1100px){ .related-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
-  @media(max-width:980px){ .calculator-layout,.calorie-card{grid-template-columns:1fr}.info-card{position:static}.macro-grid,.content-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr} }
+  @media(max-width:980px){ .calculator-layout,.calorie-card{grid-template-columns:1fr}.info-card{position:static}.macro-grid,.content-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
   @media(max-width:760px){ .hero{padding:30px 0 68px}.goal-grid{grid-template-columns:1fr}.ebook-card{align-items:flex-start;flex-direction:column}.content-section{padding:72px 0} }
-  @media(max-width:580px){ .page-container,.content-container{width:min(100% - 24px,1160px)}.calculator-card,.info-card{padding:23px;border-radius:20px}.two-columns,.field-grid{grid-template-columns:1fr}.card-heading,.results-heading{align-items:flex-start}.results-heading{flex-direction:column}.calorie-card{padding:24px}.related-grid a{flex-direction:column}.ebook-card{padding:28px 23px}.ebook-card a{width:100%;text-align:center} }
+  @media(max-width:580px){ .page-container,.content-container{width:min(100% - 24px,1160px)}.calculator-card,.info-card{padding:23px;border-radius:20px}.two-columns,.field-grid{grid-template-columns:1fr}.card-heading,.results-heading{align-items:flex-start}.results-heading{flex-direction:column}.calorie-card{padding:24px}.related-grid{grid-template-columns:1fr}.ebook-card{padding:28px 23px}.ebook-card a{width:100%;text-align:center} }
 </style>
