@@ -5,6 +5,14 @@ export default defineConfig({
   site: "https://novis1928.github.io",
   base: "/weight-loss-without-starving",
   trailingSlash: "always",
+  output: "static",
+  compressHTML: true,
 
-  integrations: [sitemap()],
+  build: {
+    format: "directory",
+  },
+
+  integrations: [
+    sitemap(),
+  ],
 });
