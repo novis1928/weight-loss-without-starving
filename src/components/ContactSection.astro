@@ -1,8 +1,6 @@
 <section class="contact-section" id="contact">
   <div class="contact-container">
-
     <div class="contact-content">
-
       <span class="contact-label">CONTACT</span>
 
       <h2>
@@ -12,11 +10,10 @@
 
       <p class="contact-intro">
         Do you have a question about the ebook, the purchase process, or your
-        download? Send me an email and I will reply as soon as possible.
+        download? Send a message and I will reply as soon as possible.
       </p>
 
       <div class="contact-list">
-
         <div class="contact-item">
           <div class="contact-icon" aria-hidden="true">✉</div>
 
@@ -48,44 +45,264 @@
             <p>Checkout and delivery are handled by Payhip and Gumroad</p>
           </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="contact-card">
+      <span class="contact-card-label">CONTACT SUPPORT</span>
 
-      <span class="contact-card-label">QUICK CONTACT</span>
+      <h3>Send Us a Message</h3>
 
-      <h3>Send an Email</h3>
-
-      <p>
-        Click the button below to open your email application.
+      <p class="contact-card-intro">
+        Fill out the form below and we will reply as soon as possible.
       </p>
 
-      <a
-        class="contact-button"
-        href="mailto:novis1928@gmail.com?subject=Weight%20Loss%20Without%20Starving%20-%20Question"
+      <form
+        class="contact-form"
+        id="contact-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
       >
-        Contact the Author
-        <span>→</span>
-      </a>
+        <input
+          type="hidden"
+          name="access_key"
+          value="8fd99bb5-6ff0-4b90-9c49-0b88d6892add"
+        />
+
+        <input
+          type="hidden"
+          name="from_name"
+          value="Weight Loss Without Starving"
+        />
+
+        <input
+          type="hidden"
+          name="subject"
+          value="New message from Weight Loss Without Starving"
+        />
+
+        <div class="form-field">
+          <label for="contact-name">Name</label>
+
+          <input
+            id="contact-name"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact-email">Email</label>
+
+          <input
+            id="contact-email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact-subject">Subject</label>
+
+          <input
+            id="contact-subject"
+            type="text"
+            name="message_subject"
+            placeholder="How can we help?"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact-message">Message</label>
+
+          <textarea
+            id="contact-message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="contact-botcheck">Leave this field empty</label>
+
+          <input
+            id="contact-botcheck"
+            type="checkbox"
+            name="botcheck"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+        <button class="contact-button" id="contact-submit" type="submit">
+          <span class="button-text">Send Message</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <div
+          class="form-status"
+          id="contact-status"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+      </form>
 
       <div class="contact-divider"></div>
 
-      <div class="contact-help">
-        <strong>Purchase question?</strong>
-
-        <p>
-          Include the email address used for your order so your purchase can be
-          found more quickly.
-        </p>
+      <div class="faq-heading">
+        <span>FREQUENTLY ASKED QUESTIONS</span>
+        <p>Quick answers to common purchase and download questions.</p>
       </div>
 
-    </div>
+      <div class="contact-help">
+        <details>
+          <summary>How do I download the ebook?</summary>
 
+          <p>
+            After your purchase, you will receive an email containing your
+            download link. Please also check your spam or promotions folder.
+          </p>
+        </details>
+
+        <details>
+          <summary>I didn't receive my PDF.</summary>
+
+          <p>
+            If the email has not arrived within 15 minutes, contact support and
+            include the email address used for your purchase.
+          </p>
+        </details>
+
+        <details>
+          <summary>Which payment methods are accepted?</summary>
+
+          <p>
+            Payments are securely processed through Payhip. Depending on your
+            country, you can usually pay with a credit or debit card or PayPal.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I get a refund?</summary>
+
+          <p>
+            If you experience a technical problem with your purchase, contact
+            us first. We will do our best to resolve the issue quickly. Refund
+            requests are handled according to the store policy and applicable
+            consumer protection laws.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this ebook suitable for beginners?</summary>
+
+          <p>
+            Yes. The ebook is written for beginners and focuses on healthy,
+            sustainable weight loss without extreme diets.
+          </p>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("contact-submit");
+    const buttonText = submitButton?.querySelector(".button-text");
+    const buttonArrow = submitButton?.querySelector(".button-arrow");
+    const statusBox = document.getElementById("contact-status");
+
+    if (
+      !(form instanceof HTMLFormElement) ||
+      !(submitButton instanceof HTMLButtonElement) ||
+      !(buttonText instanceof HTMLElement) ||
+      !(buttonArrow instanceof HTMLElement) ||
+      !(statusBox instanceof HTMLElement) ||
+      form.dataset.ajaxReady === "true"
+    ) {
+      return;
+    }
+
+    form.dataset.ajaxReady = "true";
+
+    const showStatus = (type, title, message) => {
+      statusBox.className = `form-status form-status--${type}`;
+      statusBox.innerHTML = `
+        <span class="form-status-icon" aria-hidden="true">
+          ${type === "success" ? "✓" : "!"}
+        </span>
+        <span>
+          <strong>${title}</strong>
+          <span>${message}</span>
+        </span>
+      `;
+      statusBox.hidden = false;
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+      buttonText.textContent = "Sending...";
+      buttonArrow.textContent = "…";
+      statusBox.hidden = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "The message could not be sent.");
+        }
+
+        form.reset();
+
+        showStatus(
+          "success",
+          "Thank you!",
+          "Your message has been sent successfully. We'll get back to you within 1–2 business days."
+        );
+      } catch (error) {
+        showStatus(
+          "error",
+          "Something went wrong.",
+          "Your message could not be sent. Please try again or email us directly."
+        );
+
+        console.error("Contact form error:", error);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+        buttonText.textContent = "Send Message";
+        buttonArrow.textContent = "→";
+      }
+    });
+  })();
+</script>
 
 <style>
   .contact-section {
@@ -100,16 +317,19 @@
   }
 
   .contact-container {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-    align-items: center;
-    gap: 72px;
+    width: min(1180px, calc(100% - 40px));
+    grid-template-columns: minmax(0, 0.92fr) minmax(390px, 1.08fr);
+    align-items: start;
+    gap: 64px;
+    margin: 0 auto;
   }
 
   .contact-content {
-    max-width: 680px;
+    position: sticky;
+    top: 110px;
+    max-width: 620px;
+    padding-top: 18px;
   }
 
   .contact-label {
@@ -118,7 +338,7 @@
     padding: 8px 14px;
     border-radius: 999px;
     background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
+    color: #15803d;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -138,7 +358,7 @@
   }
 
   .contact-intro {
-    max-width: 620px;
+    max-width: 600px;
     margin: 24px 0 0;
     color: #64748b;
     font-size: 18px;
@@ -170,7 +390,7 @@
     place-items: center;
     border-radius: 14px;
     background: #dcfce7;
-    color: #16a34a;
+    color: #15803d;
     font-size: 20px;
     font-weight: 900;
   }
@@ -184,7 +404,7 @@
   }
 
   .contact-item a {
-    color: #16a34a;
+    color: #15803d;
     font-weight: 700;
     text-decoration: none;
     word-break: break-word;
@@ -202,7 +422,7 @@
 
   .contact-card {
     position: relative;
-    padding: 44px 36px;
+    padding: 48px 36px 36px;
     overflow: hidden;
     border-radius: 28px;
     background: #0f172a;
@@ -213,12 +433,13 @@
   .contact-card::before {
     content: "";
     position: absolute;
-    top: -90px;
-    right: -90px;
-    width: 240px;
-    height: 240px;
+    top: -100px;
+    right: -100px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     background: rgba(34, 197, 94, 0.14);
+    pointer-events: none;
   }
 
   .contact-card-label {
@@ -234,76 +455,295 @@
   .contact-card h3 {
     position: relative;
     z-index: 1;
-    margin: 12px 0 14px;
-    font-size: 34px;
-    letter-spacing: -0.03em;
+    max-width: 440px;
+    margin: 14px 0 12px;
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
   }
 
-  .contact-card > p {
+  .contact-card-intro {
     position: relative;
     z-index: 1;
+    max-width: 460px;
     margin: 0;
     color: #cbd5e1;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
   }
 
-  .contact-button {
+  .contact-form {
     position: relative;
     z-index: 1;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .form-field {
+    display: grid;
+    gap: 8px;
+  }
+
+  .form-field:nth-of-type(3),
+  .form-field:nth-of-type(4),
+  .contact-button,
+  .form-status {
+    grid-column: 1 / -1;
+  }
+
+  .form-field label {
+    color: #f8fafc;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font: inherit;
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .form-field input {
+    min-height: 50px;
+    padding: 0 15px;
+  }
+
+  .form-field textarea {
+    min-height: 132px;
+    padding: 14px 15px;
+    line-height: 1.6;
+    resize: vertical;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: #94a3b8;
+  }
+
+  .form-field input:hover,
+  .form-field textarea:hover {
+    border-color: rgba(74, 222, 128, 0.42);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: #4ade80;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+  }
+
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .contact-button {
+    display: flex;
+    min-height: 56px;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    min-height: 56px;
-    margin-top: 30px;
+    margin-top: 4px;
     padding: 0 20px;
+    border: 0;
     border-radius: 14px;
     background: #22c55e;
     color: #ffffff;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 900;
-    text-decoration: none;
+    cursor: pointer;
     box-shadow: 0 16px 32px rgba(34, 197, 94, 0.26);
     transition:
       background 0.2s ease,
       transform 0.2s ease,
-      box-shadow 0.2s ease;
+      box-shadow 0.2s ease,
+      opacity 0.2s ease;
   }
 
-  .contact-button:hover {
+  .contact-button:hover:not(:disabled) {
     background: #16a34a;
     transform: translateY(-2px);
     box-shadow: 0 20px 38px rgba(34, 197, 94, 0.34);
   }
 
-  .contact-button span {
+  .contact-button:disabled {
+    cursor: wait;
+    opacity: 0.72;
+  }
+
+  .contact-button:focus-visible {
+    outline: 3px solid rgba(187, 247, 208, 0.9);
+    outline-offset: 3px;
+  }
+
+  .button-arrow {
     font-size: 22px;
+  }
+
+  .form-status {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .form-status[hidden] {
+    display: none;
+  }
+
+  .form-status--success {
+    border-color: rgba(74, 222, 128, 0.42);
+    background: rgba(34, 197, 94, 0.12);
+    color: #dcfce7;
+  }
+
+  .form-status--error {
+    border-color: rgba(248, 113, 113, 0.45);
+    background: rgba(239, 68, 68, 0.12);
+    color: #fee2e2;
+  }
+
+  .form-status-icon {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .form-status strong,
+  .form-status span span {
+    display: block;
+  }
+
+  .form-status strong {
+    margin-bottom: 2px;
+    color: #ffffff;
+    font-size: 15px;
   }
 
   .contact-divider {
     position: relative;
     z-index: 1;
     height: 1px;
-    margin: 30px 0;
+    margin: 32px 0 26px;
     background: rgba(255, 255, 255, 0.12);
+  }
+
+  .faq-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+  }
+
+  .faq-heading > span {
+    display: block;
+    color: #4ade80;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .faq-heading p {
+    margin: 7px 0 0;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .contact-help {
     position: relative;
     z-index: 1;
+    display: grid;
+    gap: 10px;
   }
 
-  .contact-help strong {
-    display: block;
-    margin-bottom: 8px;
+  .contact-help details {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.045);
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .contact-help details[open] {
+    border-color: rgba(74, 222, 128, 0.45);
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .contact-help summary {
+    position: relative;
+    padding: 17px 48px 17px 18px;
     color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.45;
+    cursor: pointer;
+    list-style: none;
   }
 
-  .contact-help p {
+  .contact-help summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .contact-help summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    color: #4ade80;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .contact-help details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .contact-help summary:hover {
+    color: #4ade80;
+  }
+
+  .contact-help summary:focus-visible {
+    outline: 2px solid #4ade80;
+    outline-offset: -3px;
+  }
+
+  .contact-help details p {
     margin: 0;
-    color: #94a3b8;
-    line-height: 1.65;
+    padding: 0 18px 18px;
+    color: #aebbd0;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   @media (max-width: 940px) {
@@ -313,12 +753,14 @@
     }
 
     .contact-content {
+      position: static;
       max-width: none;
+      padding-top: 0;
     }
 
     .contact-card {
-      max-width: 660px;
       width: 100%;
+      max-width: 720px;
       margin: 0 auto;
     }
   }
@@ -342,12 +784,36 @@
     }
 
     .contact-card {
-      padding: 34px 24px;
+      padding: 38px 22px 24px;
       border-radius: 22px;
     }
 
     .contact-card h3 {
       font-size: 29px;
+    }
+
+    .contact-form {
+      grid-template-columns: 1fr;
+    }
+
+    .form-field:nth-of-type(3),
+    .form-field:nth-of-type(4),
+    .contact-button,
+    .form-status {
+      grid-column: auto;
+    }
+
+    .contact-help summary {
+      padding: 16px 44px 16px 15px;
+      font-size: 13px;
+    }
+
+    .contact-help summary::after {
+      right: 15px;
+    }
+
+    .contact-help details p {
+      padding: 0 15px 16px;
     }
   }
 </style>
