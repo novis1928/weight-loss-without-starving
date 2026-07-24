@@ -69,8 +69,7 @@ In this beginner's guide you'll learn:
 
 > 💡 **Not sure where to begin?**
 >
-> Before starting your journey, use our [BMI
-> Calculator](/calculators/bmi/) to estimate your current weight
+> Before starting your journey, use our BMI Calculator to estimate your current weight
 > category. While BMI doesn't tell the whole story, it provides a useful
 > starting point for many adults.
 
@@ -147,7 +146,7 @@ whether you follow a Mediterranean diet, a low-carbohydrate diet,
 intermittent fasting, or another eating pattern.
 
 Different diets work because they help people maintain a
-[calorie deficit](/blog/calorie-deficit-explained/)—not because they magically burn fat.
+calorie deficit not because they magically burn fat.
 
 ### Why bigger is not always better
 
@@ -212,12 +211,11 @@ maintain than one dramatic change.
 >
 > Read our complete guide:
 >
-> **👉 [Calorie Deficit Explained](/blog/calorie-deficit-explained/)**
+> **👉 [Calorie Deficit Explained](/weight-loss-without-starving/blog/calorie-deficit-explained/)**
 
 > 🧮 **Helpful Tool**
 >
-> Estimate your daily calorie needs with our [Calorie
-> Calculator](/calculators/calorie/) before deciding how much to eat.
+> Estimate your daily calorie needs with our [Calorie Calculator](/weight-loss-without-starving/tools/calorie-calculator/) before deciding how much to eat.
 
 ------------------------------------------------------------------------
 
@@ -294,8 +292,7 @@ Your long-term habits matter far more than individual choices.
 If there is one nutrient that deserves special attention during weight
 loss, it is protein.
 
-[Protein](/blog/how-much-protein-do-you-need-to-lose-weight/) is essential for preserving muscle while losing body fat. It
-also has another important benefit—it helps you stay full for longer.
+[Protein](/weight-loss-without-starving/blog/how-much-protein-to-lose-weight/) is essential for preserving muscle while losing body fat. It also has another important benefit—it helps you stay full for longer.
 
 Many highly processed foods are easy to overeat because they are low in
 protein and fiber. In contrast, protein-rich meals tend to be more
@@ -361,13 +358,12 @@ complicated calculations.
 
 > Read our complete guide:
 
-> **👉 [How Much Protein Do You Need to Lose
-> Weight?](/blog/how-much-protein-do-you-need-to-lose-weight/)**
+> **👉 [How Much Protein Do You Need to Lose Weight?](/weight-loss-without-starving/blog/how-much-protein-to-lose-weight/)**
 
 > 🧮 **Helpful Tool**
 
 > Estimate your daily protein, carbohydrate and fat intake using our
-> [Macro Calculator](/calculators/macro/).
+> [Macro Calculator](/weight-loss-without-starving/tools/macro-calculator/).
 
 ------------------------------------------------------------------------
 
@@ -428,7 +424,7 @@ foods that keep you satisfied.
 
 > Explore our guide:
 
-> **👉 [Best Foods for Weight Loss](/blog/best-foods-for-weight-loss/)**
+> **👉 [Best Foods for Weight Loss](/weight-loss-without-starving/blog/best-foods-for-weight-loss/)**
 
 ------------------------------------------------------------------------
 
@@ -489,7 +485,7 @@ taking the stairs.
 For many people, simply moving more throughout the day can noticeably
 increase daily calorie expenditure.
 
-[Walking](/blog/walking-for-weight-loss/) is one of the best activities... for beginners because it is:
+[Walking](/weight-loss-without-starving/blog/walking-for-weight-loss/) is one of the best activities for beginners because it is:
 
 |  Daily Steps | Activity Level    |
 | -----------: | ----------------- |
@@ -538,7 +534,7 @@ without feeling overwhelming.
 
 > Read our guide:
 
-> **👉 [Walking for Weight Loss](/blog/walking-for-weight-loss/)**
+> **👉 [Walking for Weight Loss](/weight-loss-without-starving/blog/walking-for-weight-loss/)**
 
 ------------------------------------------------------------------------
 
@@ -592,8 +588,7 @@ immediately.
 
 > Read our beginner guide:
 
-> **👉 [Strength Training for Weight
-> Loss](/blog/strength-training-for-weight-loss/)**
+> **👉 [Strength Training for Weight Loss](/weight-loss-without-starving/blog/strength-training-for-weight-loss/)**
 
 ------------------------------------------------------------------------
 
@@ -644,7 +639,7 @@ after it.
 
 > Staying hydrated also supports overall health.
 
-> 👉 [Water Intake Calculator](/calculators/water-intake/)
+> 👉 [Water Intake Calculator](/weight-loss-without-starving/tools/water-intake-calculator/)
 
 ------------------------------------------------------------------------
 
@@ -923,12 +918,12 @@ your life.
 
 If you enjoyed this guide, these articles can help you continue your journey:
 
-- 👉 [How to Lose Belly Fat](/blog/how-to-lose-belly-fat/)
-- 👉 [Best Foods for Weight Loss](/blog/best-foods-for-weight-loss/)
-- 👉 [Walking for Weight Loss](/blog/walking-for-weight-loss/)
-- 👉 [Strength Training for Weight Loss](/blog/strength-training-for-weight-loss/)
-- 👉 [Calorie Deficit Explained](/blog/calorie-deficit-explained/)
-- 👉 [How Much Protein Do You Need to Lose Weight?](/blog/how-much-protein-do-you-need-to-lose-weight/)
+- 👉 [How to Lose Belly Fat](/weight-loss-without-starving/blog/how-to-lose-belly-fat/)
+- 👉 [Best Foods for Weight Loss](/weight-loss-without-starving/blog/best-foods-for-weight-loss/)
+- 👉 [Walking for Weight Loss](/weight-loss-without-starving/blog/walking-for-weight-loss/)
+- 👉 [Strength Training for Weight Loss](/weight-loss-without-starving/blog/strength-training-for-weight-loss/)
+- 👉 [Calorie Deficit Explained](/weight-loss-without-starving/blog/calorie-deficit-explained/)
+- 👉 [How Much Protein Do You Need to Lose Weight?](/weight-loss-without-starving/blog/how-much-protein-to-lose-weight/)
 
 ------------------------------------------------------------------------
 
@@ -944,7 +939,7 @@ Not sure where to continue? Start with the article that best matches your curren
 
 Learn how a calorie deficit works, why it's essential for fat loss, and how to create one without starving yourself.
 
-**👉 [Read the complete guide](/blog/calorie-deficit-explained/)**
+**👉 [Read the complete guide](/weight-loss-without-starving/blog/calorie-deficit-explained/)**
 
 ---
 
@@ -952,7 +947,7 @@ Learn how a calorie deficit works, why it's essential for fat loss, and how to c
 
 Discover filling, nutrient-dense foods that can help control hunger while supporting healthy and sustainable weight loss.
 
-**👉 [Read the article](/blog/best-foods-for-weight-loss/)**
+**👉 [Read the article](/weight-loss-without-starving/blog/best-foods-for-weight-loss/)**
 
 ---
 
@@ -960,7 +955,7 @@ Discover filling, nutrient-dense foods that can help control hunger while suppor
 
 Learn how a simple walking routine can burn calories, improve fitness, and become one of the easiest habits to maintain.
 
-**👉 [Read the beginner guide](/blog/walking-for-weight-loss/)**
+**👉 [Read the beginner guide](/weight-loss-without-starving/blog/walking-for-weight-loss/)**
 
 ---
 
@@ -968,7 +963,7 @@ Learn how a simple walking routine can burn calories, improve fitness, and becom
 
 Find out why building muscle helps support fat loss and learn how to start strength training with beginner-friendly workouts.
 
-**👉 [Read the guide](/blog/strength-training-for-weight-loss/)**
+**👉 [Read the guide](/weight-loss-without-starving/blog/strength-training-for-weight-loss/)**
 
 ---
 
@@ -976,7 +971,7 @@ Find out why building muscle helps support fat loss and learn how to start stren
 
 Calculate how much protein you need each day to stay full, preserve muscle, and support healthy fat loss.
 
-**👉 [Read the full guide](/blog/how-much-protein-do-you-need-to-lose-weight/)**
+**👉 [Read the full guide](/weight-loss-without-starving/blog/how-much-protein-do-you-need-to-lose-weight/)**
 
 ---
 
@@ -984,7 +979,7 @@ Calculate how much protein you need each day to stay full, preserve muscle, and 
 
 Separate myths from facts and learn what really works for reducing abdominal fat over the long term.
 
-**👉 [Read the science-based guide](/blog/how-to-lose-belly-fat/)**
+**👉 [Read the science-based guide](/weight-loss-without-starving/blog/how-to-lose-belly-fat/)**
 
 
 ## Ready to Take the Next Step?
@@ -1023,8 +1018,8 @@ pace.
 
 These free tools can help you put the advice from this guide into practice.
 
--   👉 [BMI Calculator](/calculators/bmi/)
--   👉 [Calorie Calculator](/calculators/calorie/)
--   👉 [TDEE Calculator](/calculators/tdee/)
--   👉 [Macro Calculator](/calculators/macro/)
--   👉 [Water Intake Calculator](/calculators/water-intake/)
+- 👉 [BMI Calculator](/weight-loss-without-starving/tools/bmi-calculator/)
+- 👉 [Calorie Calculator](/weight-loss-without-starving/tools/calorie-calculator/)
+- 👉 [TDEE Calculator](/weight-loss-without-starving/tools/tdee-calculator/)
+- 👉 [Macro Calculator](/weight-loss-without-starving/tools/macro-calculator/)
+- 👉 [Water Intake Calculator](/weight-loss-without-starving/tools/water-intake-calculator/)
