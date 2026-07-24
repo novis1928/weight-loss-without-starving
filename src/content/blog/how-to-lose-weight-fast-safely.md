@@ -71,7 +71,7 @@ Protein is one of the most important nutrients during weight loss. It helps pres
 
 Aim to include lean protein sources such as chicken, fish, eggs, Greek yogurt, beans, or tofu in every meal.
 
-👉 Related article: [How Much Protein Do You Need to Lose Weight?](/weight-loss-without-starving/blog/how-much-protein-do-you-need-to-lose-weight/)
+👉 Related article: [How Much Protein Do You Need to Lose Weight?](/weight-loss-without-starving/blog/how-much-protein-to-lose-weight/)
 
 ---
 

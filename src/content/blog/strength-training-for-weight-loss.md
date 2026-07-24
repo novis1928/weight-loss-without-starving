@@ -801,7 +801,7 @@ The goal is not to eat as little as possible.
 
 The goal is to eat enough to fuel your body while maintaining a moderate calorie deficit.
 
-Use our [calorie calculator](/weight-loss-without-starving/calculators/calorie-calculator/) or [TDEE calculator](/weight-loss-without-starving/calculators/tdee-calculator/) to estimate a realistic starting point.
+Use our [Calorie Calculator](/weight-loss-without-starving/tools/calorie-calculator/) or [TDEE Calculator](/weight-loss-without-starving/tools/tdee-calculator/) to estimate a realistic starting point.
 
 ### Prioritize Protein
 
@@ -820,7 +820,7 @@ Good sources include:
 - lentils,
 - protein powder if needed.
 
-Read our guide to [how much protein you need for weight loss](/weight-loss-without-starving/blog/how-much-protein-do-you-need-to-lose-weight/) or use the [macro calculator](/weight-loss-without-starving/calculators/macro-calculator/).
+Read our guide to [how much protein you need for weight loss](/weight-loss-without-starving/blog/how-much-protein-to-lose-weight/) or use the [macro calculator](/weight-loss-without-starving/tools/macro-calculator/).
 
 ### Stay Hydrated
 
