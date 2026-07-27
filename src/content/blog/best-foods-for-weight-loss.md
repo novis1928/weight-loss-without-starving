@@ -97,6 +97,10 @@ Two meals with similar calorie totals can produce very different levels of hunge
 
 Several factors influence fullness:
 
+![30 Best Foods for Weight Loss](/weight-loss-without-starving/images/best-foods/best-food.png)
+
+*Discover the best foods that help you stay full longer, support fat loss, and make healthy eating easier.*
+
 ### Protein
 
 Protein takes time to digest and tends to produce stronger fullness than a meal dominated by refined carbohydrates. It is also important for maintaining muscle during weight loss.
