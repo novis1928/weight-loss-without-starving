@@ -67,25 +67,27 @@ In this complete guide you'll learn:
 
 ---
 
-# Table of Contents
+## Table of Contents
 
-1. What Is a Calorie Deficit?
-2. Why Does It Cause Weight Loss?
-3. Energy Balance Explained
-4. Understanding BMR and TDEE
-5. How to Calculate Your Calories
-6. Choosing the Right Deficit
-7. Foods That Make a Deficit Easier
-8. Common Beginner Mistakes
-9. Signs Your Deficit Is Too Large
-10. Exercise and Calorie Deficit
-11. Tracking Progress
-12. Weight-Loss Plateaus
-13. Example Meal Plan
-14. Frequently Asked Questions
-15. Free Weight Loss Tools
-16. What to Read Next
-17. Final Thoughts
+1. [What Is a Calorie Deficit?](#what-is-a-calorie-deficit)
+2. [Why Does a Calorie Deficit Cause Weight Loss?](#why-does-a-calorie-deficit-cause-weight-loss)
+3. [Energy Balance Explained](#energy-balance-explained)
+4. [Understanding BMR and TDEE](#understanding-bmr-and-tdee)
+5. [How to Calculate Your Calorie Deficit](#how-to-calculate-your-calorie-deficit)
+6. [How Large Should Your Calorie Deficit Be?](#how-large-should-your-calorie-deficit-be)
+7. [Do You Have to Count Calories?](#do-you-have-to-count-calories)
+8. [Foods That Make a Calorie Deficit Easier](#foods-that-make-a-calorie-deficit-easier)
+9. [Common Calorie Deficit Mistakes](#common-calorie-deficit-mistakes)
+10. [Signs Your Calorie Deficit May Be Too Aggressive](#signs-your-calorie-deficit-may-be-too-aggressive)
+11. [Can Exercise Help Create a Calorie Deficit?](#can-exercise-help-create-a-calorie-deficit)
+12. [How to Track Your Progress](#how-to-track-your-progress)
+13. [What to Do If Weight Loss Stops](#what-to-do-if-weight-loss-stops)
+14. [Example Day in a Moderate Calorie Deficit](#example-day-in-a-moderate-calorie-deficit)
+15. [Frequently Asked Questions](#frequently-asked-questions)
+16. [Free Weight Loss Tools](#free-weight-loss-tools)
+17. [Continue Reading](#continue-reading)
+18. [Ready to Lose Weight Without Starving?](#ready-to-lose-weight-without-starving)
+19. [Final Thoughts](#final-thoughts)
 
 ---
 
