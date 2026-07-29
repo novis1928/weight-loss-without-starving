@@ -26,25 +26,33 @@ const asset = (path: string) =>
 
     <div class="buttons">
 
-      <a
-        class="btn primary"
-        href="https://payhip.com/b/eW3MA"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Buy on Payhip
-      </a>
+  <a
+    class="btn primary"
+    href="https://payhip.com/b/eW3MA"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-ga-event="begin_checkout"
+    data-ga-platform="payhip"
+    data-ga-placement="homepage-hero"
+    data-ga-label="Hero - Buy on Payhip"
+  >
+    Buy on Payhip
+  </a>
 
-      <a
-        class="btn secondary"
-        href="https://novis4.gumroad.com/l/lcuop"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Buy on Gumroad
-      </a>
+  <a
+    class="btn secondary"
+    href="https://novis4.gumroad.com/l/lcuop"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-ga-event="begin_checkout"
+    data-ga-platform="gumroad"
+    data-ga-placement="homepage-hero"
+    data-ga-label="Hero - Buy on Gumroad"
+  >
+    Buy on Gumroad
+  </a>
 
-    </div>
+</div>
 
     <div class="stats">
 

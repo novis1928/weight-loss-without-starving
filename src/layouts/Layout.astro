@@ -170,9 +170,13 @@ const structuredData = {
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
 
-    <meta name="p:domain_verify" content="0ae9b29cc48a065647b79a85339aa587" />
+      <meta charset="UTF-8" />
+
+    <meta
+      name="p:domain_verify"
+      content="0ae9b29cc48a065647b79a85339aa587"
+    />
 
     <meta
       name="viewport"
@@ -181,7 +185,7 @@ const structuredData = {
 
     <meta
       name="application-name"
-      content={siteName} 
+      content={siteName}
     />
 
     <meta
@@ -194,7 +198,7 @@ const structuredData = {
       content="yes"
     />
 
-    <!-- Google Search Console verification -->
+    <!-- Google Search Console -->
 
     <meta
       name="google-site-verification"
@@ -217,14 +221,14 @@ const structuredData = {
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
+      window.gtag = function () {
         window.dataLayer.push(arguments);
-      }
+      };
 
-      gtag("js", new Date());
+      window.gtag("js", new Date());
 
-      gtag("config", "G-P69VD544HB", {
-        anonymize_ip: true,
+      window.gtag("config", "G-P69VD544HB", {
+        send_page_view: true,
       });
     </script>
 
@@ -262,7 +266,7 @@ const structuredData = {
       content="light"
     />
 
-    <!-- Canonical URL -->
+    <!-- Canonical -->
 
     <link
       rel="canonical"
@@ -277,7 +281,7 @@ const structuredData = {
       href={sitemapURL.href}
     />
 
-    <!-- Web App Manifest -->
+    <!-- Manifest -->
 
     <link
       rel="manifest"
@@ -359,7 +363,7 @@ const structuredData = {
       content="en_US"
     />
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
 
     <meta
       name="twitter:card"
@@ -394,11 +398,75 @@ const structuredData = {
     />
   </head>
 
-  <body>
+    <body>
     <Header />
 
     <slot />
 
     <Footer />
+
+    <!-- Google Analytics 4 Conversion Tracking -->
+
+    <script is:inline>
+      document.addEventListener("click", (event) => {
+        const target = event.target;
+
+        if (!(target instanceof Element)) {
+          return;
+        }
+
+        const link = target.closest("a");
+
+        if (!link) {
+          return;
+        }
+
+        const eventName = link.dataset.gaEvent;
+
+        if (!eventName) {
+          return;
+        }
+
+        if (typeof window.gtag !== "function") {
+          return;
+        }
+
+        const platform =
+          link.dataset.gaPlatform ?? "unknown";
+
+        const placement =
+          link.dataset.gaPlacement ?? "unknown";
+
+        const label =
+          link.dataset.gaLabel ??
+          link.textContent?.trim() ??
+          "ebook";
+
+        window.gtag("event", eventName, {
+          currency: "USD",
+          value: 19.99,
+
+          items: [
+            {
+              item_id: "weight-loss-without-starving",
+              item_name: "Weight Loss Without Starving",
+              item_category: "Ebook",
+              price: 19.99,
+              quantity: 1,
+            },
+          ],
+
+          checkout_platform: platform,
+          cta_placement: placement,
+          link_text: label,
+          link_url: link.href,
+
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+        });
+      });
+    </script>
+
   </body>
 </html>
