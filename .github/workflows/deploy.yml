@@ -29,14 +29,26 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build Astro site
         run: npm run build
 
+      - name: Verify sitemap files
+        run: |
+          echo "Files in dist:"
+          find dist -maxdepth 2 -type f | sort
+
+          test -f dist/sitemap-index.xml
+          test -f dist/sitemap-0.xml
+          test -f dist/robots.txt
+
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
