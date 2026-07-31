@@ -4,7 +4,7 @@ category: "Nutrition"
 description: "Learn how dietary fiber can support fullness, healthy digestion, and sustainable weight loss with practical food choices, daily targets, meal ideas, and beginner-friendly tips."
 draft: false
 featured: true
-publishDate: 2026-08-01
+publishDate: 2026-07-31
 readingTime: "30 min read"
 seoDescription: "Discover how fiber supports healthy weight loss, how much fiber you need, the best high-fiber foods, meal ideas, common mistakes, supplements, and a simple seven-day fiber challenge."
 seoTitle: "Fiber for Weight Loss | Complete Science-Based Guide"
@@ -2297,15 +2297,15 @@ Estimate your body-fat percentage using body measurements.
 
 ## Sources and References
 
-1. European Food Safety Authority. *Scientific Opinion on Dietary Reference Values for carbohydrates and dietary fibre.* EFSA Journal.
+1. [European Food Safety Authority — Dietary Reference Values for carbohydrates and dietary fibre](https://www.efsa.europa.eu/en/efsajournal/pub/1462)
 
-2. U.S. Department of Agriculture and U.S. Department of Health and Human Services. *Dietary Guidelines for Americans, 2020–2025.*
+2. [Dietary Guidelines for Americans, 2020–2025](https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf)
 
-3. Clark MJ, Slavin JL. *The effect of fiber on satiety and food intake: a systematic review.* Journal of the American College of Nutrition.
+3. [Clark MJ, Slavin JL — The Effect of Fiber on Satiety and Food Intake](https://pubmed.ncbi.nlm.nih.gov/23885994/)
 
-4. Reynolds A, Mann J, Cummings J, Winter N, Mete E, Te Morenga L. *Carbohydrate quality and human health: a series of systematic reviews and meta-analyses.* The Lancet.
+4. [Reynolds A et al. — Carbohydrate Quality and Human Health](https://pubmed.ncbi.nlm.nih.gov/30638909/)
 
-5. U.S. Department of Agriculture. *FoodData Central.*
+5. [USDA FoodData Central](https://fdc.nal.usda.gov/)
 
 ------------------------------------------------------------------------
 
