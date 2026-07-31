@@ -1,23 +1,20 @@
 ---
-author: George Novák
-category: Weight Loss Basics
-description: A simple beginner-friendly guide to losing weight with
-  realistic habits, balanced meals, and sustainable progress.
+author: "George Novák"
+category: "Weight Loss Basics"
+description: "A simple beginner-friendly guide to losing weight with realistic habits, balanced meals, and sustainable progress."
 draft: false
 featured: true
 publishDate: 2026-07-20
-readingTime: 11 min read
-seoDescription: Learn the fundamentals of healthy weight loss for
-  beginners with practical tips on nutrition, calorie deficit, exercise,
-  sleep, and sustainable habits.
-seoTitle: Healthy Weight Loss for Beginners \| Simple Practical Guide
+readingTime: "11 min read"
+seoDescription: "Learn the fundamentals of healthy weight loss for beginners with practical tips on nutrition, calorie deficit, exercise, sleep, and sustainable habits."
+seoTitle: "Healthy Weight Loss for Beginners | Simple Practical Guide"
 tags:
-- beginner weight loss
-- healthy weight loss
-- sustainable habits
-- nutrition basics
-- calorie deficit
-title: Healthy Weight Loss for Beginners
+  - beginner weight loss
+  - healthy weight loss
+  - sustainable habits
+  - nutrition basics
+  - calorie deficit
+title: "Healthy Weight Loss for Beginners"
 ---
 
 Healthy weight loss is not about finding the perfect diet.
