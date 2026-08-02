@@ -243,8 +243,6 @@ featuredImage: "/images/overnight-oats-for-weight-loss/hero-banner.png"
   }
 </style>
 
-# Overnight Oats for Weight Loss: 15 Healthy Recipes That Keep You Full
-
 ![Overnight Oats for Weight Loss Hero Banner](/weight-loss-without-starving/images/overnight-oats-for-weight-loss/hero-banner.png)
 
 <div class="article-updated">
