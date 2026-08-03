@@ -4,7 +4,7 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
 ---
 
 <section class="tools-preview" aria-labelledby="tools-preview-title">
-  <div class="container">
+  <div class="tools-container">
     <div class="section-heading">
       <span class="eyebrow">FREE WEIGHT LOSS TOOLS</span>
 
@@ -95,10 +95,11 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
       linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   }
 
-  .container {
-    width: min(1120px, calc(100% - 40px));
-    margin: 0 auto;
-  }
+  .tools-container {
+  display: block;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
 
   .section-heading {
     max-width: 760px;
@@ -303,12 +304,12 @@ const baseURL = rawBaseURL.endsWith("/") ? rawBaseURL : `${rawBaseURL}/`;
   }
 
   @media (max-width: 620px) {
-    .container {
-      width: min(100% - 24px, 1120px);
-    }
-
-    .tool-card {
-      padding: 24px;
-    }
+  .tools-container {
+    width: min(100% - 24px, 1120px);
   }
+
+  .tool-card {
+    padding: 24px;
+  }
+}
 </style>
