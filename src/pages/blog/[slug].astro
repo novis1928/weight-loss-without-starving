@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import RelatedArticles from "../../components/RelatedArticles.astro";
+import StarterKitCTA from "../../components/StarterKitCTA.astro";
 
 import { getCollection, render } from "astro:content";
 import { slugify } from "../../utils/slugify";
@@ -342,9 +343,11 @@ const structuredData = {
         </aside>
 
         <article class="article-content">
-          <Content />
+  <Content />
 
-          <div class="article-disclaimer">
+  <StarterKitCTA />
+
+  <div class="article-disclaimer">
             <strong>Important note</strong>
 
             <p>

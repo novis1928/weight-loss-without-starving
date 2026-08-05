@@ -15,51 +15,41 @@ const imageURL =
 >
   <div class="starter-kit-container">
     <div class="starter-kit-copy">
-      <span class="starter-kit-eyebrow">
-        FREE HEALTHY WEIGHT LOSS RESOURCE
-      </span>
+      <div class="starter-kit-topline">
+        <span class="gift-mark" aria-hidden="true">🎁</span>
+
+        <span class="starter-kit-eyebrow">
+          FREE HEALTHY WEIGHT LOSS STARTER KIT
+        </span>
+      </div>
 
       <h2 id="starter-kit-signup-title">
-        Start With the FREE
-        <span>Healthy Weight Loss Starter Kit</span>
+        Everything You Need to Start
+        <span>Losing Weight Without Starving</span>
       </h2>
 
       <p class="starter-kit-description">
-        Enter your email and get a practical 28-page PDF designed to help
-        you start losing weight without extreme diets, complicated rules,
-        or constant hunger.
+        Get a practical 28-page PDF with a simple 7-day meal plan,
+        printable tools, nutrition guides, and realistic strategies you
+        can start using today.
       </p>
 
+      <div class="starter-kit-proof">
+        <div class="proof-stars" aria-label="Five stars">★★★★★</div>
+
+        <p>
+          Practical resources for healthy, sustainable weight loss without
+          extreme diets or complicated rules.
+        </p>
+      </div>
+
       <ul class="starter-kit-benefits">
-        <li>
-          <span aria-hidden="true">✓</span>
-          7-day healthy meal plan
-        </li>
-
-        <li>
-          <span aria-hidden="true">✓</span>
-          Printable grocery list
-        </li>
-
-        <li>
-          <span aria-hidden="true">✓</span>
-          Weekly meal planner
-        </li>
-
-        <li>
-          <span aria-hidden="true">✓</span>
-          Daily habit tracker
-        </li>
-
-        <li>
-          <span aria-hidden="true">✓</span>
-          Healthy portion guide
-        </li>
-
-        <li>
-          <span aria-hidden="true">✓</span>
-          Protein cheat sheet
-        </li>
+        <li><span aria-hidden="true">✓</span>7-day healthy meal plan</li>
+        <li><span aria-hidden="true">✓</span>Printable grocery list</li>
+        <li><span aria-hidden="true">✓</span>Weekly meal planner</li>
+        <li><span aria-hidden="true">✓</span>Daily habit tracker</li>
+        <li><span aria-hidden="true">✓</span>Healthy portion guide</li>
+        <li><span aria-hidden="true">✓</span>Protein cheat sheet</li>
       </ul>
 
       <div
@@ -67,42 +57,40 @@ const imageURL =
         class="starter-mailerlite-form ml-subscribe-form ml-subscribe-form-44518335"
       >
         <div class="starter-form-content row-form">
+          <div class="form-heading">
+            <strong>Where should we send your free Starter Kit?</strong>
+            <span>Enter your best email address below.</span>
+          </div>
+
           <form
             class="signup-form ml-block-form"
             action="https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/subscribe"
             method="post"
             target="_blank"
           >
-            <label for="starter-email">
+            <label for="starter-email-home">
               Email address
             </label>
 
             <input
-              id="starter-email"
+              id="starter-email-home"
               aria-label="Email address"
               aria-required="true"
               name="fields[email]"
               type="email"
               autocomplete="email"
+              inputmode="email"
               placeholder="you@example.com"
               required
             />
 
-            <input
-              type="hidden"
-              name="ml-submit"
-              value="1"
-            />
-
-            <input
-              type="hidden"
-              name="anticsrf"
-              value="true"
-            />
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
 
             <button type="submit" class="primary">
               <span class="button-text">
-                Send Me the FREE Starter Kit →
+                <span aria-hidden="true">↓</span>
+                Download My FREE Starter Kit
               </span>
 
               <span class="button-loading" aria-hidden="true">
@@ -112,7 +100,7 @@ const imageURL =
           </form>
 
           <div class="starter-kit-trust">
-            <span>✓ Free PDF</span>
+            <span>✓ Free 28-page PDF</span>
             <span>✓ Instant access</span>
             <span>✓ No credit card required</span>
           </div>
@@ -128,13 +116,17 @@ const imageURL =
           role="status"
           aria-live="polite"
         >
-          <strong>Check your inbox!</strong>
+          <span class="success-icon" aria-hidden="true">✓</span>
 
-          <p>
-            Please confirm your email to receive your FREE Healthy Weight
-            Loss Starter Kit. Check your Promotions or Spam folder if the
-            confirmation email does not arrive within a few minutes.
-          </p>
+          <div>
+            <strong>Check your inbox!</strong>
+
+            <p>
+              Please confirm your email to receive your FREE Healthy Weight
+              Loss Starter Kit. Check Promotions or Spam if it does not arrive
+              within a few minutes.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -150,13 +142,45 @@ const imageURL =
         />
       </div>
 
-      <div class="starter-kit-shadow"></div>
+      <div class="starter-kit-shadow" aria-hidden="true"></div>
 
       <div class="starter-kit-badge">
         <strong>100% FREE</strong>
         <span>28-page printable PDF</span>
       </div>
+
+      <div class="starter-kit-mini-card mini-card-one">
+        <strong>28</strong>
+        <span>Printable pages</span>
+      </div>
+
+      <div class="starter-kit-mini-card mini-card-two">
+        <strong>7-Day</strong>
+        <span>Meal plan included</span>
+      </div>
     </div>
+  </div>
+
+  <div class="starter-kit-stats">
+    <article>
+      <strong>28</strong>
+      <span>Printable pages</span>
+    </article>
+
+    <article>
+      <strong>7-Day</strong>
+      <span>Healthy meal plan</span>
+    </article>
+
+    <article>
+      <strong>6</strong>
+      <span>Practical tools</span>
+    </article>
+
+    <article>
+      <strong>100%</strong>
+      <span>Free download</span>
+    </article>
   </div>
 </section>
 
@@ -176,7 +200,7 @@ const imageURL =
     }
 
     if (successContent) {
-      successContent.style.display = "block";
+      successContent.style.display = "flex";
     }
   };
 </script>
@@ -190,7 +214,7 @@ const imageURL =
   fetch(
     "https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/takel"
   ).catch(() => {
-    // Tracking must not block the form.
+    // Tracking must never block the signup form.
   });
 </script>
 
@@ -198,65 +222,73 @@ const imageURL =
   .starter-kit-signup {
     position: relative;
     overflow: hidden;
-    padding: 96px 0;
+    padding: 108px 0 0;
     border-top: 1px solid #dcfce7;
     border-bottom: 1px solid #dcfce7;
     background:
       radial-gradient(
-        circle at top right,
-        rgba(34, 197, 94, 0.2),
-        transparent 34%
+        circle at 88% 18%,
+        rgba(34, 197, 94, 0.22),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 8% 82%,
+        rgba(134, 239, 172, 0.24),
+        transparent 24%
       ),
       linear-gradient(
         180deg,
-        #f0fdf4 0%,
+        #effcf3 0%,
+        #f8fff9 52%,
         #ffffff 100%
       );
   }
 
-  .starter-kit-signup::before {
-    content: "";
-    position: absolute;
-    top: -130px;
-    left: -130px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: rgba(34, 197, 94, 0.08);
-  }
-
   .starter-kit-container {
-    position: relative;
-    z-index: 1;
     display: grid;
-    width: min(1160px, calc(100% - 40px));
-    grid-template-columns:
-      minmax(0, 1.05fr)
-      minmax(340px, 0.8fr);
-    gap: 72px;
+    width: min(1220px, calc(100% - 40px));
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.88fr);
+    gap: 82px;
     align-items: center;
     margin: 0 auto;
   }
 
   .starter-kit-copy {
-    max-width: 690px;
+    max-width: 730px;
+  }
+
+  .starter-kit-topline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gift-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 24px rgba(34, 197, 94, 0.12);
+    font-size: 1.2rem;
   }
 
   .starter-kit-eyebrow {
-    display: inline-block;
     color: #15803d;
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.13em;
     text-transform: uppercase;
   }
 
   .starter-kit-copy h2 {
-    margin: 16px 0 0;
+    margin: 20px 0 0;
     color: #0f172a;
-    font-size: clamp(2.7rem, 6vw, 4.8rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+    font-size: clamp(3rem, 6.2vw, 5.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.057em;
   }
 
   .starter-kit-copy h2 span {
@@ -265,17 +297,45 @@ const imageURL =
   }
 
   .starter-kit-description {
-    max-width: 640px;
-    margin: 24px 0 0;
+    max-width: 680px;
+    margin: 26px 0 0;
     color: #475569;
-    font-size: 1.1rem;
-    line-height: 1.75;
+    font-size: 1.14rem;
+    line-height: 1.78;
+  }
+
+  .starter-kit-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    align-items: center;
+    margin-top: 22px;
+    padding: 15px 18px;
+    border: 1px solid #dcfce7;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .proof-stars {
+    color: #f59e0b;
+    font-size: 1.02rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .starter-kit-proof p {
+    flex: 1 1 340px;
+    margin: 0;
+    color: #334155;
+    font-size: 0.94rem;
+    font-weight: 750;
+    line-height: 1.55;
   }
 
   .starter-kit-benefits {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 24px;
+    gap: 13px 26px;
     margin: 28px 0 0;
     padding: 0;
     list-style: none;
@@ -286,23 +346,50 @@ const imageURL =
     gap: 10px;
     align-items: flex-start;
     color: #163b2f;
-    font-weight: 800;
+    font-weight: 850;
     line-height: 1.45;
   }
 
   .starter-kit-benefits li span {
-    color: #22c55e;
+    display: grid;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    place-items: center;
+    margin-top: 1px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 0.78rem;
     font-weight: 900;
   }
 
   .starter-mailerlite-form {
     width: 100%;
-    margin-top: 30px;
-    padding: 22px;
+    margin-top: 34px;
+    padding: 24px;
     border: 1px solid #bbf7d0;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow:
+      0 28px 70px rgba(15, 23, 42, 0.13),
+      0 10px 28px rgba(34, 197, 94, 0.08);
+  }
+
+  .form-heading {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+
+  .form-heading strong {
+    color: #163b2f;
+    font-size: 1.12rem;
+  }
+
+  .form-heading span {
+    color: #64748b;
+    font-size: 0.9rem;
   }
 
   .signup-form {
@@ -323,30 +410,26 @@ const imageURL =
 
   .signup-form input[type="email"] {
     min-width: 0;
-    min-height: 58px;
-    padding: 0 18px;
+    min-height: 62px;
+    padding: 0 19px;
     border: 1px solid #cbd5e1;
-    border-radius: 14px;
+    border-radius: 16px;
     background: #ffffff;
     color: #0f172a;
     font: inherit;
     font-size: 1rem;
   }
 
-  .signup-form input[type="email"]::placeholder {
-    color: #94a3b8;
-  }
-
   .signup-form input[type="email"]:focus {
     border-color: #22c55e;
-    outline: 3px solid rgba(34, 197, 94, 0.18);
+    outline: 4px solid rgba(34, 197, 94, 0.14);
   }
 
   .signup-form button {
-    min-height: 58px;
-    padding: 0 24px;
+    min-height: 62px;
+    padding: 0 28px;
     border: 0;
-    border-radius: 14px;
+    border-radius: 16px;
     background: linear-gradient(
       135deg,
       #22c55e 0%,
@@ -356,26 +439,27 @@ const imageURL =
     font: inherit;
     font-weight: 900;
     cursor: pointer;
-    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.25);
+    box-shadow: 0 15px 32px rgba(34, 197, 94, 0.28);
     transition:
-      background 0.2s ease,
       transform 0.2s ease,
       box-shadow 0.2s ease;
   }
 
+  .button-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+  }
+
   .signup-form button:hover {
-    background: linear-gradient(
-      135deg,
-      #16a34a 0%,
-      #15803d 100%
-    );
-    box-shadow: 0 16px 34px rgba(34, 197, 94, 0.34);
+    box-shadow: 0 20px 42px rgba(34, 197, 94, 0.38);
     transform: translateY(-2px);
   }
 
   .signup-form button:focus-visible {
-    outline: 3px solid rgba(34, 197, 94, 0.35);
-    outline-offset: 3px;
+    outline: 3px solid rgba(34, 197, 94, 0.32);
+    outline-offset: 4px;
   }
 
   .button-loading {
@@ -385,11 +469,11 @@ const imageURL =
   .starter-kit-trust {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
-    margin-top: 15px;
+    gap: 8px 17px;
+    margin-top: 16px;
     color: #166534;
     font-size: 0.86rem;
-    font-weight: 800;
+    font-weight: 850;
   }
 
   .privacy-note {
@@ -399,12 +483,24 @@ const imageURL =
   }
 
   .starter-form-success {
-    margin: 0;
-    padding: 20px;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 21px;
     border: 1px solid #86efac;
-    border-radius: 15px;
+    border-radius: 17px;
     background: #f0fdf4;
-    color: #166534;
+  }
+
+  .success-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    place-items: center;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 900;
   }
 
   .starter-form-success strong {
@@ -414,33 +510,30 @@ const imageURL =
   }
 
   .starter-form-success p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
     color: #166534;
     line-height: 1.65;
   }
 
   .starter-kit-visual {
     position: relative;
-    width: min(100%, 480px);
+    width: min(100%, 560px);
     margin-left: auto;
-    padding: 22px 34px 40px;
-    perspective: 1400px;
+    padding: 36px 46px 58px;
+    perspective: 1500px;
   }
 
   .starter-kit-image-card {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     overflow: hidden;
-    border: 10px solid #ffffff;
-    border-radius: 26px;
+    border: 11px solid #ffffff;
+    border-radius: 30px;
     background: #ffffff;
     box-shadow:
-      0 44px 88px rgba(15, 23, 42, 0.22),
-      0 16px 34px rgba(15, 23, 42, 0.12);
-    transform:
-      rotateY(-6deg)
-      rotateX(2deg)
-      rotateZ(1deg);
+      0 52px 100px rgba(15, 23, 42, 0.25),
+      0 18px 42px rgba(15, 23, 42, 0.14);
+    transform: rotateY(-7deg) rotateX(2deg) rotateZ(1deg);
   }
 
   .starter-kit-image-card img {
@@ -452,42 +545,106 @@ const imageURL =
   .starter-kit-shadow {
     position: absolute;
     z-index: 1;
-    right: 8%;
-    bottom: 18px;
-    left: 14%;
-    height: 38px;
+    right: 7%;
+    bottom: 22px;
+    left: 13%;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(15, 23, 42, 0.2);
-    filter: blur(18px);
+    background: rgba(15, 23, 42, 0.22);
+    filter: blur(20px);
   }
 
   .starter-kit-badge {
     position: absolute;
-    z-index: 3;
-    right: 0;
-    bottom: 56px;
+    z-index: 5;
+    right: 2px;
+    bottom: 72px;
     display: grid;
     gap: 3px;
-    padding: 15px 19px;
+    padding: 17px 21px;
     border: 4px solid #ffffff;
-    border-radius: 18px;
+    border-radius: 20px;
     background: #0f172a;
     color: #ffffff;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.26);
   }
 
   .starter-kit-badge strong {
     color: #86efac;
-    font-size: 0.98rem;
+    font-size: 1rem;
   }
 
   .starter-kit-badge span {
-    font-size: 0.78rem;
+    font-size: 0.79rem;
   }
 
-  @media (max-width: 900px) {
+  .starter-kit-mini-card {
+    position: absolute;
+    z-index: 4;
+    display: grid;
+    gap: 2px;
+    min-width: 126px;
+    padding: 13px 15px;
+    border: 1px solid #dcfce7;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.14);
+  }
+
+  .starter-kit-mini-card strong {
+    color: #16a34a;
+    font-size: 1.25rem;
+  }
+
+  .starter-kit-mini-card span {
+    color: #475569;
+    font-size: 0.74rem;
+    font-weight: 750;
+  }
+
+  .mini-card-one {
+    top: 8px;
+    left: 0;
+  }
+
+  .mini-card-two {
+    top: 36%;
+    right: 4px;
+  }
+
+  .starter-kit-stats {
+    display: grid;
+    width: min(1220px, calc(100% - 40px));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 88px auto 0;
+    padding: 26px 0 30px;
+    border-top: 1px solid rgba(34, 197, 94, 0.16);
+  }
+
+  .starter-kit-stats article {
+    display: grid;
+    gap: 6px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .starter-kit-stats strong {
+    color: #16a34a;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+  }
+
+  .starter-kit-stats span {
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 850;
+  }
+
+  @media (max-width: 1040px) {
     .starter-kit-container {
       grid-template-columns: 1fr;
+      gap: 58px;
     }
 
     .starter-kit-copy {
@@ -495,31 +652,51 @@ const imageURL =
     }
 
     .starter-kit-visual {
-      width: min(100%, 520px);
-      margin: 10px auto 0;
+      width: min(100%, 590px);
+      margin: 0 auto;
     }
   }
 
-  @media (max-width: 620px) {
-    .starter-kit-signup {
-      padding: 64px 0;
-    }
-
-    .starter-kit-container {
-      width: calc(100% - 24px);
-      gap: 44px;
-    }
-
-    .starter-kit-benefits {
-      grid-template-columns: 1fr;
-    }
-
+  @media (max-width: 760px) {
     .signup-form {
       grid-template-columns: 1fr;
     }
 
     .signup-form button {
       width: 100%;
+    }
+
+    .button-text {
+      justify-content: center;
+    }
+
+    .starter-kit-benefits {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .starter-kit-signup {
+      padding: 72px 0 0;
+    }
+
+    .starter-kit-container,
+    .starter-kit-stats {
+      width: calc(100% - 24px);
+    }
+
+    .starter-kit-copy h2 {
+      font-size: clamp(2.55rem, 13vw, 3.7rem);
+    }
+
+    .starter-kit-proof {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .starter-mailerlite-form {
+      padding: 18px;
+      border-radius: 20px;
     }
 
     .starter-kit-trust {
@@ -532,18 +709,35 @@ const imageURL =
     }
 
     .starter-kit-visual {
-      padding: 12px 24px 34px;
+      padding: 30px 20px 44px;
     }
 
     .starter-kit-image-card {
       border-width: 7px;
-      border-radius: 20px;
+      border-radius: 22px;
       transform: none;
     }
 
+    .starter-kit-mini-card {
+      display: none;
+    }
+
     .starter-kit-badge {
-      right: 8px;
-      bottom: 16px;
+      right: 6px;
+      bottom: 22px;
+    }
+
+    .starter-kit-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 54px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .signup-form button,
+    .starter-kit-image-card {
+      transition: none;
+      transform: none;
     }
   }
 </style>
