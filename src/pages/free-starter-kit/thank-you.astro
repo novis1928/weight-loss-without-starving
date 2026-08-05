@@ -1,0 +1,1162 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
+
+const asset = (path: string) =>
+  `${baseURL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const pageTitle =
+  "Your FREE Healthy Weight Loss Starter Kit Is Ready | Weight Loss Without Starving";
+
+const pageDescription =
+  "Download your free Healthy Weight Loss Starter Kit and continue with practical recipes, free calculators, nutrition guides, and the complete Weight Loss Without Starving eBook.";
+
+const pdfUrl = asset(
+  "downloads/free-healthy-weight-loss-starter-kit.pdf"
+);
+
+const ebookUrl = "https://payhip.com/b/eW3MA";
+
+const included = [
+  {
+    icon: "📅",
+    title: "7-Day Meal Plan",
+    text: "A practical week of breakfasts, lunches, dinners, and snacks.",
+  },
+  {
+    icon: "🛒",
+    title: "Healthy Grocery List",
+    text: "A printable checklist organized by useful food categories.",
+  },
+  {
+    icon: "📝",
+    title: "Weekly Meal Planner",
+    text: "Plan your meals, shopping, hydration, and weekly priorities.",
+  },
+  {
+    icon: "✅",
+    title: "Daily Habit Tracker",
+    text: "Track water, protein, vegetables, movement, sleep, and more.",
+  },
+  {
+    icon: "✋",
+    title: "Healthy Portion Guide",
+    text: "Build balanced meals using a simple hand-based method.",
+  },
+  {
+    icon: "💪",
+    title: "Protein Cheat Sheet",
+    text: "Compare common protein foods and make meals more satisfying.",
+  },
+];
+
+const resources = [
+  {
+    title: "High Protein Breakfast Recipes",
+    description:
+      "Start your day with satisfying, protein-rich breakfast ideas designed to help you stay full longer.",
+    href: `${baseURL}blog/high-protein-breakfast-recipes-for-weight-loss/`,
+    icon: "🥣",
+  },
+  {
+    title: "Overnight Oats for Weight Loss",
+    description:
+      "Discover easy make-ahead breakfasts that support meal prep and balanced eating.",
+    href: `${baseURL}blog/overnight-oats-for-weight-loss/`,
+    icon: "🌙",
+  },
+  {
+    title: "Fiber for Weight Loss",
+    description:
+      "Learn how fiber supports fullness, digestion, and sustainable weight-loss habits.",
+    href: `${baseURL}blog/fiber-for-weight-loss/`,
+    icon: "🌾",
+  },
+  {
+    title: "30 Best Foods for Weight Loss",
+    description:
+      "Build filling meals around nutrient-dense foods that are practical and enjoyable.",
+    href: `${baseURL}blog/best-foods-for-weight-loss/`,
+    icon: "🥗",
+  },
+];
+
+const calculators = [
+  {
+    title: "BMI Calculator",
+    description:
+      "Calculate your BMI and understand what the result may mean.",
+    href: `${baseURL}tools/bmi-calculator/`,
+    icon: "📏",
+  },
+  {
+    title: "Calorie Calculator",
+    description:
+      "Estimate your daily calorie needs based on your personal details.",
+    href: `${baseURL}tools/calorie-calculator/`,
+    icon: "🔥",
+  },
+  {
+    title: "Macro Calculator",
+    description:
+      "Estimate practical daily protein, carbohydrate, and fat targets.",
+    href: `${baseURL}tools/macro-calculator/`,
+    icon: "⚖️",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is the Starter Kit really free?",
+    answer:
+      "Yes. The Healthy Weight Loss Starter Kit is completely free to download and use.",
+  },
+  {
+    question: "How many pages does it include?",
+    answer:
+      "The Starter Kit contains 28 printable pages, including meal-planning tools, nutrition guides, and practical worksheets.",
+  },
+  {
+    question: "Can I print the Starter Kit?",
+    answer:
+      "Yes. The PDF is designed for both digital use and home printing.",
+  },
+  {
+    question: "Can I use it on my phone or tablet?",
+    answer:
+      "Yes. You can open the PDF on a phone, tablet, or computer and save it for later.",
+  },
+  {
+    question: "What happens after I download it?",
+    answer:
+      "Start with one page that feels useful today. You can then use the free guides, calculators, and articles linked below whenever you need more support.",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <section class="thank-you-hero">
+      <div class="thank-you-container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">EMAIL CONFIRMED</span>
+
+          <div class="success-badge" aria-hidden="true">✓</div>
+
+          <h1>
+            Your FREE Starter Kit
+            <span>Is Ready to Download</span>
+          </h1>
+
+          <p class="hero-description">
+            Thank you for confirming your email and joining the
+            Weight Loss Without Starving community. Your complete 28-page
+            Starter Kit is ready below.
+          </p>
+
+          <div class="download-panel">
+            <div class="download-details">
+              <span class="download-icon" aria-hidden="true">↓</span>
+
+              <div>
+                <strong>FREE Healthy Weight Loss Starter Kit</strong>
+                <small>28 printable pages · PDF format · Instant access</small>
+              </div>
+            </div>
+
+            <a
+              href={pdfUrl}
+              class="download-button"
+              download="free-healthy-weight-loss-starter-kit.pdf"
+            >
+              Download My FREE Starter Kit →
+            </a>
+
+            <div class="download-trust">
+              <span>✓ Free PDF</span>
+              <span>✓ Instant download</span>
+              <span>✓ No signup required again</span>
+            </div>
+          </div>
+
+          <p class="download-help">
+            If the file opens in your browser instead of downloading, use the
+            download icon in the PDF viewer.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mockup-card">
+            <img
+              src={asset("images/starter-kit/starter-kit-mockup.png")}
+              alt="FREE Healthy Weight Loss Starter Kit preview"
+              width="1600"
+              height="1200"
+            />
+          </div>
+
+          <div class="mockup-shadow"></div>
+
+          <div class="free-badge">
+            <strong>100% FREE</strong>
+            <span>Your PDF is ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="included-section">
+      <div class="thank-you-container">
+        <header class="section-heading">
+          <span class="eyebrow">EVERYTHING YOU NEED TO BEGIN</span>
+
+          <h2>Inside Your FREE Starter Kit</h2>
+
+          <p>
+            Six practical tools designed to make planning, shopping, and
+            healthy eating easier from your very first week.
+          </p>
+        </header>
+
+        <div class="included-grid">
+          {included.map((item) => (
+            <article class="included-card">
+              <span class="included-icon" aria-hidden="true">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="next-steps-section">
+      <div class="thank-you-container">
+        <header class="section-heading">
+          <span class="eyebrow">START SIMPLE</span>
+
+          <h2>What to Do Next</h2>
+
+          <p>
+            You do not need to complete everything at once. Choose one simple
+            starting point and build from there.
+          </p>
+        </header>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span>01</span>
+            <h3>Save the PDF</h3>
+            <p>
+              Download the Starter Kit to your phone or computer so it is easy
+              to find whenever you need it.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span>02</span>
+            <h3>Choose One Page</h3>
+            <p>
+              Start with the meal plan, grocery list, habit tracker, or portion
+              guide—whichever feels most useful today.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <span>03</span>
+            <h3>Repeat One Small Habit</h3>
+            <p>
+              Focus on consistency rather than perfection. The habits you can
+              repeat are the habits that create results.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-section">
+      <div class="thank-you-container">
+        <header class="section-heading">
+          <span class="eyebrow">KEEP LEARNING</span>
+
+          <h2>Popular Free Guides and Recipes</h2>
+
+          <p>
+            Continue with practical articles that help you plan satisfying
+            meals and build healthier habits.
+          </p>
+        </header>
+
+        <div class="resources-grid">
+          {resources.map((resource) => (
+            <article class="resource-card">
+              <span class="resource-icon" aria-hidden="true">
+                {resource.icon}
+              </span>
+
+              <h3>{resource.title}</h3>
+
+              <p>{resource.description}</p>
+
+              <a href={resource.href}>
+                Read the guide →
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="calculators-section">
+      <div class="thank-you-container">
+        <header class="section-heading">
+          <span class="eyebrow">FREE TOOLS</span>
+
+          <h2>Use the Calculators</h2>
+
+          <p>
+            Get practical estimates you can use as a starting point for your
+            own healthy weight-loss plan.
+          </p>
+        </header>
+
+        <div class="calculators-grid">
+          {calculators.map((calculator) => (
+            <article class="calculator-card">
+              <span class="calculator-icon" aria-hidden="true">
+                {calculator.icon}
+              </span>
+
+              <div>
+                <h3>{calculator.title}</h3>
+                <p>{calculator.description}</p>
+              </div>
+
+              <a href={calculator.href}>
+                Open calculator →
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="ebook-section">
+      <div class="thank-you-container ebook-grid">
+        <div class="ebook-copy">
+          <span class="eyebrow light">WANT MORE SUPPORT?</span>
+
+          <h2>The FREE Starter Kit Is Just the Beginning</h2>
+
+          <p>
+            The complete Weight Loss Without Starving eBook expands on these
+            fundamentals with practical strategies, planning guidance,
+            recipes, and tools designed to help you build a sustainable
+            lifestyle.
+          </p>
+
+          <ul>
+            <li>✓ Practical weight-loss strategies</li>
+            <li>✓ Simple meal-planning guidance</li>
+            <li>✓ Sustainable habits without extreme restriction</li>
+            <li>✓ Tools you can use again and again</li>
+          </ul>
+
+          <a
+            href={ebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ebook-button"
+          >
+            Get the Complete eBook →
+          </a>
+        </div>
+
+        <div class="ebook-visual">
+          <img
+            src={asset("images/starter-kit/cta-banner.png")}
+            alt="Weight Loss Without Starving complete eBook"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="thank-you-container">
+        <header class="section-heading">
+          <span class="eyebrow">COMMON QUESTIONS</span>
+
+          <h2>Starter Kit FAQ</h2>
+
+          <p>
+            Quick answers about your free download.
+          </p>
+        </header>
+
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section">
+      <div class="thank-you-container social-inner">
+        <div>
+          <span class="eyebrow">STAY CONNECTED</span>
+
+          <h2>More Practical Ideas Every Week</h2>
+
+          <p>
+            Follow Weight Loss Without Starving for new recipes, visual guides,
+            and practical motivation.
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/wlwsguide?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram →
+          </a>
+
+          <a
+            href="https://cz.pinterest.com/wlwsguide/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pinterest →
+          </a>
+
+          <a href={`${baseURL}blog/`}>
+            Blog →
+          </a>
+
+          <a href={baseURL}>
+            Visit the Website →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-download-section">
+      <div class="thank-you-container final-download-inner">
+        <div>
+          <span class="eyebrow light">READY TO START?</span>
+
+          <h2>Download Your FREE Starter Kit Now</h2>
+
+          <p>
+            Save the PDF, choose one page, and take one practical step today.
+            Progress grows from the habits you can repeat.
+          </p>
+        </div>
+
+        <a
+          href={pdfUrl}
+          download="free-healthy-weight-loss-starter-kit.pdf"
+        >
+          Download the PDF →
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .thank-you-container {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .thank-you-hero {
+    padding: 92px 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(34, 197, 94, 0.2),
+        transparent 34%
+      ),
+      linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.75fr);
+    gap: 72px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: #15803d;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow.light {
+    color: #86efac;
+  }
+
+  .success-badge {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    margin-top: 20px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #ffffff;
+    font-size: 1.65rem;
+    font-weight: 900;
+    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.25);
+  }
+
+  .hero-copy h1 {
+    max-width: 760px;
+    margin: 18px 0 0;
+    color: #0f172a;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.97;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-copy h1 span {
+    display: block;
+    color: #16a34a;
+  }
+
+  .hero-description {
+    max-width: 690px;
+    margin: 26px 0 0;
+    color: #475569;
+    font-size: 1.16rem;
+    line-height: 1.75;
+  }
+
+  .download-panel {
+    max-width: 700px;
+    margin-top: 32px;
+    padding: 24px;
+    border: 1px solid #bbf7d0;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 22px 56px rgba(15, 23, 42, 0.12);
+  }
+
+  .download-details {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .download-icon {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    place-items: center;
+    border-radius: 14px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .download-details strong,
+  .download-details small {
+    display: block;
+  }
+
+  .download-details strong {
+    color: #163b2f;
+    font-size: 1.08rem;
+  }
+
+  .download-details small {
+    margin-top: 4px;
+    color: #64748b;
+  }
+
+  .download-button,
+  .ebook-button,
+  .final-download-section a {
+    display: inline-flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    border-radius: 16px;
+    background: #22c55e;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 16px 34px rgba(34, 197, 94, 0.26);
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+ .download-button {
+  width: fit-content;
+  margin: 22px auto 0;
+  padding: 0 42px;
+}
+
+  .download-button:hover,
+.ebook-button:hover,
+.final-download-section a:hover {
+
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+      135deg,
+      #16a34a,
+      #15803d
+  );
+
+  box-shadow:
+      0 18px 40px rgba(34,197,94,.35);
+}
+
+.download-button::before {
+  content: "⬇";
+  font-size: 1.15rem;
+}
+
+  .download-button:focus-visible,
+  .ebook-button:focus-visible,
+  .final-download-section a:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 4px;
+  }
+
+  .download-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 16px;
+    color: #166534;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .download-help {
+    margin: 15px 0 0;
+    color: #94a3b8;
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .hero-visual {
+    position: relative;
+    width: min(100%, 460px);
+    margin-left: auto;
+    padding: 24px 34px 40px;
+    perspective: 1400px;
+  }
+
+  .mockup-card {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    aspect-ratio: 2 / 3;
+    border: 10px solid #ffffff;
+    border-radius: 24px;
+    background: #ffffff;
+    transform: rotateY(-7deg) rotateX(2deg) rotateZ(1deg);
+    box-shadow:
+      0 44px 86px rgba(15, 23, 42, 0.24),
+      0 14px 30px rgba(15, 23, 42, 0.14);
+  }
+
+  .mockup-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mockup-shadow {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    bottom: 18px;
+    left: 14%;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.2);
+    filter: blur(18px);
+  }
+
+  .free-badge {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 64px;
+    display: grid;
+    gap: 3px;
+    padding: 15px 19px;
+    border: 4px solid #ffffff;
+    border-radius: 18px;
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+  }
+
+  .free-badge strong {
+    color: #86efac;
+  }
+
+  .free-badge span {
+    font-size: 0.78rem;
+  }
+
+  .included-section,
+  .next-steps-section,
+  .resources-section,
+  .calculators-section,
+  .faq-section {
+    padding: 96px 0;
+  }
+
+  .included-section,
+  .resources-section,
+  .faq-section {
+    background: #ffffff;
+  }
+
+  .next-steps-section,
+  .calculators-section {
+    background: #f8fafc;
+  }
+
+  .section-heading {
+    max-width: 780px;
+    margin: 0 auto 46px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .ebook-copy h2,
+  .social-inner h2,
+  .final-download-inner h2 {
+    margin: 12px 0 0;
+    color: #0f172a;
+    font-size: clamp(2.25rem, 5vw, 3.7rem);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p,
+  .ebook-copy p,
+  .social-inner p,
+  .final-download-inner p {
+    margin: 18px 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .included-grid,
+  .steps-grid,
+  .resources-grid {
+    display: grid;
+    gap: 22px;
+  }
+
+  .included-grid,
+  .steps-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .resources-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .included-card,
+  .step-card,
+  .resource-card {
+    padding: 28px;
+    border: 1px solid #dcfce7;
+    border-radius: 20px;
+    background: #f8fdf9;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .included-card:hover,
+  .step-card:hover,
+  .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px rgba(15, 23, 42, 0.09);
+  }
+
+  .included-icon,
+  .resource-icon,
+  .calculator-icon {
+    font-size: 2rem;
+  }
+
+  .step-card > span {
+    color: #22c55e;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .included-card h3,
+  .step-card h3,
+  .resource-card h3,
+  .calculator-card h3 {
+    margin: 16px 0 0;
+    color: #163b2f;
+    font-size: 1.25rem;
+  }
+
+  .included-card p,
+  .step-card p,
+  .resource-card p,
+  .calculator-card p {
+    margin: 10px 0 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .resource-card {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    background: #ffffff;
+  }
+
+  .resource-card a {
+    margin-top: auto;
+    padding-top: 22px;
+    color: #166534;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .resource-card a:hover,
+  .calculator-card a:hover {
+    color: #15803d;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .calculator-card {
+    display: flex;
+    min-height: 240px;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid #dcfce7;
+    border-radius: 20px;
+    background: #ffffff;
+  }
+
+  .calculator-card h3 {
+    margin-top: 16px;
+  }
+
+  .calculator-card a {
+    margin-top: auto;
+    padding-top: 22px;
+    color: #166534;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .ebook-section {
+    padding: 96px 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(34, 197, 94, 0.16),
+        transparent 32%
+      ),
+      #081b11;
+  }
+
+  .ebook-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+    gap: 70px;
+    align-items: center;
+  }
+
+  .ebook-copy h2 {
+    color: #ffffff;
+  }
+
+  .ebook-copy p {
+    color: #b8c8bf;
+  }
+
+  .ebook-copy ul {
+    display: grid;
+    gap: 11px;
+    margin: 26px 0 0;
+    padding: 0;
+    color: #dcfce7;
+    font-weight: 800;
+    list-style: none;
+  }
+
+  .ebook-button {
+    margin-top: 30px;
+  }
+
+  .ebook-visual {
+    overflow: hidden;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 34px 80px rgba(0, 0, 0, 0.3);
+  }
+
+  .ebook-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid #dcfce7;
+    border-radius: 16px;
+    background: #f8fdf9;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    position: relative;
+    padding: 20px 52px 20px 22px;
+    color: #163b2f;
+    font-size: 1.05rem;
+    font-weight: 900;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 22px;
+    color: #16a34a;
+    font-size: 1.45rem;
+    transform: translateY(-50%);
+  }
+
+  .faq-item[open] summary::after {
+    content: "–";
+  }
+
+  .faq-item p {
+    margin: 0;
+    padding: 0 22px 22px;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .social-section {
+    padding: 72px 0;
+    background: #ffffff;
+  }
+
+  .social-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 42px;
+    align-items: center;
+  }
+
+  .social-inner > div:first-child {
+    max-width: 700px;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    padding: 0 18px;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    background: #f0fdf4;
+    color: #166534;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .social-links a:hover {
+    border-color: #22c55e;
+    background: #dcfce7;
+  }
+
+  .final-download-section {
+    padding: 72px 0;
+    background: #081b11;
+  }
+
+  .final-download-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 42px;
+    align-items: center;
+  }
+
+  .final-download-inner > div {
+    max-width: 760px;
+  }
+
+  .final-download-inner h2 {
+    color: #ffffff;
+  }
+
+  .final-download-inner p {
+    color: #b8c8bf;
+  }
+
+  .final-download-section a {
+    min-width: 230px;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 1000px) {
+    .resources-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .ebook-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      width: min(100%, 520px);
+      margin: 10px auto 0;
+    }
+
+    .included-grid,
+    .steps-grid,
+    .calculators-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .social-inner,
+    .final-download-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .social-links {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .thank-you-container {
+      width: min(100% - 24px, 1160px);
+    }
+
+    .thank-you-hero,
+    .included-section,
+    .next-steps-section,
+    .resources-section,
+    .calculators-section,
+    .ebook-section,
+    .faq-section {
+      padding: 64px 0;
+    }
+
+    .included-grid,
+    .steps-grid,
+    .resources-grid,
+    .calculators-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .download-panel {
+      padding: 18px;
+    }
+
+    .download-details {
+      align-items: flex-start;
+    }
+
+    .download-trust {
+      flex-direction: column;
+    }
+
+    .hero-visual {
+      padding: 14px 24px 34px;
+    }
+
+    .mockup-card {
+      border-width: 7px;
+      border-radius: 18px;
+      transform: none;
+    }
+
+    .free-badge {
+      right: 8px;
+      bottom: 18px;
+    }
+
+    .ebook-button,
+    .final-download-section a {
+      width: 100%;
+      text-align: center;
+    }
+
+    .social-links {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .social-links a {
+      justify-content: center;
+    }
+  }
+</style>
