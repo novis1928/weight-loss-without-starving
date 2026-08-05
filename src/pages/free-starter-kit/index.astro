@@ -1,0 +1,857 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StarterKitSignup from "../../components/StarterKitSignup.astro";
+
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
+
+const asset = (path: string) =>
+  `${baseURL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const pageTitle =
+  "FREE Healthy Weight Loss Starter Kit | Weight Loss Without Starving";
+
+const pageDescription =
+  "Download a free 28-page Healthy Weight Loss Starter Kit with a 7-day meal plan, grocery list, meal planner, habit tracker, portion guide, and protein cheat sheet.";
+
+const previews = [
+  {
+    src: "images/starter-kit/meal-plan-overview-infographic.png",
+    title: "7-Day Meal Plan",
+    alt: "Preview of the 7-day healthy weight loss meal plan",
+  },
+  {
+    src: "images/starter-kit/healthy-grocery-list-infographic.png",
+    title: "Healthy Grocery List",
+    alt: "Preview of the healthy grocery list",
+  },
+  {
+    src: "images/starter-kit/weekly-meal-planner-infographic.png",
+    title: "Weekly Meal Planner",
+    alt: "Preview of the weekly meal planner",
+  },
+  {
+    src: "images/starter-kit/daily-habit-tracker-infographic.png",
+    title: "Daily Habit Tracker",
+    alt: "Preview of the daily habit tracker",
+  },
+  {
+    src: "images/starter-kit/healthy-plate-infographic.png",
+    title: "Healthy Plate Guide",
+    alt: "Preview of the healthy plate guide",
+  },
+  {
+    src: "images/starter-kit/protein-cheat-sheet-infographic.png",
+    title: "Protein Cheat Sheet",
+    alt: "Preview of the protein cheat sheet",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <section class="starter-hero">
+      <div class="starter-container starter-hero-grid">
+        <div class="starter-hero-copy">
+          <span class="eyebrow">FREE HEALTHY WEIGHT LOSS RESOURCE</span>
+
+          <h1>
+            Start Losing Weight
+            <span>Without Starving</span>
+          </h1>
+
+          <p class="hero-description">
+            Get the FREE Healthy Weight Loss Starter Kit with a practical
+            7-day meal plan, grocery list, printable planners, habit tracker,
+            healthy portion guide, and protein cheat sheet.
+          </p>
+
+          <ul class="hero-benefits">
+            <li>✓ Simple 7-day healthy meal plan</li>
+            <li>✓ Printable grocery list and meal planner</li>
+            <li>✓ Daily habit tracker</li>
+            <li>✓ Healthy portion guide</li>
+            <li>✓ Protein cheat sheet</li>
+          </ul>
+
+          <div class="hero-proof">
+            <div class="proof-stars" aria-label="Five stars">★★★★★</div>
+
+            <p>
+              Practical resources for people who want sustainable weight loss.
+            </p>
+
+            <div class="proof-points">
+              <span>✓ Free download</span>
+              <span>✓ Instant access</span>
+              <span>✓ No credit card required</span>
+            </div>
+          </div>
+
+          <div class="signup-card" id="download">
+            <span class="signup-label">GET YOUR FREE COPY</span>
+
+            <h2>Where should we send your Starter Kit?</h2>
+
+            <p>
+              Enter your email below and we'll send the free PDF directly to
+              your inbox.
+            </p>
+
+            <StarterKitSignup />
+
+            <small>No spam. Unsubscribe anytime.</small>
+          </div>
+        </div>
+
+        <div class="starter-hero-visual">
+          <div class="starter-kit-mockup">
+            <img
+              src={asset("images/starter-kit/starter-kit-mockup.png")}
+              alt="FREE Healthy Weight Loss Starter Kit"
+              width="1600"
+              height="1200"
+            />
+          </div>
+
+          <div class="mockup-shadow"></div>
+
+          <div class="free-badge">
+            <strong>100% FREE</strong>
+            <span>Instant PDF guide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" aria-label="Starter Kit highlights">
+      <div class="starter-container">
+        <div class="trust-heading">
+          <div class="proof-stars" aria-hidden="true">★★★★★</div>
+
+          <h2>Everything you need to begin building healthier habits</h2>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card">
+            <strong>28</strong>
+            <span>Printable pages</span>
+          </article>
+
+          <article class="trust-card">
+            <strong>7-Day</strong>
+            <span>Healthy meal plan</span>
+          </article>
+
+          <article class="trust-card">
+            <strong>6</strong>
+            <span>Practical tools</span>
+          </article>
+
+          <article class="trust-card">
+            <strong>100%</strong>
+            <span>Free download</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="included-section">
+      <div class="starter-container">
+        <header class="section-heading">
+          <span class="eyebrow">EVERYTHING YOU NEED TO BEGIN</span>
+
+          <h2>What's Inside the Starter Kit?</h2>
+
+          <p>
+            Practical resources designed to make healthy eating and
+            sustainable weight loss easier from your very first week.
+          </p>
+        </header>
+
+        <div class="included-grid">
+          <article class="included-card">
+            <span class="card-icon">📅</span>
+            <h3>7-Day Meal Plan</h3>
+            <p>
+              A full week of balanced breakfasts, lunches, dinners, and snacks.
+            </p>
+          </article>
+
+          <article class="included-card">
+            <span class="card-icon">🛒</span>
+            <h3>Healthy Grocery List</h3>
+            <p>
+              A practical shopping checklist organized by food category.
+            </p>
+          </article>
+
+          <article class="included-card">
+            <span class="card-icon">📝</span>
+            <h3>Weekly Meal Planner</h3>
+            <p>
+              Plan meals ahead and make healthier choices throughout the week.
+            </p>
+          </article>
+
+          <article class="included-card">
+            <span class="card-icon">✅</span>
+            <h3>Daily Habit Tracker</h3>
+            <p>
+              Track water, protein, vegetables, activity, sleep, and other
+              habits.
+            </p>
+          </article>
+
+          <article class="included-card">
+            <span class="card-icon">✋</span>
+            <h3>Healthy Portion Guide</h3>
+            <p>
+              Learn a simple hand-based method without weighing every meal.
+            </p>
+          </article>
+
+          <article class="included-card">
+            <span class="card-icon">💪</span>
+            <h3>Protein Cheat Sheet</h3>
+            <p>
+              Compare common protein foods and build more satisfying meals.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <div class="starter-container">
+        <header class="section-heading preview-heading">
+          <span class="eyebrow">SEE WHAT'S INSIDE</span>
+
+          <h2>Preview the Starter Kit</h2>
+
+          <p>
+            Explore six of the practical guides and printable worksheets
+            included in your free 28-page Starter Kit. Click any preview to
+            open the full-size image.
+          </p>
+        </header>
+
+        <div class="preview-gallery">
+          {previews.map((preview) => (
+            <figure class="preview-card">
+              <a
+                href={asset(preview.src)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="preview-card-link"
+                aria-label={`Open a larger preview of ${preview.title}`}
+              >
+                <img
+                  src={asset(preview.src)}
+                  alt={preview.alt}
+                  loading="lazy"
+                />
+
+                <span class="preview-enlarge" aria-hidden="true">
+                  Click to enlarge
+                </span>
+              </a>
+
+              <figcaption>{preview.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div class="preview-action">
+          <p>
+            Simple, practical, and designed to help you take action from day
+            one.
+          </p>
+
+          <a href="#download" class="primary-link">
+            Get the Free Starter Kit →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="starter-container final-cta-inner">
+        <div>
+          <span class="eyebrow light">START TODAY</span>
+
+          <h2>Your healthier week can begin right now</h2>
+
+          <p>
+            Download your FREE Starter Kit today and start building healthier
+            habits with practical meal plans, printable worksheets, and
+            nutrition guides.
+          </p>
+        </div>
+
+        <a href="#download">Download It Free →</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .starter-container {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .starter-hero {
+    padding: 88px 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(34, 197, 94, 0.18),
+        transparent 32%
+      ),
+      linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  }
+
+  .starter-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+    gap: 72px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    color: #15803d;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .starter-hero h1 {
+    max-width: 700px;
+    margin: 14px 0 0;
+    color: #0f172a;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .starter-hero h1 span {
+    display: block;
+    color: #16a34a;
+  }
+
+  .hero-description {
+    max-width: 680px;
+    margin: 26px 0 0;
+    color: #475569;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  .hero-benefits {
+    display: grid;
+    gap: 12px;
+    margin: 28px 0 0;
+    padding: 0;
+    color: #166534;
+    font-weight: 800;
+    list-style: none;
+  }
+
+  .hero-proof {
+    max-width: 680px;
+    margin-top: 24px;
+    padding: 18px 20px;
+    border: 1px solid #dcfce7;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .proof-stars {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-proof p {
+    margin: 8px 0 0;
+    color: #334155;
+    font-weight: 800;
+  }
+
+  .proof-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 12px;
+    color: #166534;
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .signup-card {
+    max-width: 680px;
+    margin-top: 36px;
+    padding: 28px;
+    border: 1px solid #bbf7d0;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+  }
+
+  .signup-label {
+    color: #15803d;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+  }
+
+  .signup-card h2 {
+    margin: 10px 0 0;
+    color: #0f172a;
+    font-size: 1.65rem;
+  }
+
+  .signup-card p {
+    margin: 10px 0 0;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .signup-card small {
+    display: block;
+    margin-top: 13px;
+    color: #94a3b8;
+  }
+
+  .starter-hero-visual {
+    position: relative;
+    width: min(100%, 430px);
+    margin-left: auto;
+    padding: 24px 34px 38px;
+    perspective: 1400px;
+  }
+
+  .starter-kit-mockup {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    aspect-ratio: 2 / 3;
+    border: 10px solid #ffffff;
+    border-radius: 22px;
+    background: #ffffff;
+    transform: rotateY(-8deg) rotateX(2deg) rotateZ(1deg);
+    transform-origin: center;
+    box-shadow:
+      0 42px 80px rgba(15, 23, 42, 0.24),
+      0 12px 28px rgba(15, 23, 42, 0.14);
+  }
+
+  .starter-kit-mockup::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.24),
+        transparent 34%,
+        transparent 72%,
+        rgba(15, 23, 42, 0.08)
+      );
+  }
+
+  .starter-kit-mockup img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mockup-shadow {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    bottom: 18px;
+    left: 14%;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.2);
+    filter: blur(18px);
+  }
+
+  .free-badge {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 62px;
+    display: grid;
+    gap: 3px;
+    padding: 16px 20px;
+    border: 4px solid #ffffff;
+    border-radius: 18px;
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+  }
+
+  .free-badge strong {
+    color: #86efac;
+    font-size: 1rem;
+  }
+
+  .free-badge span {
+    font-size: 0.8rem;
+  }
+
+  .trust-section {
+    padding: 44px 0;
+    border-top: 1px solid #dcfce7;
+    border-bottom: 1px solid #dcfce7;
+    background: #ffffff;
+  }
+
+  .trust-heading {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .trust-heading h2 {
+    margin: 8px 0 0;
+    color: #163b2f;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .trust-card {
+    display: grid;
+    gap: 6px;
+    min-height: 132px;
+    align-content: center;
+    padding: 22px;
+    border: 1px solid #dcfce7;
+    border-radius: 18px;
+    background: #f8fdf9;
+    text-align: center;
+  }
+
+  .trust-card strong {
+    color: #16a34a;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+  }
+
+  .trust-card span {
+    color: #334155;
+    font-weight: 800;
+  }
+
+  .included-section {
+    padding: 96px 0;
+    background: #ffffff;
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin: 0 auto 46px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .final-cta h2 {
+    margin: 12px 0 0;
+    color: #0f172a;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .section-heading p {
+    margin: 18px 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .included-card {
+    padding: 28px;
+    border: 1px solid #dcfce7;
+    border-radius: 20px;
+    background: #f8fdf9;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .included-card h3 {
+    margin: 18px 0 0;
+    color: #163b2f;
+    font-size: 1.25rem;
+  }
+
+  .included-card p {
+    margin: 10px 0 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .preview-section {
+    padding: 96px 0;
+    background: #f8fafc;
+  }
+
+  .preview-heading {
+    margin-bottom: 42px;
+  }
+
+  .preview-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .preview-card {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #dcfce7;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .preview-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 65px rgba(15, 23, 42, 0.16);
+  }
+
+  .preview-card-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .preview-card-link:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.5);
+    outline-offset: -3px;
+  }
+
+  .preview-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    padding: 12px;
+    background: #ffffff;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .preview-card-link:hover img,
+  .preview-card-link:focus-visible img {
+    transform: scale(1.025);
+  }
+
+  .preview-enlarge {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffffff;
+    font-size: 0.74rem;
+    font-weight: 800;
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .preview-card-link:hover .preview-enlarge,
+  .preview-card-link:focus-visible .preview-enlarge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .preview-card figcaption {
+    padding: 16px 18px;
+    border-top: 1px solid #dcfce7;
+    background: #f8fdf9;
+    color: #163b2f;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .preview-action {
+    max-width: 720px;
+    margin: 42px auto 0;
+    text-align: center;
+  }
+
+  .preview-action p {
+    margin: 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .primary-link {
+    display: inline-flex;
+    margin-top: 30px;
+    padding: 16px 22px;
+    border-radius: 14px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .primary-link:hover {
+    background: #16a34a;
+  }
+
+  .final-cta {
+    padding: 72px 0;
+    background: #081b11;
+  }
+
+  .final-cta-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .eyebrow.light {
+    color: #86efac;
+  }
+
+  .final-cta h2 {
+    max-width: 720px;
+    color: #ffffff;
+  }
+
+  .final-cta p {
+    max-width: 760px;
+    margin: 16px 0 0;
+    color: #b8c8bf;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .final-cta a {
+    display: inline-flex;
+    min-width: 210px;
+    min-height: 56px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    border-radius: 14px;
+    background: #22c55e;
+    color: #ffffff;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .final-cta a:hover {
+    background: #16a34a;
+  }
+
+  @media (max-width: 900px) {
+    .starter-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .starter-hero-visual {
+      width: min(100%, 530px);
+      margin: 10px auto 0;
+    }
+
+    .included-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .preview-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .final-cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .starter-container {
+      width: min(100% - 24px, 1160px);
+    }
+
+    .starter-hero,
+    .included-section,
+    .preview-section {
+      padding: 64px 0;
+    }
+
+    .trust-section {
+      padding: 36px 0;
+    }
+
+    .trust-grid,
+    .included-grid,
+    .preview-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .free-badge {
+      right: 12px;
+      bottom: 20px;
+    }
+
+    .starter-hero-visual {
+      padding: 16px 24px 32px;
+    }
+
+    .starter-kit-mockup {
+      transform: none;
+      border-width: 7px;
+      border-radius: 18px;
+    }
+
+    .preview-card img {
+      aspect-ratio: auto;
+    }
+
+    .preview-enlarge {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

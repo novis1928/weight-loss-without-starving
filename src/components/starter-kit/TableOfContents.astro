@@ -1,0 +1,16 @@
+---
+import PdfPage from "./PdfPage.astro";
+const items = [
+ ["01","Welcome","#welcome"],["02","Healthy Weight Loss Roadmap","#roadmap"],
+ ["03","7-Day Meal Plan","#meal-plan"],["04","Healthy Grocery List","#grocery-list"],
+ ["05","Weekly Meal Planner","#weekly-planner"],["06","Daily Habit Tracker","#habit-tracker"],
+ ["07","Healthy Portion Guide","#portion-guide"],["08","Protein Cheat Sheet","#protein-guide"],
+ ["09","Bonus Resources","#bonus-resources"],["10","Continue Your Journey","#continue-journey"],
+ ["11","Thank You","#thank-you"],
+];
+---
+<PdfPage id="table-of-contents" label="Starter Kit" title="Table of Contents">
+  <nav class="toc" aria-label="Table of contents">
+    {items.map(([n,l,h]) => <a href={h}><span>{n}</span><strong>{l}</strong></a>)}
+  </nav>
+</PdfPage>

@@ -1,0 +1,165 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+---
+
+<PdfPage
+  id="protein-guide"
+  label="Stay Full Longer"
+  title="Protein Cheat Sheet"
+  class="image-page"
+>
+  <img
+    src={asset("images/starter-kit/protein-cheat-sheet-infographic.png")}
+    alt="Protein Cheat Sheet"
+    class="full-page-infographic"
+  />
+</PdfPage>
+
+<PdfPage
+  label="Stay Full Longer"
+  title="High Protein Reference Guide"
+>
+
+  <p>
+    Protein helps preserve muscle mass during weight loss, keeps you feeling
+    full for longer, and supports recovery after exercise. Use this quick
+    reference whenever you plan your meals.
+  </p>
+
+  <table class="protein-table">
+
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Protein</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Chicken breast (100 g)</td>
+        <td>31 g</td>
+      </tr>
+
+      <tr>
+        <td>Turkey breast (100 g)</td>
+        <td>29 g</td>
+      </tr>
+
+      <tr>
+        <td>Lean beef (100 g)</td>
+        <td>26 g</td>
+      </tr>
+
+      <tr>
+        <td>Salmon (100 g)</td>
+        <td>25 g</td>
+      </tr>
+
+      <tr>
+        <td>Tuna (100 g)</td>
+        <td>24 g</td>
+      </tr>
+
+      <tr>
+        <td>Cottage cheese (100 g)</td>
+        <td>12 g</td>
+      </tr>
+
+      <tr>
+        <td>Greek yogurt (100 g)</td>
+        <td>10 g</td>
+      </tr>
+
+      <tr>
+        <td>Egg (1 large)</td>
+        <td>6 g</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="resource-grid">
+
+    <article>
+
+      <h3>Daily Protein Target</h3>
+
+      <p><strong>Women</strong><br />1.2–1.6 g per kg of body weight</p>
+
+      <p><strong>Men</strong><br />1.2–1.8 g per kg of body weight</p>
+
+    </article>
+
+    <article>
+
+      <h3>Easy Ways to Eat More Protein</h3>
+
+      <ul>
+        <li>Include protein at every meal.</li>
+        <li>Choose Greek yogurt for snacks.</li>
+        <li>Prepare chicken in advance.</li>
+        <li>Add cottage cheese to breakfasts.</li>
+        <li>Keep boiled eggs ready in the fridge.</li>
+        <li>Use beans and lentils regularly.</li>
+      </ul>
+
+    </article>
+
+  </div>
+
+ <div class="tip-box">
+
+  <h3>How to Increase Protein Intake</h3>
+
+  <ul>
+
+    <li>✔ Include a source of protein with every main meal.</li>
+
+    <li>✔ Choose Greek yogurt or cottage cheese as a snack.</li>
+
+    <li>✔ Prepare chicken, turkey or lean beef in advance.</li>
+
+    <li>✔ Keep boiled eggs in the refrigerator for quick meals.</li>
+
+    <li>✔ Add beans or lentils to soups, salads and pasta dishes.</li>
+
+    <li>✔ Aim for approximately 25–35 g of protein at each main meal.</li>
+
+  </ul>
+
+</div>
+
+<blockquote>
+
+Small increases in daily protein intake can help improve satiety,
+preserve muscle during weight loss, and make healthy eating easier to
+maintain over time.
+
+</blockquote>
+
+<div class="highlight-box">
+
+  <h3>High Protein Snack Ideas</h3>
+
+  <ul>
+    <li>Greek yogurt + berries</li>
+    <li>Cottage cheese + cucumber</li>
+    <li>Protein smoothie</li>
+    <li>2 boiled eggs</li>
+    <li>Tuna salad</li>
+    <li>Turkey breast slices</li>
+    <li>Edamame</li>
+    <li>Roasted chickpeas</li>
+  </ul>
+
+</div>
+
+</PdfPage>

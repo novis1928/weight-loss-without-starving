@@ -1,0 +1,77 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<PdfPage
+  id="bonus-resources"
+  label="Keep Learning"
+  title="Bonus Resources"
+>
+
+  <div class="resource-grid">
+
+    <article>
+
+      <h3>Popular Guides</h3>
+
+      <a href={`${base}blog/high-protein-breakfast-recipes-for-weight-loss/`}>
+        High Protein Breakfast Recipes
+      </a>
+
+      <a href={`${base}blog/overnight-oats-for-weight-loss/`}>
+        Overnight Oats for Weight Loss
+      </a>
+
+      <a href={`${base}blog/fiber-for-weight-loss/`}>
+        Fiber Guide
+      </a>
+
+      <a href={`${base}blog/best-foods-for-weight-loss/`}>
+        30 Best Foods for Weight Loss
+      </a>
+
+    </article>
+
+    <article>
+
+      <h3>Free Calculators</h3>
+
+      <a href={`${base}tools/bmi-calculator/`}>
+        BMI Calculator
+      </a>
+
+      <a href={`${base}tools/calorie-calculator/`}>
+        Calorie Calculator
+      </a>
+
+      <a href={`${base}tools/macro-calculator/`}>
+        Macro Calculator
+      </a>
+
+    </article>
+
+  </div>
+
+  <div class="highlight-box">
+
+    <h3>Keep These Resources Handy</h3>
+
+    <p>
+      Bookmark these resources and come back whenever you need new recipes,
+      free calculators, practical nutrition guides, and evidence-based weight
+      loss advice. New articles and tools are added regularly to help you stay
+      motivated and continue making progress.
+    </p>
+
+  </div>
+
+  <blockquote>
+    Eat enough protein. Fill half your plate with vegetables. Stay active.
+    Drink water. Sleep well.
+  </blockquote>
+
+</PdfPage>

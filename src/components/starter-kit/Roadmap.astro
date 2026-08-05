@@ -1,0 +1,77 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const firstMonth = [
+  {
+    week: "Week 1",
+    title: "Build Your Breakfast Routine",
+    text: "Choose one or two balanced breakfasts you can repeat throughout the week.",
+  },
+  {
+    week: "Week 2",
+    title: "Increase Your Vegetables",
+    text: "Add vegetables to lunch and dinner and aim to fill half your plate.",
+  },
+  {
+    week: "Week 3",
+    title: "Start Simple Meal Prep",
+    text: "Prepare one protein, one carbohydrate, and chopped vegetables in advance.",
+  },
+  {
+    week: "Week 4",
+    title: "Track Your Habits",
+    text: "Review your water, protein, activity, sleep, and meal-planning habits.",
+  },
+];
+---
+
+<PdfPage
+  id="roadmap"
+  label="The Big Picture"
+  title="Your Healthy Weight Loss Roadmap"
+  class="image-page"
+>
+  <p>
+    Sustainable weight loss isn't about following a perfect diet. It's about
+    building a few simple habits that become part of your everyday life.
+  </p>
+
+  <p>
+    Use this roadmap as a quick reminder of the key steps that will help you
+    create long-term results without feeling overwhelmed.
+  </p>
+
+  <img
+  src={asset("images/starter-kit/roadmap-infographic.png")}
+  alt="Your Healthy Weight Loss Roadmap"
+  class="full-page-infographic"
+/>
+
+  <section class="first-month">
+    <div class="first-month-heading">
+      <span>Your First Month</span>
+      <h3>Build one habit at a time</h3>
+    </div>
+
+    <div class="first-month-grid">
+      {firstMonth.map((item) => (
+        <article class="first-month-card">
+          <span>{item.week}</span>
+          <h4>{item.title}</h4>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <div class="tip-box roadmap-tip">
+    <strong>Quick Tip:</strong>
+    Focus on improving one habit at a time. Small, consistent changes are much
+    easier to maintain than trying to change everything at once.
+  </div>
+</PdfPage>

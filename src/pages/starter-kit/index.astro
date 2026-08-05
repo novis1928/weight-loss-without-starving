@@ -1,0 +1,43 @@
+---
+import PdfLayout from "../../layouts/PdfLayout.astro";
+
+import Cover from "../../components/starter-kit/Cover.astro";
+import TableOfContents from "../../components/starter-kit/TableOfContents.astro";
+import Welcome from "../../components/starter-kit/Welcome.astro";
+import Roadmap from "../../components/starter-kit/Roadmap.astro";
+import MealPlan from "../../components/starter-kit/MealPlan.astro";
+import GroceryList from "../../components/starter-kit/GroceryList.astro";
+import WeeklyPlanner from "../../components/starter-kit/WeeklyPlanner.astro";
+import HabitTracker from "../../components/starter-kit/HabitTracker.astro";
+import PortionGuide from "../../components/starter-kit/PortionGuide.astro";
+import ProteinGuide from "../../components/starter-kit/ProteinGuide.astro";
+import BonusResources from "../../components/starter-kit/BonusResources.astro";
+import CTA from "../../components/starter-kit/CTA.astro";
+import ThankYou from "../../components/starter-kit/ThankYou.astro";
+
+const pageTitle = "FREE Healthy Weight Loss Starter Kit";
+
+const pageDescription =
+  "A practical healthy weight loss starter kit with a 7-day meal plan, grocery list, meal planner, habit tracker, portion guide, and protein cheat sheet.";
+---
+
+<PdfLayout
+  title={pageTitle}
+  description={pageDescription}
+>
+  <main class="starter-kit">
+    <Cover />
+    <TableOfContents />
+    <Welcome />
+    <Roadmap />
+    <MealPlan />
+    <GroceryList />
+    <WeeklyPlanner />
+    <HabitTracker />
+    <PortionGuide />
+    <ProteinGuide />
+    <BonusResources />
+    <CTA />
+    <ThankYou />
+  </main>
+</PdfLayout>

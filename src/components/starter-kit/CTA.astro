@@ -1,0 +1,63 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const ebookUrl = "https://payhip.com/b/eW3MA";
+---
+
+<PdfPage
+  id="continue-journey"
+  label="The Next Step"
+  title="Continue Your Journey"
+  class="cta-page"
+>
+  <a
+    href={ebookUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="cta-banner-link"
+  >
+    <img
+      src={asset("images/starter-kit/cta-banner.png")}
+      alt="Get the Weight Loss Without Starving eBook"
+      class="cta-banner-image"
+    />
+  </a>
+
+  <div class="cta-copy">
+    <h3>Ready for the complete system?</h3>
+
+    <p>
+      The full eBook expands on these fundamentals with recipes, planning
+      strategies, and long-term habit-building tools.
+    </p>
+
+    <p class="cta-supporting-copy">
+      If this free Starter Kit helped you, the complete eBook will take you
+      from knowing what to do to building a sustainable lifestyle.
+    </p>
+
+    <div class="cta-benefits">
+      <span>✓ Practical recipes</span>
+      <span>✓ Meal-planning strategies</span>
+      <span>✓ Sustainable habit system</span>
+    </div>
+
+    <a
+      href={ebookUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="primary-button"
+    >
+      Get the eBook Now →
+    </a>
+
+    <small class="cta-note">
+      Opens the secure Payhip checkout page.
+    </small>
+  </div>
+</PdfPage>

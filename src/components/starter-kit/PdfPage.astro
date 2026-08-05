@@ -1,0 +1,29 @@
+---
+interface Props {
+  id?: string;
+  label?: string;
+  title?: string;
+  class?: string;
+}
+
+const {
+  id,
+  label,
+  title,
+  class: className = "",
+} = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["pdf-page", "content-page", className]}
+>
+  {(label || title) && (
+    <header class="page-heading">
+      {label && <span>{label}</span>}
+      {title && <h2>{title}</h2>}
+    </header>
+  )}
+
+  <slot />
+</section>

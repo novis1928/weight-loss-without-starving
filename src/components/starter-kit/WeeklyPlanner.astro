@@ -1,0 +1,174 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+---
+
+<PdfPage
+  id="weekly-planner"
+  label="Plan Ahead"
+  title="Weekly Meal Planner"
+  class="image-page"
+>
+  <img
+    src={asset("images/starter-kit/weekly-meal-planner-infographic.png")}
+    alt="Weekly Meal Planner"
+    class="full-page-infographic"
+  />
+</PdfPage>
+
+<PdfPage
+  id="printable-weekly-planner"
+  label="Printable Worksheet"
+  title="Plan Your Week"
+>
+  <p class="planner-intro">
+    Write down your meals before the week begins. Repeat simple meals whenever
+    that saves time and makes healthy eating easier.
+  </p>
+
+  <div class="weekly-planner-table">
+    <div class="planner-row planner-header">
+      <div>Day</div>
+      <div>Breakfast</div>
+      <div>Lunch</div>
+      <div>Dinner</div>
+      <div>Snack</div>
+    </div>
+
+    {days.map((day) => (
+      <div class="planner-row">
+        <div class="planner-day">{day}</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    ))}
+  </div>
+
+  <div class="tip-box planner-tip">
+    <strong>Planning tip:</strong>
+    Start with dinners, reuse leftovers for lunch, and choose one or two easy
+    breakfasts for the whole week.
+  </div>
+</PdfPage>
+
+<PdfPage
+  id="weekly-prep-sheet"
+  label="Printable Worksheet"
+  title="Weekly Prep & Shopping"
+>
+  <p class="planner-intro">
+    Use this page to prepare your shopping, hydration, meal prep, and weekly
+    priorities.
+  </p>
+
+  <div class="prep-top-grid">
+    <section class="planner-box weekly-goals-box">
+      <h3>Weekly Goals</h3>
+
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+    </section>
+
+    <section class="planner-box water-box">
+      <h3>Water Goal</h3>
+
+      <p class="water-goal">
+        Daily target:
+        <span></span>
+      </p>
+
+      <div class="water-days">
+        <div><strong>Mon</strong><span>□</span></div>
+        <div><strong>Tue</strong><span>□</span></div>
+        <div><strong>Wed</strong><span>□</span></div>
+        <div><strong>Thu</strong><span>□</span></div>
+        <div><strong>Fri</strong><span>□</span></div>
+        <div><strong>Sat</strong><span>□</span></div>
+        <div><strong>Sun</strong><span>□</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="prep-main-grid">
+    <section class="planner-box shopping-list-box">
+      <h3>Shopping List</h3>
+
+      <div class="shopping-columns">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="planner-box notes-box">
+      <h3>Notes & Meal Prep</h3>
+
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+      <div class="writing-line"></div>
+    </section>
+  </div>
+
+  <div class="prep-reminders">
+    <article>
+      <strong>1</strong>
+      <span>Choose 2–3 dinners first</span>
+    </article>
+
+    <article>
+      <strong>2</strong>
+      <span>Plan leftovers for lunch</span>
+    </article>
+
+    <article>
+      <strong>3</strong>
+      <span>Prepare protein and vegetables ahead</span>
+    </article>
+
+    <article>
+      <strong>4</strong>
+      <span>Keep one quick backup meal available</span>
+    </article>
+  </div>
+</PdfPage>

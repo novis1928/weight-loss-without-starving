@@ -1,0 +1,540 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const days = [
+  {
+    day: "Day 1",
+    intro:
+      "Start the week with balanced meals built around protein, fiber, vegetables, and satisfying whole foods.",
+    calories: "1,700–1,800 kcal",
+    protein: "125–140 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "Greek Yogurt Berry Bowl",
+        ingredients: [
+          "200 g Greek yogurt",
+          "100 g mixed berries",
+          "30 g rolled oats",
+          "10 g chia seeds",
+          "15 g almonds",
+        ],
+        method:
+          "Add the yogurt to a bowl and top with berries, oats, chia seeds, and chopped almonds.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Apple and Almonds",
+        ingredients: [
+          "1 medium apple",
+          "20 g almonds",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Grilled Chicken Salad",
+        ingredients: [
+          "150 g grilled chicken breast",
+          "Mixed leafy greens",
+          "Tomatoes and cucumber",
+          "½ avocado",
+          "1 tsp olive oil",
+        ],
+        method:
+          "Slice the chicken and serve over the vegetables. Add avocado, olive oil, lemon juice, salt, and pepper.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Cottage Cheese",
+        ingredients: [
+          "150 g cottage cheese",
+          "Cucumber or cherry tomatoes",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Baked Salmon with Vegetables",
+        ingredients: [
+          "150 g salmon fillet",
+          "200 g roasted vegetables",
+          "150 g potatoes or sweet potatoes",
+          "1 tsp olive oil",
+        ],
+        method:
+          "Bake the salmon and vegetables at 200°C for approximately 15–20 minutes, or until fully cooked.",
+      },
+    ],
+    substitutions:
+      "Replace salmon with cod, chicken with turkey, Greek yogurt with skyr, or potatoes with brown rice.",
+  },
+
+  {
+    day: "Day 2",
+    intro:
+      "Use simple make-ahead meals to reduce stress and make healthy choices easier throughout the day.",
+    calories: "1,750–1,850 kcal",
+    protein: "130–145 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "High Protein Overnight Oats",
+        ingredients: [
+          "50 g rolled oats",
+          "200 g Greek yogurt",
+          "100 ml milk",
+          "½ banana",
+          "10 g chia seeds",
+        ],
+        method:
+          "Mix all ingredients in a jar and refrigerate overnight. Add fruit before serving.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Boiled Eggs",
+        ingredients: [
+          "2 large eggs",
+          "Cherry tomatoes",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Turkey Wrap",
+        ingredients: [
+          "1 whole wheat tortilla",
+          "120 g turkey breast",
+          "Lettuce and tomato",
+          "¼ avocado",
+          "1 tbsp Greek yogurt dressing",
+        ],
+        method:
+          "Layer the ingredients in the tortilla, roll tightly, and slice in half.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Protein Smoothie",
+        ingredients: [
+          "1 scoop protein powder",
+          "200 ml milk",
+          "½ banana",
+          "Ice",
+        ],
+        method:
+          "Blend until smooth.",
+      },
+      {
+        type: "Dinner",
+        title: "Lean Beef Stir Fry",
+        ingredients: [
+          "150 g lean beef",
+          "250 g mixed vegetables",
+          "120 g cooked brown rice",
+          "1 tsp sesame or olive oil",
+          "Low-sodium soy sauce",
+        ],
+        method:
+          "Cook the beef in a hot pan, add vegetables and sauce, then serve with brown rice.",
+      },
+    ],
+    substitutions:
+      "Replace turkey with chicken, beef with tofu, or brown rice with quinoa.",
+  },
+
+  {
+    day: "Day 3",
+    intro:
+      "Keep meals colorful and protein-rich to support fullness, energy, and a balanced intake.",
+    calories: "1,700–1,850 kcal",
+    protein: "125–140 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "Vegetable Omelet",
+        ingredients: [
+          "3 eggs",
+          "Spinach",
+          "Mushrooms",
+          "Tomatoes",
+          "30 g reduced-fat cheese",
+        ],
+        method:
+          "Cook the vegetables in a non-stick pan, add beaten eggs, and fold when set.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Greek Yogurt",
+        ingredients: [
+          "170 g Greek yogurt",
+          "Cinnamon",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Tuna Pasta Salad",
+        ingredients: [
+          "120 g tuna",
+          "120 g cooked whole wheat pasta",
+          "Cucumber and tomatoes",
+          "1 tbsp Greek yogurt",
+          "Lemon juice",
+        ],
+        method:
+          "Mix all ingredients and season with black pepper and herbs.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Walnuts and Fruit",
+        ingredients: [
+          "1 pear or apple",
+          "15 g walnuts",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Chicken with Sweet Potato",
+        ingredients: [
+          "150 g chicken breast",
+          "200 g sweet potato",
+          "200 g green vegetables",
+          "1 tsp olive oil",
+        ],
+        method:
+          "Roast the sweet potato and vegetables, then serve with grilled chicken.",
+      },
+    ],
+    substitutions:
+      "Replace tuna with salmon, sweet potato with potatoes, or chicken with turkey.",
+  },
+
+  {
+    day: "Day 4",
+    intro:
+      "Balanced bowls make it easy to combine protein, healthy carbohydrates, vegetables, and healthy fats.",
+    calories: "1,700–1,800 kcal",
+    protein: "125–140 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "Cottage Cheese Power Bowl",
+        ingredients: [
+          "200 g cottage cheese",
+          "100 g berries",
+          "20 g oats",
+          "10 g pumpkin seeds",
+        ],
+        method:
+          "Add all ingredients to a bowl and serve chilled.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Pear and Almonds",
+        ingredients: [
+          "1 pear",
+          "20 g almonds",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Chicken and Quinoa Bowl",
+        ingredients: [
+          "150 g chicken breast",
+          "120 g cooked quinoa",
+          "Mixed vegetables",
+          "¼ avocado",
+          "Lemon juice",
+        ],
+        method:
+          "Arrange all ingredients in a bowl and finish with lemon juice and herbs.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Greek Yogurt",
+        ingredients: [
+          "170 g Greek yogurt",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Turkey Meatballs with Vegetables",
+        ingredients: [
+          "160 g turkey meatballs",
+          "250 g roasted vegetables",
+          "120 g cooked brown rice",
+        ],
+        method:
+          "Bake the meatballs until fully cooked and serve with vegetables and rice.",
+      },
+    ],
+    substitutions:
+      "Replace quinoa with rice, cottage cheese with skyr, or turkey meatballs with chicken meatballs.",
+  },
+
+  {
+    day: "Day 5",
+    intro:
+      "Choose easy meals that provide enough protein and fiber to help reduce unnecessary snacking.",
+    calories: "1,700–1,800 kcal",
+    protein: "130–145 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "Protein Smoothie Bowl",
+        ingredients: [
+          "1 scoop protein powder",
+          "150 g Greek yogurt",
+          "½ frozen banana",
+          "100 g berries",
+          "20 g oats",
+        ],
+        method:
+          "Blend until thick, pour into a bowl, and add the oats and berries on top.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Boiled Eggs",
+        ingredients: [
+          "2 large eggs",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Tuna and Avocado Salad",
+        ingredients: [
+          "120 g tuna",
+          "Mixed leafy greens",
+          "Tomatoes and cucumber",
+          "½ avocado",
+          "Lemon juice",
+        ],
+        method:
+          "Combine all ingredients and season with black pepper and herbs.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Cottage Cheese",
+        ingredients: [
+          "150 g cottage cheese",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Grilled Chicken with Brown Rice",
+        ingredients: [
+          "150 g grilled chicken breast",
+          "130 g cooked brown rice",
+          "200 g vegetables",
+          "1 tsp olive oil",
+        ],
+        method:
+          "Serve the grilled chicken with rice and steamed or roasted vegetables.",
+      },
+    ],
+    substitutions:
+      "Replace tuna with salmon, chicken with tofu, or brown rice with quinoa.",
+  },
+
+  {
+    day: "Day 6",
+    intro:
+      "A flexible weekend menu can still support your goals while allowing meals to remain enjoyable and simple.",
+    calories: "1,750–1,850 kcal",
+    protein: "125–140 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "Spinach Egg Scramble",
+        ingredients: [
+          "3 eggs",
+          "Spinach",
+          "Tomatoes",
+          "1 slice whole grain toast",
+        ],
+        method:
+          "Scramble the eggs with spinach and tomatoes, then serve with toast.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Greek Yogurt and Strawberries",
+        ingredients: [
+          "170 g Greek yogurt",
+          "100 g strawberries",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Salmon Rice Bowl",
+        ingredients: [
+          "140 g salmon",
+          "120 g cooked rice",
+          "Cucumber and carrots",
+          "¼ avocado",
+        ],
+        method:
+          "Add all ingredients to a bowl and season with lemon juice or low-sodium soy sauce.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Apple and Peanut Butter",
+        ingredients: [
+          "1 apple",
+          "15 g peanut butter",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Turkey Chili",
+        ingredients: [
+          "150 g lean ground turkey",
+          "100 g beans",
+          "Tomatoes",
+          "Bell peppers",
+          "Onion and spices",
+        ],
+        method:
+          "Cook the turkey, add the remaining ingredients, and simmer for 20–25 minutes.",
+      },
+    ],
+    substitutions:
+      "Replace salmon with tuna, turkey with lean beef, or rice with quinoa.",
+  },
+
+  {
+    day: "Day 7",
+    intro:
+      "Finish the week with satisfying meals that are easy to prepare and suitable for meal prep.",
+    calories: "1,700–1,800 kcal",
+    protein: "130–145 g",
+    meals: [
+      {
+        type: "Breakfast",
+        title: "High Protein Pancakes",
+        ingredients: [
+          "50 g oats",
+          "2 eggs",
+          "100 g cottage cheese",
+          "½ banana",
+          "Cinnamon",
+        ],
+        method:
+          "Blend all ingredients and cook small pancakes in a non-stick pan.",
+      },
+      {
+        type: "Morning Snack",
+        title: "Cottage Cheese and Cucumber",
+        ingredients: [
+          "150 g cottage cheese",
+          "Cucumber slices",
+        ],
+      },
+      {
+        type: "Lunch",
+        title: "Light Chicken Caesar Wrap",
+        ingredients: [
+          "1 whole wheat tortilla",
+          "130 g chicken breast",
+          "Romaine lettuce",
+          "1 tbsp light Caesar dressing",
+          "10 g parmesan",
+        ],
+        method:
+          "Add all ingredients to the tortilla, roll tightly, and serve.",
+      },
+      {
+        type: "Afternoon Snack",
+        title: "Greek Yogurt and Berries",
+        ingredients: [
+          "170 g Greek yogurt",
+          "80 g berries",
+        ],
+      },
+      {
+        type: "Dinner",
+        title: "Baked Cod with Vegetables",
+        ingredients: [
+          "160 g cod",
+          "250 g vegetables",
+          "150 g potatoes",
+          "1 tsp olive oil",
+        ],
+        method:
+          "Bake the cod, vegetables, and potatoes at 200°C until fully cooked.",
+      },
+    ],
+    substitutions:
+      "Replace cod with salmon, chicken with turkey, or potatoes with sweet potatoes.",
+  },
+];
+---
+
+<PdfPage
+  id="meal-plan"
+  label="Your First Week"
+  title="7-Day Healthy Weight Loss Meal Plan"
+  class="image-page"
+>
+  <img
+    src={asset("images/starter-kit/meal-plan-overview-infographic.png")}
+    alt="7-Day Healthy Weight Loss Meal Plan Overview"
+    class="full-page-infographic"
+  />
+</PdfPage>
+
+{days.map((day) => (
+  <PdfPage
+    id={`meal-plan-${day.day.toLowerCase().replace(" ", "-")}`}
+    label="7-Day Meal Plan"
+    title={day.day}
+  >
+    <p class="day-intro">
+      {day.intro}
+    </p>
+
+    <div class="daily-nutrition">
+      <div>
+        <span>Estimated calories</span>
+        <strong>{day.calories}</strong>
+      </div>
+
+      <div>
+        <span>Estimated protein</span>
+        <strong>{day.protein}</strong>
+      </div>
+    </div>
+
+    <div class="meal-detail-grid">
+      {day.meals.map((meal, index) => (
+        <article
+          class:list={[
+            "meal-detail-card",
+            index === day.meals.length - 1 && "meal-detail-wide",
+          ]}
+        >
+          <span>{meal.type}</span>
+
+          <h3>{meal.title}</h3>
+
+          <ul>
+            {meal.ingredients.map((ingredient) => (
+              <li>{ingredient}</li>
+            ))}
+          </ul>
+
+          {meal.method && (
+            <p>
+              {meal.method}
+            </p>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <div class="tip-box">
+      <strong>Easy substitutions:</strong>
+      {day.substitutions}
+    </div>
+  </PdfPage>
+))}

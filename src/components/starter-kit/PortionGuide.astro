@@ -1,0 +1,251 @@
+---
+import PdfPage from "./PdfPage.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const asset = (path: string) =>
+  `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const handPortions = [
+  {
+    symbol: "✋",
+    measure: "1 Palm",
+    category: "Protein",
+    description:
+      "Choose a portion of protein about the size and thickness of your palm.",
+    examples: [
+      "Chicken breast",
+      "Turkey",
+      "Fish",
+      "Lean beef",
+      "Tofu",
+      "Eggs",
+    ],
+  },
+  {
+    symbol: "✊",
+    measure: "1–2 Fists",
+    category: "Vegetables",
+    description:
+      "Fill a large part of your meal with vegetables equal to one or two fists.",
+    examples: [
+      "Broccoli",
+      "Spinach",
+      "Peppers",
+      "Tomatoes",
+      "Carrots",
+      "Green beans",
+    ],
+  },
+  {
+    symbol: "🤲",
+    measure: "1 Cupped Hand",
+    category: "Carbohydrates",
+    description:
+      "Use one cupped hand for cooked carbohydrates or other energy-rich foods.",
+    examples: [
+      "Rice",
+      "Potatoes",
+      "Pasta",
+      "Oats",
+      "Quinoa",
+      "Fruit",
+    ],
+  },
+  {
+    symbol: "👍",
+    measure: "1 Thumb",
+    category: "Healthy Fats",
+    description:
+      "Use a thumb-sized portion for calorie-dense healthy fats.",
+    examples: [
+      "Olive oil",
+      "Avocado",
+      "Peanut butter",
+      "Nuts",
+      "Seeds",
+      "Tahini",
+    ],
+  },
+];
+---
+
+<PdfPage
+  id="portion-guide"
+  label="Balanced Eating"
+  title="The Perfect Healthy Plate"
+  class="image-page"
+>
+  <img
+    src={asset("images/starter-kit/healthy-plate-infographic.png")}
+    alt="The Perfect Healthy Plate"
+    class="full-page-infographic"
+  />
+</PdfPage>
+
+<PdfPage
+  id="perfect-plate-explained"
+  label="Balanced Eating"
+  title="How to Build the Perfect Plate"
+>
+  <p>
+    You don't need to count every calorie to build healthy meals. A simple plate
+    method makes it easy to create balanced meals at home, at work, or when
+    eating out.
+  </p>
+
+  <div class="resource-grid">
+    <article>
+      <h3>🥦 50% Vegetables</h3>
+
+      <p>
+        Fill half your plate with colorful vegetables rich in vitamins,
+        minerals, and fiber.
+      </p>
+
+      <ul>
+        <li>Broccoli</li>
+        <li>Spinach</li>
+        <li>Bell peppers</li>
+        <li>Tomatoes</li>
+        <li>Carrots</li>
+        <li>Cucumber</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>🍗 25% Lean Protein</h3>
+
+      <p>
+        Protein helps keep you full, supports your muscles, and makes weight
+        loss easier.
+      </p>
+
+      <ul>
+        <li>Chicken breast</li>
+        <li>Turkey</li>
+        <li>Salmon</li>
+        <li>Tuna</li>
+        <li>Eggs</li>
+        <li>Greek yogurt</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>🍚 25% Healthy Carbohydrates</h3>
+
+      <p>
+        Choose mostly whole-food carbohydrate sources for long-lasting energy.
+      </p>
+
+      <ul>
+        <li>Brown rice</li>
+        <li>Potatoes</li>
+        <li>Sweet potatoes</li>
+        <li>Quinoa</li>
+        <li>Whole grain pasta</li>
+        <li>Oats</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>🥑 Healthy Fats</h3>
+
+      <p>
+        Include a small amount of healthy fats to improve satisfaction and
+        nutrient absorption.
+      </p>
+
+      <ul>
+        <li>Olive oil</li>
+        <li>Avocado</li>
+        <li>Nuts</li>
+        <li>Seeds</li>
+        <li>Natural peanut butter</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="tip-box">
+    <strong>Quick Tip:</strong><br /><br />
+
+    Don't aim for perfection. Build balanced meals most of the time and enjoy
+    your favorite foods in moderation. Small, consistent habits lead to
+    long-term results.
+  </div>
+</PdfPage>
+
+<PdfPage
+  id="healthy-portion-guide"
+  label="No Scale Required"
+  title="Healthy Portion Guide"
+  class="image-page"
+>
+  <img
+    src={asset("images/starter-kit/healthy-portion-guide-infographic.png")}
+    alt="Healthy Portion Guide"
+    class="full-page-infographic"
+  />
+</PdfPage>
+
+<PdfPage
+  id="hand-portion-method"
+  label="No Scale Required"
+  title="Measure Portions With Your Hand"
+>
+  <p class="portion-method-intro">
+    Your hand is always available and naturally scales with your body. Use this
+    method as a simple starting point, then adjust portions according to hunger,
+    activity, and progress.
+  </p>
+
+  <div class="hand-portion-grid">
+    {handPortions.map((item) => (
+      <article class="hand-portion-card">
+        <div class="hand-portion-icon" aria-hidden="true">
+          {item.symbol}
+        </div>
+
+        <div class="hand-portion-content">
+          <span>{item.measure}</span>
+          <h3>{item.category}</h3>
+          <p>{item.description}</p>
+
+          <ul>
+            {item.examples.map((example) => (
+              <li>{example}</li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="portion-method-bottom">
+    <section>
+      <h3>Why This Works</h3>
+      <ul>
+        <li>No food scale required.</li>
+        <li>No calorie counting needed.</li>
+        <li>Easy to use at home or when eating out.</li>
+        <li>Simple enough to follow consistently.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Adjust When Needed</h3>
+      <ul>
+        <li>Add more food if you are consistently hungry.</li>
+        <li>Reduce portions slightly if progress has stopped.</li>
+        <li>Active people may need more carbohydrates and protein.</li>
+        <li>Focus on weekly progress, not perfect meals.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="tip-box portion-method-tip">
+    <strong>Remember:</strong>
+    Your hand is a practical guide, not a strict rule. Start with these portions
+    and adjust them to fit your needs.
+  </div>
+</PdfPage>

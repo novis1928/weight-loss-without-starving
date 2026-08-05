@@ -1,0 +1,1525 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #e9f2ec;
+  color: #334155;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.starter-kit {
+  padding: 40px 0;
+}
+
+/* =========================================================
+   ZÁKLADNÍ A4 STRÁNKA
+   ========================================================= */
+
+.pdf-page {
+  position: relative;
+  width: min(210mm, calc(100% - 32px));
+  min-height: 297mm;
+  margin: 0 auto 32px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.14);
+  break-after: page;
+  page-break-after: always;
+}
+
+.pdf-page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+/* =========================================================
+   OBÁLKA
+   ========================================================= */
+
+.cover-page {
+  padding: 0;
+}
+
+.cover-image {
+  display: block;
+  width: 100%;
+  height: 297mm;
+  object-fit: cover;
+}
+
+/* =========================================================
+   BĚŽNÁ OBSAHOVÁ STRÁNKA
+   ========================================================= */
+
+.content-page {
+  position: relative;
+  padding: 18mm 17mm 22mm;
+  color: #334155;
+  font-size: 11pt;
+  line-height: 1.58;
+}
+
+.content-page::after {
+  content: "";
+  position: absolute;
+  right: 17mm;
+  bottom: 14mm;
+  left: 17mm;
+  height: 1px;
+  background: #dcfce7;
+}
+
+/* =========================================================
+   NADPIS STRÁNKY
+   ========================================================= */
+
+.page-heading {
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid #dcfce7;
+}
+
+.page-heading span {
+  display: inline-block;
+  color: #15803d;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-heading h2 {
+  margin: 7px 0 0;
+  color: #163b2f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29pt;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================================
+   TEXTOVÉ PRVKY
+   ========================================================= */
+
+.content-page p {
+  margin: 0 0 13px;
+}
+
+.content-page h3 {
+  color: #163b2f;
+  line-height: 1.22;
+}
+
+.highlight-box,
+.tip-box {
+  margin: 18px 0;
+  padding: 15px 18px;
+  border-left: 5px solid #22c55e;
+  border-radius: 0 14px 14px 0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+blockquote {
+  margin: 24px 0 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: #163b2f;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* =========================================================
+   OBSAH
+   ========================================================= */
+
+.toc {
+  display: grid;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.toc a {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border: 1px solid #dcfce7;
+  border-radius: 13px;
+  background: #f8fdf9;
+  color: #163b2f;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toc a:hover {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  transform: translateY(-1px);
+}
+
+.toc span {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+/* =========================================================
+   STRÁNKY S INFOGRAFIKOU
+   Nadpis a obrázek zůstanou na jedné stránce
+   ========================================================= */
+
+.image-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  padding: 12mm 14mm 19mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.image-page .page-heading {
+  flex: 0 0 auto;
+  margin-bottom: 8px;
+  padding-bottom: 9px;
+}
+
+.image-page .page-heading span {
+  font-size: 0.66rem;
+}
+
+.image-page .page-heading h2 {
+  margin-top: 5px;
+  font-size: 24pt;
+  line-height: 1;
+}
+
+.full-page-infographic {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  max-height: 220mm;
+  min-height: 0;
+  margin: 0 auto;
+  object-fit: contain;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* =========================================================
+   ROADMAP
+   ========================================================= */
+
+#roadmap {
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  max-height: 297mm;
+  padding: 11mm 14mm 18mm;
+  overflow: hidden;
+  font-size: 8.4pt;
+  line-height: 1.3;
+}
+
+#roadmap::after {
+  right: 14mm;
+  bottom: 12mm;
+  left: 14mm;
+}
+
+#roadmap .page-heading {
+  flex: 0 0 auto;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+  border-bottom-width: 2px;
+}
+
+#roadmap .page-heading span {
+  font-size: 0.58rem;
+}
+
+#roadmap .page-heading h2 {
+  margin-top: 3px;
+  font-size: 22pt;
+  line-height: 1;
+}
+
+#roadmap > p {
+  margin: 0 0 5px;
+  color: #475569;
+  font-size: 7.8pt;
+  line-height: 1.28;
+}
+
+.chapter-infographic {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  max-height: 91mm;
+  margin: 6px auto 7px;
+  object-fit: contain;
+}
+
+.first-month {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.first-month-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.first-month-heading span {
+  color: #15803d;
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.first-month-heading h3 {
+  margin: 0;
+  color: #163b2f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+}
+
+.first-month-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.first-month-card {
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid #dcfce7;
+  border-radius: 9px;
+  background: #f8fdf9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.first-month-card > span {
+  display: block;
+  color: #16a34a;
+  font-size: 0.49rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.first-month-card h4 {
+  margin: 3px 0 4px;
+  color: #163b2f;
+  font-size: 7.5pt;
+  line-height: 1.15;
+}
+
+.first-month-card p {
+  margin: 0 !important;
+  color: #475569;
+  font-size: 6.4pt;
+  line-height: 1.25;
+}
+
+#roadmap .roadmap-tip {
+  flex: 0 0 auto;
+  margin: 7px 0 0;
+  padding: 7px 10px;
+  border-left-width: 4px;
+  border-radius: 0 9px 9px 0;
+  font-size: 6.9pt;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   PŮVODNÍ JEDNODUCHÉ KARTY JÍDEL
+   ========================================================= */
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.meal-card {
+  min-height: 50mm;
+  padding: 18px;
+  border: 1px solid #dcfce7;
+  border-radius: 16px;
+  background: #f8fdf9;
+}
+
+.meal-card-wide {
+  grid-column: 1 / -1;
+}
+
+.meal-card span {
+  color: #16a34a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.meal-card h3 {
+  margin: 8px 0 0;
+  color: #163b2f;
+}
+
+/* =========================================================
+   DETAILNÍ 7DENNÍ JÍDELNÍČEK
+   Každý den na jedné A4 stránce
+   ========================================================= */
+
+.pdf-page[id^="meal-plan-day-"] {
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  max-height: 297mm;
+  padding: 11mm 13mm 18mm;
+  overflow: hidden;
+  font-size: 8.2pt;
+  line-height: 1.26;
+}
+
+.pdf-page[id^="meal-plan-day-"]::after {
+  right: 13mm;
+  bottom: 12mm;
+  left: 13mm;
+}
+
+.pdf-page[id^="meal-plan-day-"] .page-heading {
+  flex: 0 0 auto;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+  border-bottom-width: 2px;
+}
+
+.pdf-page[id^="meal-plan-day-"] .page-heading span {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+.pdf-page[id^="meal-plan-day-"] .page-heading h2 {
+  margin-top: 3px;
+  font-size: 21pt;
+  line-height: 1;
+}
+
+.day-intro {
+  margin: 0 0 7px !important;
+  color: #475569;
+  font-size: 8.2pt;
+  line-height: 1.3;
+}
+
+.daily-nutrition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin: 0 0 7px;
+}
+
+.daily-nutrition > div {
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #163b2f;
+  color: #ffffff;
+}
+
+.daily-nutrition span,
+.daily-nutrition strong {
+  display: block;
+}
+
+.daily-nutrition span {
+  color: #bbf7d0;
+  font-size: 0.53rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.daily-nutrition strong {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  line-height: 1.1;
+}
+
+.meal-detail-grid {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "breakfast snack-one"
+    "lunch snack-two"
+    "dinner dinner";
+  gap: 7px;
+  min-height: 0;
+}
+
+.meal-detail-card {
+  min-height: 0;
+  padding: 8px 10px;
+  border: 1px solid #dcfce7;
+  border-radius: 10px;
+  background: #f8fdf9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.meal-detail-card:nth-child(1) {
+  grid-area: breakfast;
+}
+
+.meal-detail-card:nth-child(2) {
+  grid-area: snack-one;
+}
+
+.meal-detail-card:nth-child(3) {
+  grid-area: lunch;
+}
+
+.meal-detail-card:nth-child(4) {
+  grid-area: snack-two;
+}
+
+.meal-detail-card:nth-child(5) {
+  grid-area: dinner;
+}
+
+.meal-detail-wide {
+  grid-column: 1 / -1;
+}
+
+.meal-detail-card > span {
+  display: block;
+  color: #16a34a;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.meal-detail-card h3 {
+  margin: 3px 0 4px;
+  color: #163b2f;
+  font-size: 8.6pt;
+  line-height: 1.1;
+}
+
+.meal-detail-card ul {
+  margin: 0;
+  padding-left: 13px;
+}
+
+.meal-detail-card li {
+  margin-bottom: 1px;
+  font-size: 7.3pt;
+  line-height: 1.18;
+}
+
+.meal-detail-card p {
+  margin: 4px 0 0 !important;
+  color: #475569;
+  font-size: 7.1pt;
+  line-height: 1.22;
+}
+
+.pdf-page[id^="meal-plan-day-"] .tip-box {
+  flex: 0 0 auto;
+  margin: 7px 0 0;
+  padding: 7px 10px;
+  border-left-width: 4px;
+  border-radius: 0 9px 9px 0;
+  font-size: 7.4pt;
+  line-height: 1.25;
+}
+
+.pdf-page[id^="meal-plan-day-"] .tip-box strong {
+  margin-right: 3px;
+}
+
+/* =========================================================
+   ZDROJE
+   ========================================================= */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.resource-grid article {
+  padding: 18px;
+  border: 1px solid #dcfce7;
+  border-radius: 16px;
+  background: #f8fdf9;
+}
+
+.resource-grid article h3 {
+  margin-top: 0;
+}
+
+.resource-grid a {
+  display: block;
+  margin-top: 10px;
+  color: #166534;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resource-grid a:hover {
+  color: #15803d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-banner-image {
+  display: block;
+  width: 100%;
+  max-height: 190mm;
+  object-fit: contain;
+}
+
+.cta-copy {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.cta-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 297mm;
+  max-height: 297mm;
+  padding: 14mm 16mm 20mm;
+  overflow: hidden;
+}
+
+.cta-page .page-heading {
+  margin-bottom: 10px;
+  padding-bottom: 9px;
+}
+
+.cta-page .page-heading h2 {
+  font-size: 25pt;
+}
+
+.cta-banner-link {
+  display: block;
+  text-decoration: none;
+}
+
+.cta-page .cta-banner-image {
+  display: block;
+  width: 100%;
+  max-height: 145mm;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.cta-page .cta-copy {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.cta-page .cta-copy h3 {
+  margin: 0;
+  color: #163b2f;
+  font-size: 1.15rem;
+}
+
+.cta-page .cta-copy > p {
+  max-width: 650px;
+  margin: 8px auto 0;
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.cta-supporting-copy {
+  font-weight: 700;
+}
+
+.cta-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px 16px;
+  margin-top: 11px;
+  color: #166534;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.cta-page .primary-button {
+  margin-top: 13px;
+}
+
+.cta-note {
+  display: block;
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+.cta-page {
+  min-height: auto;
+  max-height: none;
+  padding: 42px 24px;
+  overflow: visible;
+}
+
+.cta-benefits {
+  align-items: center;
+  flex-direction: column;
+}
+
+.primary-button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0 26px;
+  border-radius: 13px;
+  background: #22c55e;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.primary-button:hover {
+  background: #16a34a;
+}
+
+/* =========================================================
+   POSLEDNÍ STRÁNKA
+   ========================================================= */
+
+.signature {
+  display: grid;
+  gap: 4px;
+  margin: 28px 0;
+  color: #166534;
+}
+
+.final-message {
+  margin-top: 28px;
+  padding: 23px;
+  border-radius: 16px;
+  background: #f0fdf4;
+  color: #163b2f;
+  font-size: 1.18rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* =========================================================
+   NÁKUPNÍ CHECKLIST
+   ========================================================= */
+
+.grocery-intro {
+  max-width: 680px;
+  margin-bottom: 17px;
+  color: #475569;
+}
+
+.grocery-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grocery-group {
+  padding: 12px 14px;
+  border: 1px solid #dcfce7;
+  border-radius: 13px;
+  background: #f8fdf9;
+  break-inside: avoid;
+}
+
+.grocery-group h3 {
+  margin: 0 0 7px;
+  font-size: 0.95rem;
+}
+
+.grocery-group ul {
+  columns: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grocery-group li {
+  break-inside: avoid;
+  margin-bottom: 4px;
+  font-size: 0.77rem;
+  line-height: 1.25;
+}
+
+.grocery-group li::before {
+  content: "□";
+  margin-right: 6px;
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.grocery-tips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 13px;
+}
+
+.grocery-tips article {
+  padding: 12px 14px;
+  border-left: 5px solid #22c55e;
+  border-radius: 0 13px 13px 0;
+  background: #f0fdf4;
+}
+
+.grocery-tips h3 {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.grocery-tips ul {
+  margin: 0;
+  padding-left: 17px;
+}
+
+.grocery-tips li {
+  margin-bottom: 3px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   PRINTABLE WEEKLY MEAL PLANNER
+   ========================================================= */
+
+#printable-weekly-planner,
+#weekly-prep-sheet {
+  position: relative;
+  min-height: 297mm;
+  max-height: 297mm;
+  padding: 13mm 14mm 19mm;
+  overflow: hidden;
+  font-size: 8.5pt;
+  line-height: 1.3;
+}
+
+#printable-weekly-planner .page-heading,
+#weekly-prep-sheet .page-heading {
+  margin-bottom: 9px;
+  padding-bottom: 8px;
+}
+
+#printable-weekly-planner .page-heading h2,
+#weekly-prep-sheet .page-heading h2 {
+  margin-top: 4px;
+  font-size: 24pt;
+}
+
+.planner-intro {
+  margin: 0 0 9px !important;
+  color: #475569;
+  font-size: 8.2pt;
+}
+
+/* Týdenní tabulka */
+
+.weekly-planner-table {
+  overflow: hidden;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+}
+
+.planner-row {
+  display: grid;
+  grid-template-columns: 78px repeat(4, minmax(0, 1fr));
+}
+
+.planner-row > div {
+  min-width: 0;
+  min-height: 22mm;
+  padding: 6px;
+  border-right: 1px solid #dcfce7;
+  border-bottom: 1px solid #dcfce7;
+  background: #ffffff;
+}
+
+.planner-row > div:last-child {
+  border-right: 0;
+}
+
+.planner-row:last-child > div {
+  border-bottom: 0;
+}
+
+.planner-header > div {
+  min-height: auto;
+  padding: 7px 4px;
+  background: #163b2f;
+  color: #ffffff;
+  font-size: 7pt;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.planner-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4 !important;
+  color: #166534;
+  font-size: 8pt;
+  font-weight: 900;
+  text-align: center;
+}
+
+.planner-tip {
+  margin: 9px 0 0;
+  padding: 9px 12px;
+  font-size: 7.5pt;
+}
+
+/* Weekly Prep & Shopping */
+
+.prep-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.prep-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+.planner-box {
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid #dcfce7;
+  border-radius: 12px;
+  background: #f8fdf9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.planner-box h3 {
+  margin: 0 0 7px;
+  color: #163b2f;
+  font-size: 9.5pt;
+}
+
+.weekly-goals-box,
+.water-box {
+  min-height: 37mm;
+  max-height: 37mm;
+}
+
+.shopping-list-box,
+.notes-box {
+  min-height: 92mm;
+  max-height: 92mm;
+}
+
+.writing-line {
+  height: 8mm;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.water-goal {
+  margin: 0 0 8px !important;
+  font-size: 8pt;
+  font-weight: 700;
+}
+
+.water-goal span {
+  display: inline-block;
+  width: 29mm;
+  margin-left: 4px;
+  border-bottom: 1px solid #64748b;
+}
+
+.water-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.water-days div {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  padding: 5px 2px;
+  border: 1px solid #dcfce7;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.water-days strong {
+  color: #166534;
+  font-size: 5.8pt;
+}
+
+.water-days span {
+  color: #16a34a;
+  font-size: 0.85rem;
+}
+
+.shopping-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.shopping-columns ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shopping-columns li {
+  height: 9.5mm;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.shopping-columns li::before {
+  content: "□";
+  margin-right: 6px;
+  color: #16a34a;
+}
+
+.notes-box .writing-line {
+  height: 9.5mm;
+}
+
+.prep-reminders {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.prep-reminders article {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 5px;
+  align-items: center;
+  min-width: 0;
+  padding: 7px;
+  border-radius: 9px;
+  background: #163b2f;
+  color: #ffffff;
+  font-size: 6.4pt;
+  line-height: 1.2;
+}
+
+.prep-reminders strong {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 7pt;
+}
+
+/* =========================================================
+   HAND PORTION METHOD
+   ========================================================= */
+
+#hand-portion-method {
+  padding: 14mm 15mm 20mm;
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+#hand-portion-method .page-heading {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+}
+
+#hand-portion-method .page-heading h2 {
+  font-size: 25pt;
+}
+
+.portion-method-intro {
+  margin-bottom: 13px !important;
+  color: #475569;
+}
+
+.hand-portion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.hand-portion-card {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 12px;
+  min-height: 66mm;
+  padding: 14px;
+  border: 1px solid #dcfce7;
+  border-radius: 14px;
+  background: #f8fdf9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.hand-portion-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  align-self: start;
+  border-radius: 50%;
+  background: #dcfce7;
+  font-size: 1.8rem;
+}
+
+.hand-portion-content > span {
+  display: block;
+  color: #16a34a;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hand-portion-content h3 {
+  margin: 4px 0 6px;
+  color: #163b2f;
+  font-size: 1rem;
+}
+
+.hand-portion-content p {
+  margin: 0 0 8px !important;
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.hand-portion-content ul {
+  columns: 2;
+  margin: 0;
+  padding-left: 17px;
+}
+
+.hand-portion-content li {
+  margin-bottom: 3px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.portion-method-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.portion-method-bottom section {
+  padding: 13px 15px;
+  border-left: 5px solid #22c55e;
+  border-radius: 0 13px 13px 0;
+  background: #f0fdf4;
+}
+
+.portion-method-bottom h3 {
+  margin: 0 0 8px;
+  color: #163b2f;
+  font-size: 0.95rem;
+}
+
+.portion-method-bottom ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.portion-method-bottom li {
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.portion-method-tip {
+  margin: 11px 0 0;
+  padding: 10px 13px;
+  font-size: 0.8rem;
+}
+
+/* Protein Cheat Sheet */
+
+.protein-table {
+  width: 100%;
+  margin: 24px 0 28px;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #dcfce7;
+}
+
+.protein-table thead {
+  background: #163b2f;
+}
+
+.protein-table th {
+  padding: 14px 18px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.protein-table td {
+  padding: 14px 18px;
+  border-top: 1px solid #dcfce7;
+  font-size: 0.95rem;
+}
+
+.protein-table tbody tr:nth-child(even) {
+  background: #f8fdf9;
+}
+
+.protein-table td:last-child,
+.protein-table th:last-child {
+  width: 110px;
+  text-align: center;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* =========================================================
+   MOBIL
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .starter-kit {
+    padding: 16px 0;
+  }
+
+  .pdf-page {
+    width: calc(100% - 20px);
+    min-height: auto;
+    max-height: none;
+    margin-bottom: 18px;
+    overflow: visible;
+  }
+
+  .cover-image {
+    height: auto;
+  }
+
+  .content-page,
+  #roadmap,
+  .pdf-page[id^="meal-plan-day-"] {
+    min-height: auto;
+    max-height: none;
+    padding: 42px 24px;
+    overflow: visible;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .content-page::after {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+  }
+
+  .page-heading h2,
+  #roadmap .page-heading h2,
+  .pdf-page[id^="meal-plan-day-"] .page-heading h2 {
+    font-size: 2.25rem;
+  }
+
+  .cover-image {
+    height: auto;
+  }
+
+  .image-page {
+    min-height: auto;
+    max-height: none;
+    padding: 36px 24px;
+  }
+
+  .full-page-infographic,
+  .chapter-infographic {
+    max-height: none;
+  }
+
+  .daily-nutrition,
+  .meal-detail-grid,
+  .resource-grid,
+  .meal-grid,
+  .grocery-checklist-grid,
+  .grocery-tips {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  .meal-detail-card:nth-child(1),
+  .meal-detail-card:nth-child(2),
+  .meal-detail-card:nth-child(3),
+  .meal-detail-card:nth-child(4),
+  .meal-detail-card:nth-child(5) {
+    grid-area: auto;
+  }
+
+  .meal-detail-wide,
+  .meal-card-wide {
+    grid-column: auto;
+  }
+
+  .meal-detail-card {
+    padding: 14px 16px;
+  }
+
+  .meal-detail-card > span {
+    font-size: 0.7rem;
+  }
+
+  .meal-detail-card h3 {
+    font-size: 1rem;
+  }
+
+  .meal-detail-card li,
+  .meal-detail-card p,
+  .pdf-page[id^="meal-plan-day-"] .tip-box {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .grocery-group ul {
+    columns: 1;
+  }
+
+    .planner-row {
+    grid-template-columns: 78px repeat(4, minmax(110px, 1fr));
+  }
+
+  .weekly-planner-table {
+    overflow-x: auto;
+  }
+
+  .planner-bottom-grid,
+  .planner-bottom-large {
+    grid-template-columns: 1fr;
+  }
+
+  .shopping-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .prep-top-grid,
+.prep-main-grid,
+.prep-reminders {
+  grid-template-columns: 1fr;
+}
+
+.water-days {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+  .first-month-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .first-month-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #roadmap {
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .chapter-infographic {
+    max-height: none;
+  }
+
+    .hand-portion-grid,
+  .portion-method-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .hand-portion-card {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .hand-portion-content ul {
+    columns: 1;
+  }
+
+}
+
+/* =========================================================
+   TISK A EXPORT DO PDF
+   ========================================================= */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0;
+    background: #ffffff;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .starter-kit {
+    padding: 0;
+  }
+
+  .pdf-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .toc a,
+  .resource-grid a,
+  .primary-button {
+    text-decoration: none;
+  }
+
+  .toc a:hover,
+  .resource-grid a:hover,
+  .primary-button:hover {
+    transform: none;
+  }
+
+  .image-page {
+    display: flex;
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    padding: 12mm 14mm 19mm;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .image-page .page-heading {
+    margin-bottom: 8px;
+    padding-bottom: 9px;
+  }
+
+  .image-page .page-heading h2 {
+    font-size: 24pt;
+  }
+
+  .image-page .full-page-infographic {
+    flex: 1 1 auto;
+    width: 100%;
+    max-height: 220mm;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  #roadmap {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .pdf-page[id^="meal-plan-day-"] {
+    display: flex;
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .meal-detail-card,
+  .daily-nutrition,
+  .tip-box,
+  .grocery-group,
+  .grocery-tips article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+    #printable-weekly-planner,
+  #weekly-prep-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .prep-top-grid,
+  .prep-main-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .prep-reminders {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .water-days {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  }
+
+  .shopping-columns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .planner-box,
+  .prep-reminders article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
