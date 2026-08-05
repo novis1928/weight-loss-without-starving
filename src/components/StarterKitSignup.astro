@@ -1,68 +1,164 @@
-<div
-  id="mlb2-44518335"
-  class="starter-mailerlite-form ml-subscribe-form ml-subscribe-form-44518335"
+---
+const rawBaseURL = import.meta.env.BASE_URL;
+
+const baseURL = rawBaseURL.endsWith("/")
+  ? rawBaseURL
+  : `${rawBaseURL}/`;
+
+const imageURL =
+  `${baseURL}images/starter-kit/starter-kit-mockup.png`;
+---
+
+<section
+  class="starter-kit-signup"
+  aria-labelledby="starter-kit-signup-title"
 >
-  <div class="starter-form-content row-form">
-    <form
-      class="signup-form ml-block-form"
-      action="https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/subscribe"
-      method="post"
-      target="_blank"
-    >
-      <label for="starter-email">
-        Email address
-      </label>
+  <div class="starter-kit-container">
+    <div class="starter-kit-copy">
+      <span class="starter-kit-eyebrow">
+        FREE HEALTHY WEIGHT LOSS RESOURCE
+      </span>
 
-      <input
-        id="starter-email"
-        aria-label="Email address"
-        aria-required="true"
-        name="fields[email]"
-        type="email"
-        autocomplete="email"
-        placeholder="you@example.com"
-        required
-      />
+      <h2 id="starter-kit-signup-title">
+        Start With the FREE
+        <span>Healthy Weight Loss Starter Kit</span>
+      </h2>
 
-      <input
-        type="hidden"
-        name="ml-submit"
-        value="1"
-      />
+      <p class="starter-kit-description">
+        Enter your email and get a practical 28-page PDF designed to help
+        you start losing weight without extreme diets, complicated rules,
+        or constant hunger.
+      </p>
 
-      <input
-        type="hidden"
-        name="anticsrf"
-        value="true"
-      />
+      <ul class="starter-kit-benefits">
+        <li>
+          <span aria-hidden="true">✓</span>
+          7-day healthy meal plan
+        </li>
 
-      <button type="submit" class="primary">
-        <span class="button-text">
-          Send Me the Free Starter Kit →
-        </span>
+        <li>
+          <span aria-hidden="true">✓</span>
+          Printable grocery list
+        </li>
 
-        <span class="button-loading" aria-hidden="true">
-          Sending…
-        </span>
-      </button>
-    </form>
+        <li>
+          <span aria-hidden="true">✓</span>
+          Weekly meal planner
+        </li>
+
+        <li>
+          <span aria-hidden="true">✓</span>
+          Daily habit tracker
+        </li>
+
+        <li>
+          <span aria-hidden="true">✓</span>
+          Healthy portion guide
+        </li>
+
+        <li>
+          <span aria-hidden="true">✓</span>
+          Protein cheat sheet
+        </li>
+      </ul>
+
+      <div
+        id="mlb2-44518335"
+        class="starter-mailerlite-form ml-subscribe-form ml-subscribe-form-44518335"
+      >
+        <div class="starter-form-content row-form">
+          <form
+            class="signup-form ml-block-form"
+            action="https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/subscribe"
+            method="post"
+            target="_blank"
+          >
+            <label for="starter-email">
+              Email address
+            </label>
+
+            <input
+              id="starter-email"
+              aria-label="Email address"
+              aria-required="true"
+              name="fields[email]"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <input
+              type="hidden"
+              name="ml-submit"
+              value="1"
+            />
+
+            <input
+              type="hidden"
+              name="anticsrf"
+              value="true"
+            />
+
+            <button type="submit" class="primary">
+              <span class="button-text">
+                Send Me the FREE Starter Kit →
+              </span>
+
+              <span class="button-loading" aria-hidden="true">
+                Sending…
+              </span>
+            </button>
+          </form>
+
+          <div class="starter-kit-trust">
+            <span>✓ Free PDF</span>
+            <span>✓ Instant access</span>
+            <span>✓ No credit card required</span>
+          </div>
+
+          <p class="privacy-note">
+            No spam. Unsubscribe anytime.
+          </p>
+        </div>
+
+        <div
+          class="starter-form-success row-success"
+          style="display: none;"
+          role="status"
+          aria-live="polite"
+        >
+          <strong>Check your inbox!</strong>
+
+          <p>
+            Please confirm your email to receive your FREE Healthy Weight
+            Loss Starter Kit. Check your Promotions or Spam folder if the
+            confirmation email does not arrive within a few minutes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="starter-kit-visual">
+      <div class="starter-kit-image-card">
+        <img
+          src={imageURL}
+          alt="FREE Healthy Weight Loss Starter Kit preview"
+          loading="lazy"
+          width="1600"
+          height="1200"
+        />
+      </div>
+
+      <div class="starter-kit-shadow"></div>
+
+      <div class="starter-kit-badge">
+        <strong>100% FREE</strong>
+        <span>28-page printable PDF</span>
+      </div>
+    </div>
   </div>
-
-  <div
-    class="starter-form-success row-success"
-    style="display: none;"
-    role="status"
-    aria-live="polite"
-  >
-    <strong>Check your inbox!</strong>
-
-    <p>
-      Your FREE Healthy Weight Loss Starter Kit is on its way.
-      Please check your Promotions or Spam folder if you do not see the
-      confirmation email within a few minutes.
-    </p>
-  </div>
-</div>
+</section>
 
 <script is:inline>
   window.ml_webform_success_44518335 = function () {
@@ -94,20 +190,126 @@
   fetch(
     "https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/takel"
   ).catch(() => {
-    // Sledovací požadavek nesmí zablokovat samotný formulář.
+    // Tracking must not block the form.
   });
 </script>
 
 <style>
+  .starter-kit-signup {
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0;
+    border-top: 1px solid #dcfce7;
+    border-bottom: 1px solid #dcfce7;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(34, 197, 94, 0.2),
+        transparent 34%
+      ),
+      linear-gradient(
+        180deg,
+        #f0fdf4 0%,
+        #ffffff 100%
+      );
+  }
+
+  .starter-kit-signup::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    left: -130px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .starter-kit-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(1160px, calc(100% - 40px));
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(340px, 0.8fr);
+    gap: 72px;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .starter-kit-copy {
+    max-width: 690px;
+  }
+
+  .starter-kit-eyebrow {
+    display: inline-block;
+    color: #15803d;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .starter-kit-copy h2 {
+    margin: 16px 0 0;
+    color: #0f172a;
+    font-size: clamp(2.7rem, 6vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .starter-kit-copy h2 span {
+    display: block;
+    color: #16a34a;
+  }
+
+  .starter-kit-description {
+    max-width: 640px;
+    margin: 24px 0 0;
+    color: #475569;
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .starter-kit-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .starter-kit-benefits li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    color: #163b2f;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .starter-kit-benefits li span {
+    color: #22c55e;
+    font-weight: 900;
+  }
+
   .starter-mailerlite-form {
     width: 100%;
+    margin-top: 30px;
+    padding: 22px;
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
   }
 
   .signup-form {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
-    margin-top: 22px;
+    margin: 0;
   }
 
   .signup-form label {
@@ -121,13 +323,18 @@
 
   .signup-form input[type="email"] {
     min-width: 0;
-    min-height: 54px;
-    padding: 0 17px;
+    min-height: 58px;
+    padding: 0 18px;
     border: 1px solid #cbd5e1;
-    border-radius: 13px;
+    border-radius: 14px;
     background: #ffffff;
     color: #0f172a;
     font: inherit;
+    font-size: 1rem;
+  }
+
+  .signup-form input[type="email"]::placeholder {
+    color: #94a3b8;
   }
 
   .signup-form input[type="email"]:focus {
@@ -136,19 +343,34 @@
   }
 
   .signup-form button {
-    min-height: 54px;
-    padding: 0 22px;
+    min-height: 58px;
+    padding: 0 24px;
     border: 0;
-    border-radius: 13px;
-    background: #22c55e;
+    border-radius: 14px;
+    background: linear-gradient(
+      135deg,
+      #22c55e 0%,
+      #16a34a 100%
+    );
     color: #ffffff;
     font: inherit;
     font-weight: 900;
     cursor: pointer;
+    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.25);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .signup-form button:hover {
-    background: #16a34a;
+    background: linear-gradient(
+      135deg,
+      #16a34a 0%,
+      #15803d 100%
+    );
+    box-shadow: 0 16px 34px rgba(34, 197, 94, 0.34);
+    transform: translateY(-2px);
   }
 
   .signup-form button:focus-visible {
@@ -160,11 +382,27 @@
     display: none;
   }
 
+  .starter-kit-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 15px;
+    color: #166534;
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .privacy-note {
+    margin: 10px 0 0;
+    color: #94a3b8;
+    font-size: 0.8rem;
+  }
+
   .starter-form-success {
-    margin-top: 22px;
-    padding: 18px 20px;
-    border: 1px solid #bbf7d0;
-    border-radius: 14px;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #86efac;
+    border-radius: 15px;
     background: #f0fdf4;
     color: #166534;
   }
@@ -172,22 +410,140 @@
   .starter-form-success strong {
     display: block;
     color: #163b2f;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .starter-form-success p {
     margin: 8px 0 0;
     color: #166534;
-    line-height: 1.6;
+    line-height: 1.65;
+  }
+
+  .starter-kit-visual {
+    position: relative;
+    width: min(100%, 480px);
+    margin-left: auto;
+    padding: 22px 34px 40px;
+    perspective: 1400px;
+  }
+
+  .starter-kit-image-card {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border: 10px solid #ffffff;
+    border-radius: 26px;
+    background: #ffffff;
+    box-shadow:
+      0 44px 88px rgba(15, 23, 42, 0.22),
+      0 16px 34px rgba(15, 23, 42, 0.12);
+    transform:
+      rotateY(-6deg)
+      rotateX(2deg)
+      rotateZ(1deg);
+  }
+
+  .starter-kit-image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .starter-kit-shadow {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    bottom: 18px;
+    left: 14%;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.2);
+    filter: blur(18px);
+  }
+
+  .starter-kit-badge {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 56px;
+    display: grid;
+    gap: 3px;
+    padding: 15px 19px;
+    border: 4px solid #ffffff;
+    border-radius: 18px;
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+  }
+
+  .starter-kit-badge strong {
+    color: #86efac;
+    font-size: 0.98rem;
+  }
+
+  .starter-kit-badge span {
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 900px) {
+    .starter-kit-container {
+      grid-template-columns: 1fr;
+    }
+
+    .starter-kit-copy {
+      max-width: none;
+    }
+
+    .starter-kit-visual {
+      width: min(100%, 520px);
+      margin: 10px auto 0;
+    }
   }
 
   @media (max-width: 620px) {
+    .starter-kit-signup {
+      padding: 64px 0;
+    }
+
+    .starter-kit-container {
+      width: calc(100% - 24px);
+      gap: 44px;
+    }
+
+    .starter-kit-benefits {
+      grid-template-columns: 1fr;
+    }
+
     .signup-form {
       grid-template-columns: 1fr;
     }
 
     .signup-form button {
       width: 100%;
+    }
+
+    .starter-kit-trust {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .privacy-note {
+      text-align: center;
+    }
+
+    .starter-kit-visual {
+      padding: 12px 24px 34px;
+    }
+
+    .starter-kit-image-card {
+      border-width: 7px;
+      border-radius: 20px;
+      transform: none;
+    }
+
+    .starter-kit-badge {
+      right: 8px;
+      bottom: 16px;
     }
   }
 </style>

@@ -1,0 +1,197 @@
+<div
+  id="mlb2-44518335"
+  class="starter-mailerlite-form ml-subscribe-form ml-subscribe-form-44518335"
+>
+  <div class="starter-form-content row-form">
+    <form
+      class="signup-form ml-block-form"
+      action="https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/subscribe"
+      method="post"
+      target="_blank"
+    >
+      <label for="starter-email">
+        Email address
+      </label>
+
+      <input
+        id="starter-email"
+        aria-label="Email address"
+        aria-required="true"
+        name="fields[email]"
+        type="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+      />
+
+      <input
+        type="hidden"
+        name="ml-submit"
+        value="1"
+      />
+
+      <input
+        type="hidden"
+        name="anticsrf"
+        value="true"
+      />
+
+      <button type="submit" class="primary">
+        <span class="button-text">
+          Send Me the FREE Starter Kit →
+        </span>
+
+        <span class="button-loading" aria-hidden="true">
+          Sending…
+        </span>
+      </button>
+    </form>
+  </div>
+
+  <div
+    class="starter-form-success row-success"
+    style="display: none;"
+    role="status"
+    aria-live="polite"
+  >
+    <strong>Check your inbox!</strong>
+
+    <p>
+      Please confirm your email to receive your FREE Healthy Weight Loss
+      Starter Kit. Check your Promotions or Spam folder if the confirmation
+      email does not arrive within a few minutes.
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  window.ml_webform_success_44518335 = function () {
+    const formContainer = document.querySelector(
+      ".ml-subscribe-form-44518335"
+    );
+
+    if (!formContainer) return;
+
+    const formContent = formContainer.querySelector(".row-form");
+    const successContent = formContainer.querySelector(".row-success");
+
+    if (formContent) {
+      formContent.style.display = "none";
+    }
+
+    if (successContent) {
+      successContent.style.display = "block";
+    }
+  };
+</script>
+
+<script
+  is:inline
+  src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519"
+></script>
+
+<script is:inline>
+  fetch(
+    "https://assets.mailerlite.com/jsonp/2557668/forms/194964919852992431/takel"
+  ).catch(() => {
+    // Tracking must not block the form.
+  });
+</script>
+
+<style>
+  .starter-mailerlite-form {
+    width: 100%;
+  }
+
+  .signup-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .signup-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .signup-form input[type="email"] {
+    min-width: 0;
+    min-height: 54px;
+    padding: 0 17px;
+    border: 1px solid #cbd5e1;
+    border-radius: 13px;
+    background: #ffffff;
+    color: #0f172a;
+    font: inherit;
+  }
+
+  .signup-form input[type="email"]:focus {
+    border-color: #22c55e;
+    outline: 3px solid rgba(34, 197, 94, 0.18);
+  }
+
+  .signup-form button {
+    min-height: 54px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 13px;
+    background: #22c55e;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .signup-form button:hover {
+    background: #16a34a;
+    transform: translateY(-1px);
+  }
+
+  .signup-form button:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.35);
+    outline-offset: 3px;
+  }
+
+  .button-loading {
+    display: none;
+  }
+
+  .starter-form-success {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+    background: #f0fdf4;
+    color: #166534;
+  }
+
+  .starter-form-success strong {
+    display: block;
+    color: #163b2f;
+    font-size: 1.1rem;
+  }
+
+  .starter-form-success p {
+    margin: 8px 0 0;
+    color: #166534;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 620px) {
+    .signup-form {
+      grid-template-columns: 1fr;
+    }
+
+    .signup-form button {
+      width: 100%;
+    }
+  }
+</style>
