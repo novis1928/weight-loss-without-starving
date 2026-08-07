@@ -1,7 +1,11 @@
 ---
 title: "How to Lose Belly Fat: A Realistic, Science-Based Guide"
-description: "Learn how to lose belly fat safely and effectively. Discover what causes belly fat, why spot reduction doesn't work, the best foods, exercises, and habits for sustainable fat loss."
+description: "Learn how to lose belly fat with realistic nutrition, exercise, and lifestyle strategies that support healthy, sustainable fat loss."
+seoTitle: "How to Lose Belly Fat | Realistic Science-Based Guide"
+seoDescription: "Learn how to lose belly fat with realistic nutrition, exercise, and lifestyle strategies that support healthy, sustainable fat loss."
 publishDate: 2026-07-21
+updatedDate: 2026-08-07
+author: "George Novák"
 category: "Weight Loss Basics"
 tags:
   - belly fat
@@ -11,6 +15,7 @@ tags:
   - healthy lifestyle
 featuredImage: "/images/how-to-lose-belly-fat-hero.png"
 readingTime: "20 min read"
+featured: true
 draft: false
 ---
 
