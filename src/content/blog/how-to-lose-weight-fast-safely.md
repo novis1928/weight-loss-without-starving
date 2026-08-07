@@ -1,8 +1,11 @@
 ---
 title: "How to Lose Weight Fast Safely: What Actually Works (2026)"
-description: "Learn how to lose weight as quickly as reasonably possible without crash diets or starvation. Includes a practical 7-day plan, meal ideas, calculators, common mistakes, and evidence-based strategies."
+description: "Learn how to lose weight fast safely with practical nutrition, exercise, and lifestyle strategies that support healthy, sustainable fat loss."
+seoTitle: "How to Lose Weight Fast Safely | What Actually Works"
+seoDescription: "Learn how to lose weight fast safely with practical nutrition, exercise, and lifestyle strategies that support healthy, sustainable fat loss."
 publishDate: 2026-07-21
-updatedDate: 2026-07-25
+updatedDate: 2026-08-07
+author: "George Novák"
 readingTime: "22 min read"
 category: "Weight Loss Basics"
 tags:
