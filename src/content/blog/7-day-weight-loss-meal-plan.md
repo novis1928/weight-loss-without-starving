@@ -22,8 +22,6 @@ tags:
   - weight loss recipes
 ---
 
-# 7-Day Weight Loss Meal Plan: The Complete Beginner's Guide
-
 ![7-Day Weight Loss Meal Plan Hero](/weight-loss-without-starving/images/7-day-weight-loss-meal-plan/hero-banner.png)
 
 *Simple, realistic and beginner-friendly meal plan for sustainable weight loss.*
