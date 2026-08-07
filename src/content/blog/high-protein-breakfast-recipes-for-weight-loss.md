@@ -101,7 +101,6 @@ grid-template-columns:1fr;
 
 ![Healthy high protein breakfast](/weight-loss-without-starving/images/high-protein-breakfast-recipes-for-weight-loss/hero-banner.png)
 
-# High Protein Breakfast Recipes for Weight Loss
 Losing weight doesn't mean skipping breakfast.
 
 In fact, for many people, eating a **high protein breakfast** is one of the easiest ways to reduce hunger, improve energy levels, and make healthier food choices throughout the rest of the day.
