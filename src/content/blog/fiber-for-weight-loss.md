@@ -1,12 +1,12 @@
 ---
 author: "George Novák"
 category: "Nutrition"
-description: "Learn how dietary fiber can support fullness, healthy digestion, and sustainable weight loss with practical food choices, daily targets, meal ideas, and beginner-friendly tips."
+description: "Learn how fiber supports weight loss, reduces hunger, and helps you stay full. Discover high-fiber foods, daily targets, and practical tips."
 draft: false
 featured: true
 publishDate: 2026-07-31
 readingTime: "30 min read"
-seoDescription: "Discover how fiber supports healthy weight loss, how much fiber you need, the best high-fiber foods, meal ideas, common mistakes, supplements, and a simple seven-day fiber challenge."
+seoDescription: "Learn how fiber supports weight loss, reduces hunger, and helps you stay full. Discover high-fiber foods, daily targets, and practical tips."
 seoTitle: "Fiber for Weight Loss | Complete Science-Based Guide"
 tags:
   - fiber for weight loss
