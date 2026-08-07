@@ -24,8 +24,6 @@ seoDescription: "Discover 30 filling foods that can help control hunger, reduce 
 > **Reading time:** About 22 minutes  
 > **Quick takeaway:** Build most meals around protein, fiber-rich carbohydrates, vegetables, fruit, and a measured portion of healthy fat.
 
-# 30 Best Foods for Weight Loss That Keep You Full Longer
-
 ![30 Best Foods for Weight Loss](/weight-loss-without-starving/images/best-foods/best-foods-weight-loss-hero.png)
 
 *Discover the best foods that help you stay full longer, support fat loss, and make healthy eating easier.*
