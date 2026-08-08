@@ -1,6 +1,6 @@
 ---
 title: "Meal Prep Lunch Recipes for Weight Loss: 15 Easy Make-Ahead Ideas"
-description: "Discover 15 healthy meal prep lunch recipes for weight loss with protein, fiber, vegetables, calorie estimates, storage tips, grocery ideas, and beginner-friendly meal prep guidance."
+description: "Discover 15 easy meal prep lunch recipes for weight loss with high-protein meals, calories, and storage tips."
 publishDate: "2026-08-08"
 updatedDate: "2026-08-08"
 readingTime: "31 min read"
